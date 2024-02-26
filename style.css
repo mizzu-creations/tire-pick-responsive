@@ -1,3 +1,57 @@
-#lottie {
+#lottie1 {
   width: 250px;
+  height: 250px;
+  border-radius: 70px;
+  overflow: hidden;
+}
+#lottie2 {
+  width: 250px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+body {
+  width: 100%;
+}
+
+.swiper {
+  width: 100%;
+  position: relative;
+}
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+}
+.slide-bg {
+  width: 100%;
+}
+.swiper-slide img {
+  display: block;
+  width: 1184px;
+  height: 100%;
+  margin: 0 auto;
+  object-fit: cover;
+}
+.swiper .swiper-pagination-fraction {
+  width: fit-content;
+  line-height: 18px;
+  position: absolute;
+  bottom: 20px;
+  left: auto;
+  right: calc(50% - 592px);
+  padding: 8px;
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 500;
+  white-space: nowrap;
 }
