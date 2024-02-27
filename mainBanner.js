@@ -74,3 +74,31 @@ const swiper = new Swiper(".mySwiper", {
     prevEl: ".swiper-button-prev",
   },
 });
+
+const swiperBtnHover = () => {
+  const swiper = document.querySelector(".swiper");
+  const next = document.querySelector(".swiper-button-next");
+  const prev = document.querySelector(".swiper-button-prev");
+
+  swiper.addEventListener("mouseenter", () => {
+    next.style.display = "flex";
+    prev.style.display = "flex";
+  });
+  swiper.addEventListener("mouseleave", () => {
+    next.style.display = "none";
+    prev.style.display = "none";
+  });
+};
+
+const responsiveApplication = () => {
+  const swiperFraction = document.querySelector(".swiper-pagination-fraction");
+
+  swiperFraction.insertAdjacentHTML(
+    "beforeend",
+    `<span class="swiper-pagination-all swiper-res">모두보기</span>
+    <img class="swiper-res" src="./images/menu.svg" alt="">`
+  );
+};
+
+swiperBtnHover();
+responsiveApplication();
