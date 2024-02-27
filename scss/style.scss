@@ -1,0 +1,11 @@
+// abstracts
+@import "./abstracts/variable.scss"; // 변수
+@import "./abstracts/mixin.scss"; // 믹스인
+// base
+@import "./base/reset.scss"; // 리셋
+@import "./base/typography.scss"; // 텍스트
+// layout
+@import "./layout/align.scss"; // 공통정렬
+@import "./layout/header.scss"; // 헤더
+// components
+@import "./components/search"; // 검색

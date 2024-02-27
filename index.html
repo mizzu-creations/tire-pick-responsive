@@ -4,31 +4,83 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>타이어픽</title>
-    <link rel="stylesheet" href="style.css" />
+    <title>내 차에 신뢰를 더하다 | 타이어픽</title>
+    <link
+      rel="stylesheet"
+      as="style"
+      crossorigin
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
+    />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
-
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./scss/style.css" />
     <script
       defer
       src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
     ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
     <script defer src="mainBanner.js"></script>
+    <script defer src="headerSearch.js"></script>
     <script defer src="animation.js"></script>
   </head>
   <body>
-    <img src="./images/search.svg" alt="" />
-    <img src="./images/logo_tirepick.svg" alt="" />
-    <!-- <div id="lottie1"></div>
-    <div id="lottie2"></div> -->
-    <div class="swiper mySwiper">
-      <div class="swiper-wrapper"></div>
-      <div class="swiper-button-next"></div>
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-pagination"></div>
-    </div>
+    <header class="header">
+      <div class="m0auto">
+        <h1 class="logo">
+          <a href="/"
+            ><img src="./images/logo_tirepick.svg" alt="타이어픽"
+          /></a>
+        </h1>
+        <div class="header__nav">
+          <h2 class="hide">메뉴</h2>
+          <nav>
+            <ul>
+              <li><a href="javascript:void(0)">와이퍼</a></li>
+              <li><a href="javascript:void(0)">엔진오일</a></li>
+              <li><a href="javascript:void(0)">배터리</a></li>
+              <li><a href="javascript:void(0)">타이어</a></li>
+              <li><a href="javascript:void(0)">매장</a></li>
+            </ul>
+          </nav>
+          <h2 class="hide">검색</h2>
+          <div class="search__wrap">
+            <div class="search">
+              <img src="./images/search.svg" alt="검색" />
+              <span>타이어 펑크 수리 + 배터리 점프 무료!</span>
+            </div>
+            <dialog class="search__content" open>
+              <p>콘텐츠</p>
+              <p>콘텐츠</p>
+              <p>콘텐츠</p>
+            </dialog>
+          </div>
+        </div>
+        <div class="spot-menu" style="display: none">
+          <nav>
+            <ul>
+              <li><a href="javascript:void(0)">이용안내</a></li>
+              <li><a href="javascript:void(0)">고객센터</a></li>
+              <li><a href="javascript:void(0)">장바구니</a></li>
+              <li><a href="javascript:void(0)">마이페이지</a></li>
+              <li><a href="javascript:void(0)">로그인</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- <div class="swiper mySwiper">
+        <div class="swiper-wrapper"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+      </div> -->
+      <!-- <div id="lottie1"></div>
+      <div id="lottie2"></div> -->
+    </main>
   </body>
 </html>
