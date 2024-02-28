@@ -466,6 +466,7 @@ label {
   padding: 1.2rem 1.4rem;
   color: #96989c;
   font-size: 1.6rem;
+  cursor: pointer;
 }
 .custom-select .option-item.selected {
   background: url("../../images/input-check-selected.svg") right 1.2rem center no-repeat;

@@ -13,7 +13,6 @@ const openSearchBox = () => {
     }
   });
 };
-
 // 탭 관련 기능
 const setupTabs = () => {
   const tabs = document.querySelectorAll(".search__tab");
@@ -38,7 +37,6 @@ const setupTabs = () => {
     });
   });
 };
-
 // 검색 콘텐츠 업데이트
 const updateSearchContent = (index) => {
   const labelArr = ["사이즈로", "규격", "브랜드"];
@@ -52,7 +50,6 @@ const updateSearchContent = (index) => {
   selectLabel.innerText = `${labelName[index]}`;
   selectedOption.innerText = `${selected[index]}`;
 };
-
 // 검색 선택 옵션 업데이트
 const updateSearchOptions = () => {
   const optionUl = document.querySelector(".option");
@@ -93,7 +90,14 @@ const updateSearchOptions = () => {
   const selectLabel = document.querySelector(".select-label");
 
   document.addEventListener("click", (e) => {
-    if (e.target.closest("div")?.classList[0] == "custom-select") {
+    // console.log(e.target.closest("li").className === "search__tab");
+    // console.log(
+    //   e.target.closest("span").children[0].className === "search__radio2"
+    // );
+    if (
+      e.target.closest("li")?.className === "search__tab" ||
+      e.target.closest("span")?.children[0].className === "search__radio2"
+    ) {
       const labelName = selectLabel.innerText;
       const data =
         labelName === "타이어 사이즈"
@@ -112,13 +116,20 @@ const updateSearchOptions = () => {
     }
   });
 };
-
 // 선택된 옵션 업데이트
 const updateSelectedOption = () => {
   const label = document.querySelector(".label");
 
   document.addEventListener("click", (e) => {
     if (e.target.className === "option-item") {
+      const selectedOption = document.querySelector(".label");
+      const lists = document.querySelectorAll(".option-item");
+
+      selectedOption.parentNode.classList.remove("--active");
+      lists.forEach((list) => {
+        list.classList.remove("selected");
+      });
+      e.target.classList.add("selected");
       label.innerHTML = e.target.innerText;
     }
 
@@ -149,7 +160,6 @@ const initializeSearchTabs = () => {
     contentSelects[1].classList.add("--active");
   });
 };
-
 const searchCarBtn = () => {
   const inputs = document.querySelectorAll(".search__item1 input");
   const btn = document.querySelector(".search__item1 button");

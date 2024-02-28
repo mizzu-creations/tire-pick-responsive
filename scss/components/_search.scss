@@ -225,6 +225,7 @@
     padding: 1.2rem 1.4rem;
     color: #96989c;
     font-size: 1.6rem;
+    cursor: pointer;
     &.selected {
       background: url("../../images/input-check-selected.svg") right
         calc(1.2rem) center no-repeat;
