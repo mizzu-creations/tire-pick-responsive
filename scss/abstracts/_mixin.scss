@@ -7,3 +7,30 @@
   clip: rect(0.1rem, 0.1rem, 0.1rem, 0.1rem);
   overflow: hidden;
 }
+
+@mixin inputBox {
+  width: 100%;
+  line-height: 2.4rem;
+  padding: 1.2rem;
+  border: 0.1rem solid #dddfe2;
+  border-radius: 0.8rem;
+  outline: none;
+  font-size: 1.7rem;
+  font-weight: 400;
+}
+
+@mixin searchBtn {
+  height: 4.8rem;
+  padding: 1.2rem 2rem;
+  border-radius: 0.8rem;
+  white-space: nowrap;
+  font-weight: 500;
+  font-size: 1.7rem;
+  background-color: #7b3ff1;
+  color: #fff;
+  transition: background 0.3s ease 0s;
+  &:disabled {
+    background-color: #f1f3f6;
+    color: #bec0c4;
+  }
+}

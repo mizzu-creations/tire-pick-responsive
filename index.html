@@ -51,7 +51,7 @@
               <img src="./images/search.svg" alt="검색" />
               <span>타이어 펑크 수리 + 배터리 점프 무료!</span>
             </div>
-            <dialog class="search__contents" open="">
+            <dialog class="search__contents">
               <nav>
                 <span class="search__tab-focus">타이어</span>
                 <ul>
@@ -88,7 +88,7 @@
                     <label for="searchChoice2">사이즈로 검색</label></span
                   >
                 </div>
-                <div class="search__content__select --active">
+                <div class="search__content__select select1 --active">
                   <span>차량번호, 소유주명</span>
                   <div class="search__item1">
                     <input type="text" placeholder="12가1234" />
@@ -104,7 +104,16 @@
                     <label for="agreeCheck2">개인정보 처리업무 위탁 동의</label>
                   </div>
                 </div>
-                <div class="search__content__select">사이즈로 검색</div>
+                <div class="search__content__select select2">
+                  <span class="select-label">타이어 사이즈</span>
+                  <div>
+                    <div class="custom-select">
+                      <button class="label">인치</button>
+                      <ul class="option"></ul>
+                    </div>
+                    <button class="search__btn">검색하기</button>
+                  </div>
+                </div>
               </div>
             </dialog>
           </div>
