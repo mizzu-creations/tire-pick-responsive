@@ -233,8 +233,10 @@ body {
   position: absolute;
   left: auto;
   right: 0;
+  background-color: #fff;
   border: 0.1rem solid #dddfe2;
   border-radius: 1.6rem;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 2px 16px;
 }
 .search__wrap .search__contents nav {
   position: relative;
@@ -273,5 +275,106 @@ body {
   justify-content: center;
   align-items: center;
   width: 100%;
+  cursor: pointer;
+}
+
+.search__content {
+  padding: 2.4rem 1.2rem 1rem;
+}
+.search__content div {
+  display: flex;
+  gap: 1.6rem;
+}
+.search__content div span {
+  padding: 0.4rem 0.8rem 0.4rem 1.2rem;
+  cursor: pointer;
+}
+.search__content div span:has(input[type=radio]:checked) {
+  background-color: #ebfaef;
+}
+.search__content div span input[type=radio] {
+  display: none;
+}
+.search__content div span input[type=radio]:checked + label {
+  background-image: url("../../images/radio_active.svg");
+}
+.search__content div span label {
+  display: inline-block;
+  padding-left: 2rem;
+  background: url("../../images/radio.svg") left center no-repeat;
+  background-size: 1rem 1rem;
+  line-height: 2.4rem;
+  font-size: 1.7rem;
+  font-weight: 500;
+  color: #282a2e;
+  cursor: pointer;
+}
+
+.search__contents .search__content__select {
+  display: none;
+  margin-top: 3.8rem;
+}
+.search__contents .search__content__select.--active {
+  display: block;
+}
+.search__contents .search__content__select span {
+  padding: 0;
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  color: #3c3e42;
+  cursor: auto;
+}
+.search__contents .search__content__select .search__item1 {
+  display: flex;
+  gap: 0.8rem;
+  margin: 0.8rem 0 1.6rem;
+}
+.search__contents .search__content__select .search__item1 input {
+  width: 100%;
+  line-height: 2.4rem;
+  padding: 1.2rem;
+  border: 0.1rem solid #dddfe2;
+  border-radius: 0.8rem;
+  outline: none;
+  font-size: 1.7rem;
+  font-weight: 400;
+}
+.search__contents .search__content__select .search__item1 input::-moz-placeholder {
+  color: #bec0c4;
+}
+.search__contents .search__content__select .search__item1 input::placeholder {
+  color: #bec0c4;
+}
+.search__contents .search__content__select .search__item1 button {
+  height: 4.8rem;
+  padding: 1.2rem 2rem;
+  border-radius: 0.8rem;
+  white-space: nowrap;
+  font-weight: 500;
+  font-size: 1.7rem;
+  background-color: #7b3ff1;
+  color: #fff;
+  transition: background 0.3s ease 0s;
+}
+.search__contents .search__content__select .search__item1 button:disabled {
+  background-color: #f1f3f6;
+  color: #bec0c4;
+}
+.search__contents .search__content__select .search__item2 input[type=checkbox] {
+  display: none;
+}
+.search__contents .search__content__select .search__item2 input[type=checkbox]:checked + label {
+  background-image: url("../../images/check_active.svg");
+}
+.search__contents .search__content__select .search__item2 label {
+  display: inline-block;
+  padding-left: 2rem;
+  background: url("../../images/check.svg") left center no-repeat;
+  background-size: 1.5rem 1.5rem;
+  line-height: 2.4rem;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #5a5c60;
   cursor: pointer;
 }/*# sourceMappingURL=style.css.map */

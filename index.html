@@ -67,30 +67,44 @@
                 </ul>
               </nav>
               <div class="search__content size">
-                <form>
-                  <fieldset>
-                    <div>
-                      <input
-                        type="radio"
-                        id="searchChoice1"
-                        name="search"
-                        value="car"
-                        checked
-                      />
-                      <label for="searchChoice1">차 번호로 검색</label>
-
-                      <input
-                        type="radio"
-                        id="searchChoice2"
-                        name="search"
-                        value="size"
-                      />
-                      <label for="searchChoice2">사이즈로 검색</label>
-                    </div>
-                  </fieldset>
-                </form>
-                <div class="search__content__select1">차 번호로 검색</div>
-                <div class="search__content__select2">사이즈로 검색</div>
+                <div>
+                  <span
+                    ><input
+                      type="radio"
+                      id="searchChoice1"
+                      name="search"
+                      value="car"
+                      checked
+                    />
+                    <label for="searchChoice1">차 번호로 검색</label></span
+                  >
+                  <span
+                    ><input
+                      type="radio"
+                      id="searchChoice2"
+                      name="search"
+                      value="size"
+                    />
+                    <label for="searchChoice2">사이즈로 검색</label></span
+                  >
+                </div>
+                <div class="search__content__select --active">
+                  <span>차량번호, 소유주명</span>
+                  <div class="search__item1">
+                    <input type="text" placeholder="12가1234" />
+                    <input type="text" placeholder="홍길동" />
+                    <button aria-label="검색하기" disabled>
+                      약관 동의하고 검색하기
+                    </button>
+                  </div>
+                  <div class="search__item2">
+                    <input type="checkbox" id="agreeCheck1" checked />
+                    <label for="agreeCheck1">개인정보 수집 및 이용 동의</label>
+                    <input type="checkbox" id="agreeCheck2" checked />
+                    <label for="agreeCheck2">개인정보 처리업무 위탁 동의</label>
+                  </div>
+                </div>
+                <div class="search__content__select">사이즈로 검색</div>
               </div>
             </dialog>
           </div>
