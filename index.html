@@ -51,10 +51,47 @@
               <img src="./images/search.svg" alt="검색" />
               <span>타이어 펑크 수리 + 배터리 점프 무료!</span>
             </div>
-            <dialog class="search__content" open>
-              <p>콘텐츠</p>
-              <p>콘텐츠</p>
-              <p>콘텐츠</p>
+            <dialog class="search__contents" open="">
+              <nav>
+                <span class="search__tab-focus">타이어</span>
+                <ul>
+                  <li class="search__tab">
+                    <a class="--active" href="javascript:void(0)">타이어</a>
+                  </li>
+                  <li class="search__tab">
+                    <a href="javascript:void(0)">배터리</a>
+                  </li>
+                  <li class="search__tab">
+                    <a href="javascript:void(0)">엔진오일</a>
+                  </li>
+                </ul>
+              </nav>
+              <div class="search__content size">
+                <form>
+                  <fieldset>
+                    <div>
+                      <input
+                        type="radio"
+                        id="searchChoice1"
+                        name="search"
+                        value="car"
+                        checked
+                      />
+                      <label for="searchChoice1">차 번호로 검색</label>
+
+                      <input
+                        type="radio"
+                        id="searchChoice2"
+                        name="search"
+                        value="size"
+                      />
+                      <label for="searchChoice2">사이즈로 검색</label>
+                    </div>
+                  </fieldset>
+                </form>
+                <div class="search__content__select1">차 번호로 검색</div>
+                <div class="search__content__select2">사이즈로 검색</div>
+              </div>
             </dialog>
           </div>
         </div>
