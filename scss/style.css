@@ -245,7 +245,6 @@ label {
   }
 }
 .header .spot-menu {
-  width: 100%;
   position: absolute;
   top: 0;
   left: 0;
@@ -265,7 +264,7 @@ label {
   .header .spot-menu__cart a {
     display: inline-block;
     width: 2.4rem;
-    height: 2.5rem;
+    height: 2.4rem;
     background: url(../../images/cart.svg) no-repeat right center;
   }
   .header .spot-menu__cart a span {
@@ -278,23 +277,24 @@ label {
     overflow: hidden;
   }
 }
-.header .spot-menu > ul {
+.header .spot-menu ul {
   display: flex;
   justify-content: flex-end;
   gap: 4.6rem;
   width: 124.4rem;
+  margin: 0 auto;
 }
 @media (min-width: 0px) and (max-width: 769px) {
-  .header .spot-menu > ul {
+  .header .spot-menu ul {
     width: 100%;
   }
 }
-.header .spot-menu > ul li {
+.header .spot-menu ul li {
   position: relative;
   line-height: 1.8rem;
   text-align: right;
 }
-.header .spot-menu > ul li:not(:last-of-type)::after {
+.header .spot-menu ul li:not(:last-of-type)::after {
   content: "";
   width: 0.1rem;
   height: 1rem;
@@ -305,14 +305,58 @@ label {
   background-color: #dddfe2;
 }
 @media (min-width: 0px) and (max-width: 769px) {
-  .header .spot-menu > ul li:not(:last-of-type)::after {
+  .header .spot-menu ul li:not(:last-of-type)::after {
     display: none;
   }
 }
-.header .spot-menu > ul li a {
+.header .spot-menu ul li a {
   font-size: 1.3rem;
   font-weight: 400;
   color: #5a5c60;
+}
+
+.main__menu {
+  padding: 5rem 0;
+}
+.main__menu ul {
+  display: flex;
+  justify-content: space-between;
+}
+.main__menu ul li a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  position: relative;
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+.main__menu ul li a.new::after {
+  content: "";
+  width: 1.6rem;
+  height: 1.6rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: url(../../images/new.svg) no-repeat right top;
+}
+.main__menu ul li a span {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 8rem;
+  height: 8rem;
+  border-radius: 2.4rem;
+  background-color: #f1f3f6;
+}
+.main__menu ul li a span#lottie1 {
+  overflow: hidden;
+}
+.main__menu ul li a span.quality {
+  background-color: #c61515;
+}
+.main__menu ul li a span img {
+  width: 6rem;
 }
 
 .search {
@@ -598,6 +642,95 @@ label {
   top: -0.1rem;
   right: -1.6rem;
   background: url(../../images/new.svg) no-repeat right top;
+}
+
+.swiper {
+  width: 100%;
+  position: relative;
+}
+.swiper .swiper-wrapper .swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+}
+.swiper .swiper-wrapper .swiper-slide .slide-bg {
+  width: 100%;
+}
+.swiper .swiper-wrapper .swiper-slide .slide-bg img {
+  display: block;
+  width: 1184px;
+  height: 100%;
+  margin: 0 auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media (min-width: 0px) and (max-width: 769px) {
+  .swiper .swiper-wrapper .swiper-slide .slide-bg img {
+    width: 100%;
+  }
+}
+.swiper .swiper-button-next,
+.swiper .swiper-button-prev {
+  display: none;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: #fff;
+  border-radius: 50%;
+}
+.swiper .swiper-button-next::after,
+.swiper .swiper-button-prev::after {
+  font-size: 14px;
+  font-weight: 700;
+}
+.swiper .swiper-button-next {
+  right: calc(50% - 618px);
+}
+.swiper .swiper-button-prev {
+  left: calc(50% - 618px);
+}
+.swiper .swiper-pagination-fraction {
+  width: -moz-fit-content;
+  width: fit-content;
+  line-height: 18px;
+  position: absolute;
+  bottom: 20px;
+  left: auto;
+  right: calc(50% - 592px);
+  padding: 8px;
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+  white-space: nowrap;
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 0px 8px 0px;
+}
+.swiper .swiper-pagination-fraction .swiper-res {
+  display: none;
+}
+@media (min-width: 0px) and (max-width: 769px) {
+  .swiper .swiper-pagination-fraction {
+    display: flex;
+    align-items: center;
+    padding: 2px 10px;
+    bottom: 10px;
+    right: 8px;
+    border-radius: 3px;
+    font-size: 12px;
+  }
+  .swiper .swiper-pagination-fraction .swiper-pagination-all {
+    margin: 0 3px;
+  }
+  .swiper .swiper-pagination-fraction .swiper-res {
+    display: block;
+  }
 }
 
 .tab-bar {

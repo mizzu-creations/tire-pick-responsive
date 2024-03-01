@@ -32,7 +32,6 @@
     }
   }
   .spot-menu {
-    width: 100%;
     position: absolute;
     top: 0;
     left: 0;
@@ -50,7 +49,7 @@
         a {
           display: inline-block;
           width: 2.4rem;
-          height: 2.5rem;
+          height: 2.4rem;
           @include bg("cart.svg", $x: right, $y: center);
           span {
             @include hide;
@@ -58,11 +57,12 @@
         }
       }
     }
-    > ul {
+    ul {
       display: flex;
       justify-content: flex-end;
       gap: 4.6rem;
       width: 124.4rem;
+      margin: 0 auto;
       @include mobile {
         width: 100%;
       }
