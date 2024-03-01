@@ -5,11 +5,11 @@
     display: flex;
     align-items: center;
     gap: 1rem;
-    width: 36rem;
+    width: 33rem;
     line-height: 20px;
     padding: 10px 16px;
-    background-color: $bg;
-    border: 0.1rem solid $border;
+    background-color: $grayf1;
+    border: 0.1rem solid $graydd;
     border-radius: 20rem;
     cursor: pointer;
     &:hover {
@@ -19,7 +19,7 @@
       padding-top: 0.1rem;
       font-size: 1.7rem;
       font-weight: 500;
-      color: $text02;
+      color: $gray5a;
     }
   }
   &__contents {
@@ -30,7 +30,7 @@
     left: auto;
     right: 0;
     background-color: $white;
-    border: 0.1rem solid $border;
+    border: 0.1rem solid $graydd;
     border-radius: 1.6rem;
     box-shadow: rgba(0, 0, 0, 0.12) 0px 2px 16px;
     nav {
@@ -56,9 +56,9 @@
         display: flex;
         line-height: 5rem;
         padding: 0.8rem;
-        background-color: $bg;
+        background-color: $grayf1;
         border-radius: 0.8rem;
-        color: $text02;
+        color: $gray5a;
         font-size: 2.2rem;
         font-weight: 700;
         .search__tab {
@@ -90,9 +90,13 @@
           label {
             display: inline-block;
             padding-left: 2rem;
-            background: url("../../images/radio.svg") left center no-repeat;
-            background-size: 1rem 1rem;
-            line-height: 2.4rem;
+            @include bg(
+              "radio.svg",
+              $x: left,
+              $y: center,
+              $width: 1rem,
+              $height: 1rem
+            );
             font-size: 1.7rem;
             font-weight: 500;
             color: #282a2e;
@@ -141,12 +145,17 @@
             label {
               display: inline-block;
               padding-left: 2rem;
-              background: url("../../images/check.svg") left center no-repeat;
-              background-size: 1.5rem 1.5rem;
+              @include bg(
+                "check.svg",
+                $x: left,
+                $y: center,
+                $width: 1.5rem,
+                $height: 1.5rem
+              );
               line-height: 2.4rem;
               font-size: 1.5rem;
               font-weight: 400;
-              color: $text02;
+              color: $gray5a;
               cursor: pointer;
             }
           }
@@ -180,17 +189,20 @@
   align-items: center;
   width: 100%;
   position: relative;
-  background: url("../../images/chevron_down-black.svg") right calc(1.2rem)
-    center no-repeat;
-  background-size: 2.4rem;
-  border: 0.1rem solid $border;
+  @include bg(
+    "chevron_down-black.svg",
+    $x: right calc(1.2rem),
+    $y: center,
+    $width: 2.4rem
+  );
+  border: 0.1rem solid $graydd;
   border-radius: 0.8rem;
   .search__option-label {
     width: inherit;
     height: 100%;
     padding-left: 1.2rem;
     background-color: transparent;
-    color: $text01;
+    color: $gray96;
     font-size: 1.7rem;
     font-weight: 400;
     text-align: left;
@@ -209,9 +221,12 @@
     overflow-y: auto;
   }
   &.--active {
-    background: url("../../images/chevron_up-black.svg") right calc(1.2rem)
-      center no-repeat;
-    background-size: 2.4rem;
+    @include bg(
+      "chevron_up-black.svg",
+      $x: right calc(1.2rem),
+      $y: center,
+      $width: 2.4rem
+    );
     border: 0.1rem solid $purple;
   }
   &.--active .search__select-option {
@@ -219,13 +234,16 @@
   }
   .search__select-option-item {
     padding: 1.2rem 1.4rem;
-    color: $text01;
+    color: $gray96;
     font-size: 1.6rem;
     cursor: pointer;
     &.selected {
-      background: url("../../images/input-check-selected.svg") right
-        calc(1.2rem) center no-repeat;
-      background-size: 2rem;
+      @include bg(
+        "input-check-selected.svg",
+        $x: right calc(1.2rem),
+        $y: center,
+        $width: 2
+      );
       color: $purple;
     }
     &:hover {

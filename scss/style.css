@@ -204,9 +204,61 @@ label {
   margin: 0 auto;
 }
 
+.header {
+  padding-top: 3.2rem;
+}
 .header .m0auto {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  gap: 4rem;
+}
+.header .m0auto .logo {
+  font-size: 0;
+}
+.header__nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2.4rem;
+  width: 100%;
+  height: 8rem;
+}
+.header__spot-menu {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 0.7rem 0;
+  border-bottom: 0.1rem solid #f1f3f6;
+}
+.header__spot-menu > ul {
+  display: flex;
+  justify-content: flex-end;
+  gap: 4.6rem;
+  width: 124.4rem;
+  margin: 0 auto;
+}
+.header__spot-menu > ul li {
+  position: relative;
+  line-height: 1.8rem;
+  text-align: right;
+}
+.header__spot-menu > ul li:not(:last-of-type)::after {
+  content: "";
+  width: 0.1rem;
+  height: 1rem;
+  position: absolute;
+  top: 50%;
+  right: -50%;
+  transform: translateY(-50%);
+  background-color: #dddfe2;
+}
+.header__spot-menu > ul li a {
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: #5a5c60;
 }
 
 .search {
@@ -217,7 +269,7 @@ label {
   display: flex;
   align-items: center;
   gap: 1rem;
-  width: 36rem;
+  width: 33rem;
   line-height: 20px;
   padding: 10px 16px;
   background-color: #f1f3f6;
@@ -306,9 +358,8 @@ label {
 .search__contents--content .search__radio-group span label {
   display: inline-block;
   padding-left: 2rem;
-  background: url("../../images/radio.svg") left center no-repeat;
+  background: url(../../images/radio.svg) no-repeat left center;
   background-size: 1rem 1rem;
-  line-height: 2.4rem;
   font-size: 1.7rem;
   font-weight: 500;
   color: #282a2e;
@@ -378,7 +429,7 @@ label {
 .search__contents--content .search__contents--select.select1 .search__consent-options label {
   display: inline-block;
   padding-left: 2rem;
-  background: url("../../images/check.svg") left center no-repeat;
+  background: url(../../images/check.svg) no-repeat left center;
   background-size: 1.5rem 1.5rem;
   line-height: 2.4rem;
   font-size: 1.5rem;
@@ -421,7 +472,7 @@ label {
   align-items: center;
   width: 100%;
   position: relative;
-  background: url("../../images/chevron_down-black.svg") right 1.2rem center no-repeat;
+  background: url(../../images/chevron_down-black.svg) no-repeat right 1.2rem center;
   background-size: 2.4rem;
   border: 0.1rem solid #dddfe2;
   border-radius: 0.8rem;
@@ -450,7 +501,7 @@ label {
   overflow-y: auto;
 }
 .search__custom-select.--active {
-  background: url("../../images/chevron_up-black.svg") right 1.2rem center no-repeat;
+  background: url(../../images/chevron_up-black.svg) no-repeat right 1.2rem center;
   background-size: 2.4rem;
   border: 0.1rem solid #7b3ff1;
 }
@@ -464,10 +515,33 @@ label {
   cursor: pointer;
 }
 .search__custom-select .search__select-option-item.selected {
-  background: url("../../images/input-check-selected.svg") right 1.2rem center no-repeat;
-  background-size: 2rem;
+  background: url(../../images/input-check-selected.svg) no-repeat right 1.2rem center;
+  background-size: 2;
   color: #7b3ff1;
 }
 .search__custom-select .search__select-option-item:hover {
   background-color: #f6f8fb;
+}
+
+.gnb ul {
+  display: flex;
+  gap: 4rem;
+}
+.gnb ul li {
+  line-height: 2.6rem;
+  font-size: 1.9rem;
+  font-weight: 500;
+}
+.gnb ul li a {
+  position: relative;
+  color: #282a2e;
+}
+.gnb ul li a.new::after {
+  content: "";
+  width: 1.6rem;
+  height: 1.6rem;
+  position: absolute;
+  top: -0.1rem;
+  right: -1.6rem;
+  background: url(../../images/new.svg) no-repeat right top;
 }/*# sourceMappingURL=style.css.map */
