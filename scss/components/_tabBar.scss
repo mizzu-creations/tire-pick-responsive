@@ -1,0 +1,67 @@
+$icons: ("home_on.svg", "store_on.svg", "search_on.svg", "my_on.svg");
+
+$inactiveIcons: (
+  "home_off.svg",
+  "store_off.svg",
+  "search_off.svg",
+  "my_off.svg"
+);
+
+$iconCount: length($icons);
+
+.tab-bar {
+  display: none;
+  @include mobile {
+    display: block;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    border-top: 0.1rem solid $grayec;
+    background-color: $white;
+    z-index: 100;
+    ul {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      height: 5.6rem;
+      li {
+        @for $i from 1 through $iconCount {
+          $icon: nth($icons, $i);
+          $inactiveIcon: nth($inactiveIcons, $i);
+          &:nth-child(#{$i}) {
+            &.--active {
+              a:before {
+                @include bg("#{$icon}", $x: center);
+              }
+              span {
+                color: $gray28;
+              }
+            }
+            a {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              span {
+                line-height: 1.4rem;
+                font-size: 1.1rem;
+                font-weight: 500;
+                color: $gray96;
+              }
+            }
+            a:before {
+              content: "";
+              display: block;
+              width: 2.6rem;
+              height: 2.6rem;
+            }
+          }
+          &:nth-child(#{$i}):not(--active) {
+            a:before {
+              @include bg("#{$inactiveIcon}", $x: center);
+            }
+          }
+        }
+      }
+    }
+  }
+}

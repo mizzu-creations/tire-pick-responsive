@@ -48,7 +48,7 @@
           <h2 class="hide">검색</h2>
           <div class="search">
             <div class="search__btn">
-              <img src="./images/search.svg" alt="검색" />
+              <img src="./images/search_off.svg" alt="검색" />
               <span>타이어 펑크 수리 + 배터리 점프 무료!</span>
             </div>
             <dialog class="search__contents">
@@ -122,18 +122,27 @@
             </dialog>
           </div>
         </div>
-        <nav class="header__spot-menu">
+        <nav class="spot-menu">
           <ul>
-            <li><a href="javascript:void(0)">이용안내</a></li>
-            <li><a href="javascript:void(0)">고객센터</a></li>
-            <li><a href="javascript:void(0)">장바구니</a></li>
-            <li><a href="javascript:void(0)">마이페이지</a></li>
-            <li><a href="javascript:void(0)">로그인</a></li>
+            <li class="spot-menu__hidden">
+              <a href="javascript:void(0)">이용안내</a>
+            </li>
+            <li class="spot-menu__hidden">
+              <a href="javascript:void(0)">고객센터</a>
+            </li>
+            <li class="spot-menu__cart">
+              <a href="javascript:void(0)"><span>장바구니</span></a>
+            </li>
+            <li class="spot-menu__hidden">
+              <a href="javascript:void(0)">마이페이지</a>
+            </li>
+            <li class="spot-menu__hidden">
+              <a href="javascript:void(0)">로그인</a>
+            </li>
           </ul>
         </nav>
       </div>
     </header>
-
     <main>
       <div class="swiper mySwiper">
         <div class="swiper-wrapper"></div>
@@ -144,5 +153,21 @@
       <div id="lottie1"></div>
       <div id="lottie2"></div>
     </main>
+    <div class="tab-bar">
+      <ul>
+        <li class="--active">
+          <a href="javascript:void(0)"><span>홈</span></a>
+        </li>
+        <li>
+          <a href="javascript:void(0)"><span>스토어</span></a>
+        </li>
+        <li>
+          <a href="javascript:void(0)"><span>검색</span></a>
+        </li>
+        <li>
+          <a href="javascript:void(0)"><span>내 정보</span></a>
+        </li>
+      </ul>
+    </div>
   </body>
 </html>

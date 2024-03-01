@@ -1,12 +1,23 @@
 .header {
   padding-top: 3.2rem;
+  @include mobile {
+    padding: 1.4rem 1.6rem;
+  }
   .m0auto {
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 4rem;
+    @include mobile {
+      width: 100%;
+    }
     .logo {
       font-size: 0;
+      @include mobile {
+        img {
+          width: 12.8rem;
+        }
+      }
     }
   }
   &__nav {
@@ -16,8 +27,11 @@
     gap: 2.4rem;
     width: 100%;
     height: 8rem;
+    @include mobile {
+      display: none;
+    }
   }
-  &__spot-menu {
+  .spot-menu {
     width: 100%;
     position: absolute;
     top: 0;
@@ -25,12 +39,33 @@
     right: 0;
     padding: 0.7rem 0;
     border-bottom: 0.1rem solid $grayf1;
+    @include mobile {
+      padding: 0;
+      position: static;
+      border-bottom: none;
+      &__hidden {
+        display: none;
+      }
+      &__cart {
+        a {
+          display: inline-block;
+          width: 2.4rem;
+          height: 2.5rem;
+          @include bg("cart.svg", $x: right, $y: center);
+          span {
+            @include hide;
+          }
+        }
+      }
+    }
     > ul {
       display: flex;
       justify-content: flex-end;
       gap: 4.6rem;
       width: 124.4rem;
-      margin: 0 auto;
+      @include mobile {
+        width: 100%;
+      }
       li {
         position: relative;
         line-height: 1.8rem;
@@ -44,6 +79,9 @@
           right: -50%;
           transform: translateY(-50%);
           background-color: $graydd;
+          @include mobile {
+            display: none;
+          }
         }
         a {
           font-size: 1.3rem;

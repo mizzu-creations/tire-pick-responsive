@@ -1,3 +1,10 @@
+// Responsive
+@mixin mobile {
+  @media (min-width: 0px) and (max-width: $web) {
+    @content;
+  }
+}
+
 // Background - 파일명, x축, y축, 배경색, 가로크기, 세로크기
 @mixin bg(
   $filename,
