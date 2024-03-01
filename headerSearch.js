@@ -1,5 +1,18 @@
+const addClassToElement = (element, className) => {
+  if (!element.classList.contains(className)) {
+    element.classList.add(className);
+  }
+};
+const removeClassFromElement = (element, className) => {
+  if (element.classList.contains(className)) {
+    element.classList.remove(className);
+  }
+};
+const toggleClassForElement = (element, className) => {
+  element.classList.toggle(className);
+};
 const openSearchBox = () => {
-  const searchBtn = document.querySelector(".search");
+  const searchBtn = document.querySelector(".search__btn");
   const searchContent = document.querySelector(".search__contents");
 
   searchBtn.addEventListener("click", (e) => {
@@ -13,15 +26,14 @@ const openSearchBox = () => {
     }
   });
 };
-// 탭 관련 기능
 const setupTabs = () => {
   const tabs = document.querySelectorAll(".search__tab");
   const tabActive = document.querySelector(".search__tab-focus");
   let currentTargetIndex = 0;
 
   const activateTab = (index) => {
-    tabs[currentTargetIndex].children[0].classList.remove("--active");
-    tabs[index].children[0].classList.add("--active");
+    removeClassFromElement(tabs[currentTargetIndex].children[0], "--active");
+    addClassToElement(tabs[index].children[0], "--active");
     currentTargetIndex = index;
     const translation = `${currentTargetIndex * 26}rem`;
     tabActive.style.transform = `translate(calc(${translation}), -50%)`;
@@ -37,22 +49,24 @@ const setupTabs = () => {
     });
   });
 };
-// 검색 콘텐츠 업데이트
 const updateSearchContent = (index) => {
-  const labelArr = ["사이즈로", "규격", "브랜드"];
-  const labelName = ["타이어 사이즈", "델코 배터리 규격", "패키지 브랜드"];
-  const selected = ["인치", "전체", "전체"];
+  const radio2LabelNames = ["사이즈로", "규격", "브랜드"];
+  const customSelectLabelNames = [
+    "타이어 사이즈",
+    "델코 배터리 규격",
+    "패키지 브랜드",
+  ];
+  const initSelectedNames = ["인치", "전체", "전체"];
   const radio2Label = document.querySelector(`label[for='searchChoice2']`);
-  const selectLabel = document.querySelector(".select-label");
-  const selectedOption = document.querySelector(".label");
+  const selectLabel = document.querySelector(".search__select-label");
+  const selectedOption = document.querySelector(".search__option-label");
 
-  radio2Label.innerText = `${labelArr[index]} 검색`;
-  selectLabel.innerText = `${labelName[index]}`;
-  selectedOption.innerText = `${selected[index]}`;
+  radio2Label.innerText = `${radio2LabelNames[index]} 검색`;
+  selectLabel.innerText = `${customSelectLabelNames[index]}`;
+  selectedOption.innerText = `${initSelectedNames[index]}`;
 };
-// 검색 선택 옵션 업데이트
 const updateSearchOptions = () => {
-  const optionUl = document.querySelector(".option");
+  const optionUl = document.querySelector(".search__select-option");
   const inchData = Array.from({ length: 10 }, (_, index) => index + 13);
   const batteryData = [
     "전체",
@@ -87,82 +101,82 @@ const updateSearchOptions = () => {
     "캐스트롤",
     "KG모빌리티",
   ];
-  const selectLabel = document.querySelector(".select-label");
+  const selectLabel = document.querySelector(".search__select-label");
+  const optionLabel = document.querySelector(".search__option-label");
 
   document.addEventListener("click", (e) => {
-    // console.log(e.target.closest("li").className === "search__tab");
-    // console.log(
-    //   e.target.closest("span").children[0].className === "search__radio2"
-    // );
     if (
       e.target.closest("li")?.className === "search__tab" ||
-      e.target.closest("span")?.children[0].className === "search__radio2"
+      e.target.closest("span")?.children[0].className ===
+        "search__radio-search-choice2"
     ) {
       const labelName = selectLabel.innerText;
-      const data =
+      const currentSelectData =
         labelName === "타이어 사이즈"
           ? inchData
           : labelName === "델코 배터리 규격"
           ? batteryData
           : brandData;
+      const currentOptionLabel =
+        labelName === "타이어 사이즈"
+          ? "인치"
+          : labelName === "델코 배터리 규격"
+          ? "전체"
+          : "전체";
 
-      optionUl.innerHTML = "";
-      data.forEach((item) => {
+      optionLabel.innerHTML = currentOptionLabel;
+
+      optionUl.innerText = "";
+      currentSelectData.forEach((item) => {
         optionUl.insertAdjacentHTML(
           "beforeend",
-          `<li class="option-item">${item}</li>`
+          `<li class="search__select-option-item">${item}</li>`
         );
       });
     }
   });
 };
-// 선택된 옵션 업데이트
 const updateSelectedOption = () => {
-  const label = document.querySelector(".label");
+  const selectedOption = document.querySelector(".search__option-label");
 
   document.addEventListener("click", (e) => {
-    if (e.target.className === "option-item") {
-      const selectedOption = document.querySelector(".label");
-      const lists = document.querySelectorAll(".option-item");
-
-      selectedOption.parentNode.classList.remove("--active");
+    if (e.target.className === "search__select-option-item") {
+      const lists = document.querySelectorAll(".search__select-option-item");
+      removeClassFromElement(selectedOption.parentNode, "--active");
       lists.forEach((list) => {
-        list.classList.remove("selected");
+        removeClassFromElement(list, "selected");
       });
       e.target.classList.add("selected");
-      label.innerHTML = e.target.innerText;
+      selectedOption.innerHTML = e.target.innerText;
     }
 
-    if (!e.target.closest("div")?.classList.contains("custom-select")) {
-      const selectedOption = document.querySelector(".label");
-      selectedOption.parentNode.classList.remove("--active");
+    if (!e.target.closest("div")?.classList.contains("search__custom-select")) {
+      removeClassFromElement(selectedOption.parentNode, "--active");
     }
   });
 
-  label.addEventListener("click", () => {
-    label.parentNode.classList.toggle("--active");
+  selectedOption.addEventListener("click", () => {
+    toggleClassForElement(selectedOption.parentNode, "--active");
   });
 };
-
-// 검색 선택 탭 초기화
 const initializeSearchTabs = () => {
   const radio1 = document.querySelectorAll("#searchChoice1");
   const radio2 = document.querySelectorAll("#searchChoice2");
-  const contentSelects = document.querySelectorAll(".search__content__select");
+  const contentSelects = document.querySelectorAll(".search__contents--select");
 
   radio1[0].addEventListener("click", () => {
-    contentSelects[1].classList.remove("--active");
-    contentSelects[0].classList.add("--active");
+    removeClassFromElement(contentSelects[1], "--active");
+    addClassToElement(contentSelects[0], "--active");
   });
 
   radio2[0].addEventListener("click", () => {
-    contentSelects[0].classList.remove("--active");
-    contentSelects[1].classList.add("--active");
+    removeClassFromElement(contentSelects[0], "--active");
+    addClassToElement(contentSelects[1], "--active");
   });
 };
 const searchCarBtn = () => {
-  const inputs = document.querySelectorAll(".search__item1 input");
-  const btn = document.querySelector(".search__item1 button");
+  const inputs = document.querySelectorAll(".search__form-inputs input");
+  const btn = document.querySelector(".search__form-inputs button");
 
   inputs.forEach((input) => {
     input.addEventListener("input", () => {
@@ -178,9 +192,7 @@ const searchCarBtn = () => {
     });
   });
 };
-
-// 초기화 함수 호출
-const initializeSearch = () => {
+const init = () => {
   openSearchBox();
   setupTabs();
   updateSearchOptions();
@@ -189,5 +201,4 @@ const initializeSearch = () => {
   searchCarBtn();
 };
 
-// 검색 초기화 함수 호출
-initializeSearch();
+init();

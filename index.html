@@ -46,8 +46,8 @@
             </ul>
           </nav>
           <h2 class="hide">검색</h2>
-          <div class="search__wrap">
-            <div class="search">
+          <div class="search">
+            <div class="search__btn">
               <img src="./images/search.svg" alt="검색" />
               <span>타이어 펑크 수리 + 배터리 점프 무료!</span>
             </div>
@@ -66,54 +66,56 @@
                   </li>
                 </ul>
               </nav>
-              <div class="search__content size">
-                <div>
-                  <span class="search__radio__wrap"
+              <div class="search__contents--content">
+                <div class="search__radio-group">
+                  <span
                     ><input
                       type="radio"
                       id="searchChoice1"
                       name="search"
                       value="car"
-                      class="search__radio1"
+                      class="search__radio-search-choice1"
                       checked
                     />
                     <label for="searchChoice1">차 번호로 검색</label></span
                   >
-                  <span class="search__radio__wrap"
+                  <span
                     ><input
                       type="radio"
                       id="searchChoice2"
                       name="search"
-                      class="search__radio2"
+                      class="search__radio-search-choice2"
                       value="size"
                     />
                     <label for="searchChoice2">사이즈로 검색</label></span
                   >
                 </div>
-                <div class="search__content__select select1 --active">
+                <div class="search__contents--select select1 --active">
                   <span>차량번호, 소유주명</span>
-                  <div class="search__item1">
+                  <div class="search__form-inputs">
                     <input type="text" placeholder="12가1234" />
                     <input type="text" placeholder="홍길동" />
                     <button aria-label="검색하기" disabled>
                       약관 동의하고 검색하기
                     </button>
                   </div>
-                  <div class="search__item2">
+                  <div class="search__consent-options">
                     <input type="checkbox" id="agreeCheck1" checked />
                     <label for="agreeCheck1">개인정보 수집 및 이용 동의</label>
                     <input type="checkbox" id="agreeCheck2" checked />
                     <label for="agreeCheck2">개인정보 처리업무 위탁 동의</label>
                   </div>
                 </div>
-                <div class="search__content__select select2">
-                  <span class="select-label">타이어 사이즈</span>
+                <div class="search__contents--select select2">
+                  <span class="search__select-label">타이어 사이즈</span>
                   <div>
-                    <div class="custom-select">
-                      <button class="label">인치</button>
-                      <ul class="option"></ul>
+                    <div class="search__custom-select">
+                      <button class="search__option-label">인치</button>
+                      <ul class="search__select-option"></ul>
                     </div>
-                    <button class="search__btn">검색하기</button>
+                    <button class="search__search-btn" aria-label="검색하기">
+                      검색하기
+                    </button>
                   </div>
                 </div>
               </div>
@@ -135,14 +137,14 @@
     </header>
 
     <main>
-      <!-- <div class="swiper mySwiper">
+      <div class="swiper mySwiper">
         <div class="swiper-wrapper"></div>
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>
         <div class="swiper-pagination"></div>
-      </div> -->
-      <!-- <div id="lottie1"></div>
-      <div id="lottie2"></div> -->
+      </div>
+      <div id="lottie1"></div>
+      <div id="lottie2"></div>
     </main>
   </body>
 </html>

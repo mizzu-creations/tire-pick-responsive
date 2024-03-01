@@ -1,185 +1,181 @@
 .search {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  width: 36rem;
-  line-height: 20px;
-  padding: 10px 16px;
-  background-color: #f1f3f6;
-  border: 0.1rem solid #dddfe2;
-  border-radius: 20rem;
-  cursor: pointer;
-  &:hover {
-    background-color: #eceef1;
-  }
-  span {
-    padding-top: 0.1rem;
-    font-size: 1.7rem;
-    font-weight: 500;
-    color: #5a5c60;
-  }
-}
-.search__wrap {
   position: relative;
-  z-index: 1;
-  .search__contents {
+  z-index: 10;
+  &__btn {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 36rem;
+    line-height: 20px;
+    padding: 10px 16px;
+    background-color: $bg;
+    border: 0.1rem solid $border;
+    border-radius: 20rem;
+    cursor: pointer;
+    &:hover {
+      background-color: #eceef1;
+    }
+    span {
+      padding-top: 0.1rem;
+      font-size: 1.7rem;
+      font-weight: 500;
+      color: $text02;
+    }
+  }
+  &__contents {
     width: 79.8rem;
     margin-top: 1rem;
     padding: 1.2rem;
     position: absolute;
     left: auto;
     right: 0;
-    background-color: #fff;
-    border: 0.1rem solid #dddfe2;
+    background-color: $white;
+    border: 0.1rem solid $border;
     border-radius: 1.6rem;
     box-shadow: rgba(0, 0, 0, 0.12) 0px 2px 16px;
     nav {
       position: relative;
+      .search__tab-focus {
+        width: 26rem;
+        position: absolute;
+        top: 50%;
+        left: 0.8rem;
+        transform: translateY(-50%);
+        padding: 1.2rem 0;
+        background-color: $white;
+        box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px;
+        border-radius: 0.8rem;
+        white-space: nowrap;
+        transition: all 0.3s ease 0s;
+        font-weight: 700;
+        font-size: 2.2rem;
+        color: #282a2e;
+        text-align: center;
+      }
       ul {
         display: flex;
         line-height: 5rem;
         padding: 0.8rem;
-        background-color: #f1f3f6;
+        background-color: $bg;
         border-radius: 0.8rem;
-        color: #5a5c60;
+        color: $text02;
         font-size: 2.2rem;
         font-weight: 700;
+        .search__tab {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          cursor: pointer;
+        }
       }
     }
-  }
-}
-
-.search__tab-focus {
-  width: 26rem;
-  position: absolute;
-  top: 50%;
-  left: 0.8rem;
-  transform: translateY(-50%);
-  padding: 1.2rem 0;
-  background-color: #fff;
-  box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px;
-  border-radius: 0.8rem;
-  white-space: nowrap;
-  transition: all 0.3s ease 0s;
-  font-weight: 700;
-  font-size: 2.2rem;
-  color: #282a2e;
-  text-align: center;
-}
-
-.search__tab {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  cursor: pointer;
-}
-
-.search__content {
-  padding: 2.4rem 1.2rem 1rem;
-  > div {
-    display: flex;
-    gap: 1.6rem;
-    span {
-      padding: 0.4rem 0.8rem 0.4rem 1.2rem;
-      cursor: pointer;
-      &:has(input[type="radio"]:checked) {
-        background-color: #ebfaef;
+    &--content {
+      padding: 2.4rem 1.2rem 1rem;
+      .search__radio-group {
+        display: flex;
+        gap: 1.6rem;
+        span {
+          padding: 0.4rem 0.8rem 0.4rem 1.2rem;
+          cursor: pointer;
+          &:has(input[type="radio"]:checked) {
+            background-color: #ebfaef;
+          }
+          input[type="radio"] {
+            display: none;
+            &:checked + label {
+              background-image: url("../../images/radio_active.svg");
+            }
+          }
+          label {
+            display: inline-block;
+            padding-left: 2rem;
+            background: url("../../images/radio.svg") left center no-repeat;
+            background-size: 1rem 1rem;
+            line-height: 2.4rem;
+            font-size: 1.7rem;
+            font-weight: 500;
+            color: #282a2e;
+            cursor: pointer;
+          }
+        }
       }
-      input[type="radio"] {
+      .search__contents--select {
         display: none;
-        &:checked + label {
-          background-image: url("../../images/radio_active.svg");
+        margin-top: 3.8rem;
+        &.--active {
+          display: block;
         }
-      }
-      label {
-        display: inline-block;
-        padding-left: 2rem;
-        background: url("../../images/radio.svg") left center no-repeat;
-        background-size: 1rem 1rem;
-        line-height: 2.4rem;
-        font-size: 1.7rem;
-        font-weight: 500;
-        color: #282a2e;
-        cursor: pointer;
+        &.select1 {
+          span {
+            padding: 0;
+            font-weight: 400;
+            font-size: 1.5rem;
+            line-height: 2rem;
+            color: #3c3e42;
+            cursor: auto;
+          }
+          .search__form-inputs {
+            display: flex;
+            gap: 0.8rem;
+            margin: 0.8rem 0 1.6rem;
+            input {
+              @include inputBox;
+              &::placeholder {
+                color: #bec0c4;
+              }
+            }
+            button {
+              @include searchBtn;
+            }
+          }
+          .search__consent-options {
+            display: flex;
+            gap: 1.6rem;
+            input[type="checkbox"] {
+              display: none;
+              &:checked + label {
+                background-image: url("../../images/check_active.svg");
+              }
+            }
+            label {
+              display: inline-block;
+              padding-left: 2rem;
+              background: url("../../images/check.svg") left center no-repeat;
+              background-size: 1.5rem 1.5rem;
+              line-height: 2.4rem;
+              font-size: 1.5rem;
+              font-weight: 400;
+              color: $text02;
+              cursor: pointer;
+            }
+          }
+        }
+        &.select2 {
+          span {
+            display: block;
+            margin-bottom: 0.8rem;
+            padding: 0;
+            line-height: 1.8rem;
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: rgb(60, 62, 66);
+          }
+          > div {
+            display: flex;
+            gap: 1rem;
+            .search__search-btn {
+              min-width: 20rem;
+              @include searchBtn;
+            }
+          }
+        }
       }
     }
   }
 }
 
-.search__contents .search__content__select {
-  display: none;
-  margin-top: 3.8rem;
-  &.--active {
-    display: block;
-  }
-  &.select1 {
-    span {
-      padding: 0;
-      font-weight: 400;
-      font-size: 1.5rem;
-      line-height: 2rem;
-      color: #3c3e42;
-      cursor: auto;
-    }
-    .search__item1 {
-      display: flex;
-      gap: 0.8rem;
-      margin: 0.8rem 0 1.6rem;
-      input {
-        @include inputBox;
-        &::placeholder {
-          color: #bec0c4;
-        }
-      }
-      button {
-        @include searchBtn;
-      }
-    }
-    .search__item2 {
-      display: flex;
-      gap: 1.6rem;
-      input[type="checkbox"] {
-        display: none;
-        &:checked + label {
-          background-image: url("../../images/check_active.svg");
-        }
-      }
-      label {
-        display: inline-block;
-        padding-left: 2rem;
-        background: url("../../images/check.svg") left center no-repeat;
-        background-size: 1.5rem 1.5rem;
-        line-height: 2.4rem;
-        font-size: 1.5rem;
-        font-weight: 400;
-        color: #5a5c60;
-        cursor: pointer;
-      }
-    }
-  }
-  &.select2 {
-    span {
-      display: block;
-      margin-bottom: 0.8rem;
-      padding: 0;
-      line-height: 1.8rem;
-      font-size: 1.3rem;
-      font-weight: 500;
-      color: rgb(60, 62, 66);
-    }
-    > div {
-      display: flex;
-      gap: 1rem;
-    }
-    .search__btn {
-      min-width: 20rem;
-      @include searchBtn;
-    }
-  }
-}
-
-.custom-select {
+.search__custom-select {
   display: flex;
   align-items: center;
   width: 100%;
@@ -187,20 +183,20 @@
   background: url("../../images/chevron_down-black.svg") right calc(1.2rem)
     center no-repeat;
   background-size: 2.4rem;
-  border: 0.1rem solid #dddfe2;
+  border: 0.1rem solid $border;
   border-radius: 0.8rem;
-  .label {
+  .search__option-label {
     width: inherit;
     height: 100%;
     padding-left: 1.2rem;
     background-color: transparent;
-    color: #96989c;
+    color: $text01;
     font-size: 1.7rem;
     font-weight: 400;
     text-align: left;
     cursor: pointer;
   }
-  .option {
+  .search__select-option {
     display: none;
     max-height: 17rem;
     position: absolute;
@@ -208,7 +204,7 @@
     left: 0;
     width: 100%;
     border-radius: 0.8rem;
-    background-color: #fff;
+    background-color: $white;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 2px 8px;
     overflow-y: auto;
   }
@@ -216,21 +212,21 @@
     background: url("../../images/chevron_up-black.svg") right calc(1.2rem)
       center no-repeat;
     background-size: 2.4rem;
-    border: 0.1rem solid #7b3ff1;
+    border: 0.1rem solid $purple;
   }
-  &.--active .option {
+  &.--active .search__select-option {
     display: block;
   }
-  .option-item {
+  .search__select-option-item {
     padding: 1.2rem 1.4rem;
-    color: #96989c;
+    color: $text01;
     font-size: 1.6rem;
     cursor: pointer;
     &.selected {
       background: url("../../images/input-check-selected.svg") right
         calc(1.2rem) center no-repeat;
       background-size: 2rem;
-      color: #7b3ff1;
+      color: $purple;
     }
     &:hover {
       background-color: #f6f8fb;

@@ -21,6 +21,7 @@ header {
   width: 1244px;
   margin: 0 auto;
 }
+ */
 
 .swiper {
   width: 100%;
@@ -105,4 +106,4 @@ header {
   .swiper .swiper-pagination-fraction .swiper-res {
     display: block;
   }
-} */
+}
