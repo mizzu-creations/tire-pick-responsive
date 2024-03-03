@@ -3,7 +3,7 @@ const setWinterAni = {
   renderer: "svg",
   loop: true,
   autoplay: true,
-  path: "lottie_winter.json",
+  path: "../assets/lotties/lottie_winter.json",
 };
 
 const setLicenseAni = {
@@ -11,7 +11,7 @@ const setLicenseAni = {
   renderer: "svg",
   loop: true,
   autoplay: true,
-  path: "lottie_license.json",
+  path: "../assets/lotties/lottie_license.json",
 };
 
 const winterAni = lottie.loadAnimation(setWinterAni);

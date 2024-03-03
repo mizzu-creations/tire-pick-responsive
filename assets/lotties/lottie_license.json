@@ -12,7 +12,7 @@
       "id": "lottie_scan",
       "w": 49,
       "h": 225,
-      "u": "images/",
+      "u": "./",
       "p": "lottie_scan.png",
       "e": 0
     },
@@ -20,7 +20,7 @@
       "id": "lottie_license",
       "w": 561,
       "h": 253,
-      "u": "images/",
+      "u": "./",
       "p": "lottie_license.png",
       "e": 0
     },
@@ -28,7 +28,7 @@
       "id": "lottie_car",
       "w": 560,
       "h": 461,
-      "u": "images/",
+      "u": "./",
       "p": "lottie_car.png",
       "e": 0
     }
