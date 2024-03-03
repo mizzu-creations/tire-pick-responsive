@@ -54,9 +54,7 @@
               content: "";
               width: 1.6rem;
               height: 1.6rem;
-              position: absolute;
-              top: 0;
-              right: 0;
+              @include position(top, 0, right, 0);
               @include bg("new.svg", $x: right, $y: top);
               @include mobile {
                 top: -0.2rem;

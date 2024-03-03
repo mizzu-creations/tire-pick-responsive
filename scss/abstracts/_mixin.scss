@@ -3,7 +3,7 @@
   position: absolute;
   #{$x}: $xvalue;
   #{$y}: $yvalue;
-  @if $xvalue == 50% and $yvalue == 50% {
+  @if $xvalue == 50% and $yvalue == 50% or $yvalue == -50% {
     transform: translate(-50%, -50%);
   } @else if $xvalue == 50% {
     transform: translateX(-50%);

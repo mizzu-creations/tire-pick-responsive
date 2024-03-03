@@ -247,10 +247,10 @@ label {
   }
 }
 .header .spot-menu {
+  width: 100%;
   position: absolute;
-  top: 0;
   left: 0;
-  right: 0;
+  top: 0;
   padding: 0.7rem 0;
   border-bottom: 0.1rem solid #f1f3f6;
 }
@@ -303,7 +303,7 @@ label {
   position: absolute;
   top: 50%;
   right: -50%;
-  transform: translateY(-50%);
+  transform: translate(-50%, -50%);
   background-color: #dddfe2;
 }
 @media (min-width: 0px) and (max-width: 769px) {
@@ -571,8 +571,8 @@ label {
 .search__contents nav .search__tab-focus {
   width: 26rem;
   position: absolute;
-  top: 50%;
   left: 0.8rem;
+  top: 50%;
   transform: translateY(-50%);
   padding: 1.2rem 0;
   background-color: #fff;
@@ -866,8 +866,8 @@ label {
   line-height: 1.8rem;
   position: absolute;
   bottom: 2rem;
-  left: auto;
   right: calc(50% - 59.2rem);
+  left: auto;
   padding: 0.8rem;
   border-radius: 0.4rem;
   background-color: rgba(0, 0, 0, 0.4);

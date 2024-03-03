@@ -45,10 +45,8 @@
   .swiper-pagination-fraction {
     width: fit-content;
     line-height: 1.8rem;
-    position: absolute;
-    bottom: 2rem;
+    @include position(bottom, 2rem, right, calc(50% - 59.2rem));
     left: auto;
-    right: calc(50% - 59.2rem);
     padding: 0.8rem;
     border-radius: 0.4rem;
     background-color: rgba(0, 0, 0, 0.4);
