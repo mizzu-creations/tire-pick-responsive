@@ -760,8 +760,7 @@ label {
 }
 .swiper .swiper-wrapper .swiper-slide .slide-bg img {
   display: block;
-  width: 1184px;
-  height: auto;
+  max-width: 118.4rem;
   margin: 0 auto;
   -o-object-fit: cover;
      object-fit: cover;

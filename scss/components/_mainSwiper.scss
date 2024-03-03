@@ -12,8 +12,7 @@
         width: 100%;
         img {
           display: block;
-          width: 1184px;
-          height: auto;
+          max-width: 118.4rem;
           margin: 0 auto;
           object-fit: cover;
           @include mobile {

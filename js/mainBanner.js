@@ -50,11 +50,9 @@ const createSlide = () => {
     );
   });
 };
-const changeMobileImg = () => {
-  const swiperSlide = document.querySelectorAll(".swiper-slide");
-
+const changeMobileImg = (slide) => {
   if (window.innerWidth <= 769 && !imgChangeFlag) {
-    swiperSlide.forEach((slide) => {
+    slide.forEach((slide) => {
       const slideBg = slide.children;
       let slideImg = slideBg[0].children[0];
       let src = slideImg.src;
@@ -64,7 +62,7 @@ const changeMobileImg = () => {
 
     imgChangeFlag = true;
   } else if (window.innerWidth > 769 && imgChangeFlag) {
-    swiperSlide.forEach((slide) => {
+    slide.forEach((slide) => {
       const slideBg = slide.children;
       let slideImg = slideBg[0].children[0];
       let src = slideImg.src;
@@ -75,26 +73,38 @@ const changeMobileImg = () => {
     imgChangeFlag = false;
   }
 };
+const changeBgColor = (slide) => {
+  if (window.innerWidth > 769) {
+    slide.forEach((slide, index) => {
+      slide.style.backgroundColor = bannerImgs[index].color;
+    });
+  }
+};
+const changeSwiper = () => {
+  const swiperSlide = document.querySelectorAll(".swiper-slide");
+  changeMobileImg(swiperSlide);
+  changeBgColor(swiperSlide);
+};
 
-createSlide();
-changeMobileImg();
-window.addEventListener("resize", changeMobileImg);
-
-const swiper = new Swiper(".mySwiper", {
-  slidesPerView: 1,
-  loop: true,
-  autoplay: {
-    delay: 5000,
-  },
-  pagination: {
-    el: ".swiper-pagination",
-    type: "fraction",
-  },
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-});
+let eventSwiper;
+const initSwiper = () => {
+  eventSwiper = new Swiper(".mySwiper", {
+    slidesPerView: 1,
+    loop: true,
+    autoplay: {
+      delay: 5000,
+    },
+    grabCursor: true,
+    pagination: {
+      el: ".swiper-pagination",
+      type: "fraction",
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+};
 const swiperBtnHover = () => {
   const swiper = document.querySelector(".swiper");
   const next = document.querySelector(".swiper-button-next");
@@ -119,5 +129,18 @@ const responsiveApplication = () => {
   );
 };
 
-swiperBtnHover();
-responsiveApplication();
+const initialize = () => {
+  createSlide();
+  changeSwiper();
+  initSwiper();
+  swiperBtnHover();
+  responsiveApplication();
+};
+
+initialize();
+window.addEventListener("resize", () => {
+  eventSwiper.destroy();
+  changeSwiper();
+  initSwiper();
+  responsiveApplication();
+});
