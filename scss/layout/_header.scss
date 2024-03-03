@@ -1,7 +1,7 @@
 .header {
   padding-top: 3.2rem;
   @include mobile {
-    padding: 1.4rem 1.6rem;
+    padding: 1.6rem 1.6rem;
   }
   .m0auto {
     display: flex;
@@ -10,6 +10,7 @@
     gap: 4rem;
     @include mobile {
       width: 100%;
+      padding: 0;
     }
     .logo {
       font-size: 0;
@@ -61,7 +62,7 @@
       display: flex;
       justify-content: flex-end;
       gap: 4.6rem;
-      width: 124.4rem;
+      width: $width;
       margin: 0 auto;
       @include mobile {
         width: 100%;

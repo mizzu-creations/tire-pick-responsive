@@ -6,15 +6,14 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      text-align: center;
       font-size: 18px;
-      background: #fff;
+      background: $black;
       .slide-bg {
         width: 100%;
         img {
           display: block;
           width: 1184px;
-          height: 100%;
+          height: auto;
           margin: 0 auto;
           object-fit: cover;
           @include mobile {
@@ -31,7 +30,7 @@
     height: 40px;
     position: absolute;
     background-color: rgba(0, 0, 0, 0.3);
-    color: #fff;
+    color: $white;
     border-radius: 50%;
     &::after {
       font-size: 14px;

@@ -14,7 +14,7 @@ $iconCount: length($icons);
   @include mobile {
     display: block;
     width: 100%;
-    position: fixed;
+    position: absolute;
     bottom: 0;
     border-top: 0.1rem solid $grayec;
     background-color: $white;

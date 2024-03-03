@@ -200,8 +200,9 @@ label {
 }
 
 .m0auto {
-  width: 124.4rem;
+  width: 118.4rem;
   margin: 0 auto;
+  padding: 0 3rem;
 }
 
 .header {
@@ -209,7 +210,7 @@ label {
 }
 @media (min-width: 0px) and (max-width: 769px) {
   .header {
-    padding: 1.4rem 1.6rem;
+    padding: 1.6rem 1.6rem;
   }
 }
 .header .m0auto {
@@ -221,6 +222,7 @@ label {
 @media (min-width: 0px) and (max-width: 769px) {
   .header .m0auto {
     width: 100%;
+    padding: 0;
   }
 }
 .header .m0auto .logo {
@@ -281,7 +283,7 @@ label {
   display: flex;
   justify-content: flex-end;
   gap: 4.6rem;
-  width: 124.4rem;
+  width: 118.4rem;
   margin: 0 auto;
 }
 @media (min-width: 0px) and (max-width: 769px) {
@@ -315,23 +317,92 @@ label {
   color: #5a5c60;
 }
 
+@media (min-width: 0px) and (max-width: 769px) {
+  .main {
+    width: 100%;
+    min-width: 32rem;
+    max-width: 76.8rem;
+  }
+}
 .main__menu {
   padding: 5rem 0;
 }
-.main__menu ul {
+@media (min-width: 0px) and (max-width: 769px) {
+  .main__menu {
+    padding: 2rem;
+    border-bottom: 0.8rem solid #f1f3f6;
+  }
+}
+@media (min-width: 0px) and (max-width: 769px) {
+  .main .m0auto {
+    width: 100%;
+    padding: 0;
+  }
+}
+.main .m0auto ul {
   display: flex;
   justify-content: space-between;
 }
-.main__menu ul li a {
+@media (min-width: 0px) and (max-width: 769px) {
+  .main .m0auto ul {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.2rem 1rem;
+  }
+}
+@media (min-width: 0px) and (max-width: 769px) {
+  .main .m0auto ul li:nth-child(1) {
+    order: 1;
+  }
+  .main .m0auto ul li:nth-child(2) {
+    order: 7;
+  }
+  .main .m0auto ul li:nth-child(3) {
+    order: 3;
+  }
+  .main .m0auto ul li:nth-child(4) {
+    order: 4;
+  }
+  .main .m0auto ul li:nth-child(5) {
+    order: 5;
+  }
+  .main .m0auto ul li:nth-child(6) {
+    order: 6;
+  }
+  .main .m0auto ul li:nth-child(7) {
+    order: 7;
+  }
+  .main .m0auto ul li:nth-child(8) {
+    order: 8;
+  }
+  .main .m0auto ul li:nth-child(9) {
+    order: 9;
+  }
+  .main .m0auto ul li:nth-child(10) {
+    order: 10;
+  }
+}
+.main .m0auto ul li a {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0.6rem;
-  position: relative;
-  font-weight: 500;
   font-size: 1.5rem;
+  font-weight: 500;
+  color: #282a2e;
+  white-space: nowrap;
 }
-.main__menu ul li a.new::after {
+@media (min-width: 0px) and (max-width: 769px) {
+  .main .m0auto ul li a {
+    font-size: 1.1rem;
+  }
+}
+@media (min-width: 0px) and (max-width: 380px) {
+  .main .m0auto ul li a {
+    font-size: 0.92rem;
+  }
+}
+.main .m0auto ul li a.new span::after {
   content: "";
   width: 1.6rem;
   height: 1.6rem;
@@ -340,23 +411,52 @@ label {
   right: 0;
   background: url(../../images/new.svg) no-repeat right top;
 }
-.main__menu ul li a span {
-  display: inline-flex;
+@media (min-width: 0px) and (max-width: 769px) {
+  .main .m0auto ul li a.new span::after {
+    top: -0.2rem;
+    right: -0.2rem;
+  }
+}
+.main .m0auto ul li a span {
+  display: flex;
   justify-content: center;
   align-items: center;
   width: 8rem;
   height: 8rem;
+  position: relative;
   border-radius: 2.4rem;
   background-color: #f1f3f6;
 }
-.main__menu ul li a span#lottie1 {
+.main .m0auto ul li a span#lottie1 {
   overflow: hidden;
 }
-.main__menu ul li a span.quality {
+@media (min-width: 0px) and (max-width: 769px) {
+  .main .m0auto ul li a span#lottie1 {
+    padding: 0;
+  }
+}
+.main .m0auto ul li a span.quality {
   background-color: #c61515;
 }
-.main__menu ul li a span img {
+@media (min-width: 0px) and (max-width: 769px) {
+  .main .m0auto ul li a span {
+    width: 100%;
+    max-width: 8rem;
+    height: auto;
+    aspect-ratio: 1/1;
+    border-radius: 1.8rem;
+    box-sizing: border-box;
+    padding: 0.6rem;
+  }
+}
+.main .m0auto ul li a span img {
   width: 6rem;
+}
+@media (min-width: 0px) and (max-width: 769px) {
+  .main .m0auto ul li a span img {
+    width: 100%;
+    max-width: 6rem;
+  }
 }
 
 .search {
@@ -652,9 +752,8 @@ label {
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
   font-size: 18px;
-  background: #fff;
+  background: #000000;
 }
 .swiper .swiper-wrapper .swiper-slide .slide-bg {
   width: 100%;
@@ -662,7 +761,7 @@ label {
 .swiper .swiper-wrapper .swiper-slide .slide-bg img {
   display: block;
   width: 1184px;
-  height: 100%;
+  height: auto;
   margin: 0 auto;
   -o-object-fit: cover;
      object-fit: cover;
@@ -740,7 +839,7 @@ label {
   .tab-bar {
     display: block;
     width: 100%;
-    position: fixed;
+    position: absolute;
     bottom: 0;
     border-top: 0.1rem solid #eceef1;
     background-color: #fff;

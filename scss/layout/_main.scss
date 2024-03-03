@@ -1,19 +1,57 @@
 .main {
+  @include mobile {
+    width: 100%;
+    min-width: 32rem;
+    max-width: 76.8rem;
+  }
   &__menu {
     padding: 5rem 0;
+    @include mobile {
+      padding: 2rem;
+      border-bottom: 0.8rem solid $grayf1;
+    }
+  }
+  .m0auto {
+    @include mobile {
+      width: 100%;
+      padding: 0;
+    }
     ul {
       display: flex;
       justify-content: space-between;
+      @include mobile {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 1.2rem 1rem;
+      }
       li {
+        @include mobile {
+          @for $i from 1 through 10 {
+            $order: $i;
+            @if $i == 2 {
+              $order: 7;
+            }
+            &:nth-child(#{$i}) {
+              order: $order;
+            }
+          }
+        }
         a {
           display: flex;
           flex-direction: column;
           align-items: center;
           gap: 0.6rem;
-          position: relative;
-          font-weight: 500;
           font-size: 1.5rem;
-          &.new::after {
+          font-weight: 500;
+          color: $gray28;
+          white-space: nowrap;
+          @include mobile {
+            font-size: 1.1rem;
+          }
+          @include mobileMin {
+            font-size: 0.92rem;
+          }
+          &.new span::after {
             content: "";
             width: 1.6rem;
             height: 1.6rem;
@@ -21,23 +59,44 @@
             top: 0;
             right: 0;
             @include bg("new.svg", $x: right, $y: top);
+            @include mobile {
+              top: -0.2rem;
+              right: -0.2rem;
+            }
           }
           span {
-            display: inline-flex;
+            display: flex;
             justify-content: center;
             align-items: center;
             width: 8rem;
             height: 8rem;
+            position: relative;
             border-radius: 2.4rem;
             background-color: $grayf1;
             &#lottie1 {
               overflow: hidden;
+              @include mobile {
+                padding: 0;
+              }
             }
             &.quality {
               background-color: #c61515;
             }
+            @include mobile {
+              width: 100%;
+              max-width: 8rem;
+              height: auto;
+              aspect-ratio: 1/1;
+              border-radius: 1.8rem;
+              box-sizing: border-box;
+              padding: 0.6rem;
+            }
             img {
               width: 6rem;
+              @include mobile {
+                width: 100%;
+                max-width: 6rem;
+              }
             }
           }
         }
