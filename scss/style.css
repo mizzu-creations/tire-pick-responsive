@@ -334,55 +334,55 @@ label {
   }
 }
 @media (min-width: 0px) and (max-width: 769px) {
-  .main .m0auto {
+  .main__menu .m0auto {
     width: 100%;
     padding: 0;
   }
 }
-.main .m0auto ul {
+.main__menu .m0auto ul {
   display: flex;
   justify-content: space-between;
 }
 @media (min-width: 0px) and (max-width: 769px) {
-  .main .m0auto ul {
+  .main__menu .m0auto ul {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 1.2rem 1rem;
   }
 }
 @media (min-width: 0px) and (max-width: 769px) {
-  .main .m0auto ul li:nth-child(1) {
+  .main__menu .m0auto ul li:nth-child(1) {
     order: 1;
   }
-  .main .m0auto ul li:nth-child(2) {
+  .main__menu .m0auto ul li:nth-child(2) {
     order: 7;
   }
-  .main .m0auto ul li:nth-child(3) {
+  .main__menu .m0auto ul li:nth-child(3) {
     order: 3;
   }
-  .main .m0auto ul li:nth-child(4) {
+  .main__menu .m0auto ul li:nth-child(4) {
     order: 4;
   }
-  .main .m0auto ul li:nth-child(5) {
+  .main__menu .m0auto ul li:nth-child(5) {
     order: 5;
   }
-  .main .m0auto ul li:nth-child(6) {
+  .main__menu .m0auto ul li:nth-child(6) {
     order: 6;
   }
-  .main .m0auto ul li:nth-child(7) {
+  .main__menu .m0auto ul li:nth-child(7) {
     order: 7;
   }
-  .main .m0auto ul li:nth-child(8) {
+  .main__menu .m0auto ul li:nth-child(8) {
     order: 8;
   }
-  .main .m0auto ul li:nth-child(9) {
+  .main__menu .m0auto ul li:nth-child(9) {
     order: 9;
   }
-  .main .m0auto ul li:nth-child(10) {
+  .main__menu .m0auto ul li:nth-child(10) {
     order: 10;
   }
 }
-.main .m0auto ul li a {
+.main__menu .m0auto ul li a {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -393,16 +393,16 @@ label {
   white-space: nowrap;
 }
 @media (min-width: 0px) and (max-width: 769px) {
-  .main .m0auto ul li a {
+  .main__menu .m0auto ul li a {
     font-size: 1.1rem;
   }
 }
 @media (min-width: 0px) and (max-width: 380px) {
-  .main .m0auto ul li a {
+  .main__menu .m0auto ul li a {
     font-size: 0.92rem;
   }
 }
-.main .m0auto ul li a.new span::after {
+.main__menu .m0auto ul li a.new span::after {
   content: "";
   width: 1.6rem;
   height: 1.6rem;
@@ -412,12 +412,12 @@ label {
   background: url(../../images/new.svg) no-repeat right top;
 }
 @media (min-width: 0px) and (max-width: 769px) {
-  .main .m0auto ul li a.new span::after {
+  .main__menu .m0auto ul li a.new span::after {
     top: -0.2rem;
     right: -0.2rem;
   }
 }
-.main .m0auto ul li a span {
+.main__menu .m0auto ul li a span {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -427,19 +427,19 @@ label {
   border-radius: 2.4rem;
   background-color: #f1f3f6;
 }
-.main .m0auto ul li a span#lottie1 {
+.main__menu .m0auto ul li a span#lottie1 {
   overflow: hidden;
 }
 @media (min-width: 0px) and (max-width: 769px) {
-  .main .m0auto ul li a span#lottie1 {
+  .main__menu .m0auto ul li a span#lottie1 {
     padding: 0;
   }
 }
-.main .m0auto ul li a span.quality {
+.main__menu .m0auto ul li a span.quality {
   background-color: #c61515;
 }
 @media (min-width: 0px) and (max-width: 769px) {
-  .main .m0auto ul li a span {
+  .main__menu .m0auto ul li a span {
     width: 100%;
     max-width: 8rem;
     height: auto;
@@ -449,14 +449,83 @@ label {
     padding: 0.6rem;
   }
 }
-.main .m0auto ul li a span img {
+.main__menu .m0auto ul li a span img {
   width: 6rem;
 }
 @media (min-width: 0px) and (max-width: 769px) {
-  .main .m0auto ul li a span img {
+  .main__menu .m0auto ul li a span img {
     width: 100%;
     max-width: 6rem;
   }
+}
+@media (min-width: 0px) and (max-width: 769px) {
+  .main__register .m0auto {
+    width: 100%;
+    padding: 0;
+  }
+}
+.main__register .m0auto a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  padding: 0.4rem 2.4rem;
+  border: 0.1rem solid #eceef1;
+  border-radius: 0.8rem;
+  box-shadow: rgba(0, 0, 0, 0.06) 0 0.2rem 0.4rem 0;
+}
+@media (min-width: 0px) and (max-width: 769px) {
+  .main__register .m0auto a {
+    padding: 1rem 2rem;
+    border: none;
+    border-bottom: 0.1rem solid #f1f3f6;
+    border-radius: 0;
+    box-shadow: none;
+  }
+}
+.main__register .m0auto a span {
+  display: flex;
+}
+.main__register .m0auto a span .register-text {
+  display: flex;
+  align-items: center;
+}
+@media (min-width: 0px) and (max-width: 769px) {
+  .main__register .m0auto a span .register-text {
+    flex-direction: column;
+    align-items: baseline;
+  }
+}
+.main__register .m0auto a span .register-text .title {
+  line-height: 2.4rem;
+  margin: 0 0.8rem 0 1.2rem;
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: #282a2e;
+}
+@media (min-width: 0px) and (max-width: 769px) {
+  .main__register .m0auto a span .register-text .title {
+    line-height: 2rem;
+    font-size: 1.5rem;
+  }
+}
+.main__register .m0auto a span .register-text .license {
+  line-height: 2rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #5a5c60;
+}
+@media (min-width: 0px) and (max-width: 769px) {
+  .main__register .m0auto a span .register-text .license {
+    font-size: 1.4rem;
+  }
+}
+.main__register .m0auto a span .register-text .license strong {
+  margin-left: 0.4rem;
+  color: #7b3ff1;
+}
+.main__register .m0auto a span#lottie2 {
+  width: 5.6rem;
 }
 
 .search {
@@ -468,8 +537,8 @@ label {
   align-items: center;
   gap: 1rem;
   width: 33rem;
-  line-height: 20px;
-  padding: 10px 16px;
+  line-height: 2rem;
+  padding: 1rem 1.6rem;
   background-color: #f1f3f6;
   border: 0.1rem solid #dddfe2;
   border-radius: 20rem;
@@ -494,7 +563,7 @@ label {
   background-color: #fff;
   border: 0.1rem solid #dddfe2;
   border-radius: 1.6rem;
-  box-shadow: rgba(0, 0, 0, 0.12) 0px 2px 16px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0 0.2rem 1.6rem;
 }
 .search__contents nav {
   position: relative;
@@ -507,7 +576,7 @@ label {
   transform: translateY(-50%);
   padding: 1.2rem 0;
   background-color: #fff;
-  box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px;
+  box-shadow: rgba(0, 0, 0, 0.06) 0 0.2rem 0.4rem;
   border-radius: 0.8rem;
   white-space: nowrap;
   transition: all 0.3s ease 0s;
@@ -695,7 +764,7 @@ label {
   width: 100%;
   border-radius: 0.8rem;
   background-color: #fff;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 2px 8px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0 0.2rem 0.8rem;
   overflow-y: auto;
 }
 .search__custom-select.--active {
@@ -752,7 +821,7 @@ label {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 18px;
+  font-size: 1.8rem;
   background: #000000;
 }
 .swiper .swiper-wrapper .swiper-slide .slide-bg {
@@ -773,8 +842,8 @@ label {
 .swiper .swiper-button-next,
 .swiper .swiper-button-prev {
   display: none;
-  width: 40px;
-  height: 40px;
+  width: 4rem;
+  height: 4rem;
   position: absolute;
   background-color: rgba(0, 0, 0, 0.3);
   color: #fff;
@@ -782,33 +851,33 @@ label {
 }
 .swiper .swiper-button-next::after,
 .swiper .swiper-button-prev::after {
-  font-size: 14px;
+  font-size: 1.4rem;
   font-weight: 700;
 }
 .swiper .swiper-button-next {
-  right: calc(50% - 618px);
+  right: calc(50% - 61.8rem);
 }
 .swiper .swiper-button-prev {
-  left: calc(50% - 618px);
+  left: calc(50% - 61.8rem);
 }
 .swiper .swiper-pagination-fraction {
   width: -moz-fit-content;
   width: fit-content;
-  line-height: 18px;
+  line-height: 1.8rem;
   position: absolute;
-  bottom: 20px;
+  bottom: 2rem;
   left: auto;
-  right: calc(50% - 592px);
-  padding: 8px;
-  border-radius: 4px;
+  right: calc(50% - 59.2rem);
+  padding: 0.8rem;
+  border-radius: 0.4rem;
   background-color: rgba(0, 0, 0, 0.4);
   color: #fff;
-  font-size: 15px;
+  font-size: 1.5rem;
   font-weight: 500;
   white-space: nowrap;
-  -webkit-backdrop-filter: blur(2px);
-          backdrop-filter: blur(2px);
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 0px 8px 0px;
+  -webkit-backdrop-filter: blur(0.2rem);
+          backdrop-filter: blur(0.2rem);
+  box-shadow: rgba(0, 0, 0, 0.16) 0 0 0.8rem 0;
 }
 .swiper .swiper-pagination-fraction .swiper-res {
   display: none;
@@ -817,14 +886,14 @@ label {
   .swiper .swiper-pagination-fraction {
     display: flex;
     align-items: center;
-    padding: 2px 10px;
-    bottom: 10px;
-    right: 8px;
-    border-radius: 3px;
-    font-size: 12px;
+    padding: 0.2rem 1rem;
+    bottom: 1rem;
+    right: 0.8rem;
+    border-radius: 0.3rem;
+    font-size: 1.2rem;
   }
   .swiper .swiper-pagination-fraction .swiper-pagination-all {
-    margin: 0 3px;
+    margin: 0 0.3rem;
   }
   .swiper .swiper-pagination-fraction .swiper-res {
     display: block;

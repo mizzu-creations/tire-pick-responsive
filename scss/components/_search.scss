@@ -6,8 +6,8 @@
     align-items: center;
     gap: 1rem;
     width: 33rem;
-    line-height: 20px;
-    padding: 10px 16px;
+    line-height: 2rem;
+    padding: 1rem 1.6rem;
     background-color: $grayf1;
     border: 0.1rem solid $graydd;
     border-radius: 20rem;
@@ -32,7 +32,7 @@
     background-color: $white;
     border: 0.1rem solid $graydd;
     border-radius: 1.6rem;
-    box-shadow: rgba(0, 0, 0, 0.12) 0px 2px 16px;
+    box-shadow: rgba(0, 0, 0, 0.12) 0 0.2rem 1.6rem;
     nav {
       position: relative;
       .search__tab-focus {
@@ -43,7 +43,7 @@
         transform: translateY(-50%);
         padding: 1.2rem 0;
         background-color: $white;
-        box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px;
+        box-shadow: rgba(0, 0, 0, 0.06) 0 0.2rem 0.4rem;
         border-radius: 0.8rem;
         white-space: nowrap;
         transition: all 0.3s ease 0s;
@@ -217,7 +217,7 @@
     width: 100%;
     border-radius: 0.8rem;
     background-color: $white;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 2px 8px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0 0.2rem 0.8rem;
     overflow-y: auto;
   }
   &.--active {

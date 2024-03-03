@@ -10,95 +10,158 @@
       padding: 2rem;
       border-bottom: 0.8rem solid $grayf1;
     }
-  }
-  .m0auto {
-    @include mobile {
-      width: 100%;
-      padding: 0;
-    }
-    ul {
-      display: flex;
-      justify-content: space-between;
+    .m0auto {
       @include mobile {
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        gap: 1.2rem 1rem;
+        width: 100%;
+        padding: 0;
       }
-      li {
+      ul {
+        display: flex;
+        justify-content: space-between;
         @include mobile {
-          @for $i from 1 through 10 {
-            $order: $i;
-            @if $i == 2 {
-              $order: 7;
+          display: grid;
+          grid-template-columns: repeat(5, 1fr);
+          gap: 1.2rem 1rem;
+        }
+        li {
+          @include mobile {
+            @for $i from 1 through 10 {
+              $order: $i;
+              @if $i == 2 {
+                $order: 7;
+              }
+              &:nth-child(#{$i}) {
+                order: $order;
+              }
             }
-            &:nth-child(#{$i}) {
-              order: $order;
+          }
+          a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.6rem;
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: $gray28;
+            white-space: nowrap;
+            @include mobile {
+              font-size: 1.1rem;
+            }
+            @include mobileMin {
+              font-size: 0.92rem;
+            }
+            &.new span::after {
+              content: "";
+              width: 1.6rem;
+              height: 1.6rem;
+              position: absolute;
+              top: 0;
+              right: 0;
+              @include bg("new.svg", $x: right, $y: top);
+              @include mobile {
+                top: -0.2rem;
+                right: -0.2rem;
+              }
+            }
+            span {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              width: 8rem;
+              height: 8rem;
+              position: relative;
+              border-radius: 2.4rem;
+              background-color: $grayf1;
+              &#lottie1 {
+                overflow: hidden;
+                @include mobile {
+                  padding: 0;
+                }
+              }
+              &.quality {
+                background-color: #c61515;
+              }
+              @include mobile {
+                width: 100%;
+                max-width: 8rem;
+                height: auto;
+                aspect-ratio: 1/1;
+                border-radius: 1.8rem;
+                box-sizing: border-box;
+                padding: 0.6rem;
+              }
+              img {
+                width: 6rem;
+                @include mobile {
+                  width: 100%;
+                  max-width: 6rem;
+                }
+              }
             }
           }
         }
-        a {
+      }
+    }
+  }
+  &__register {
+    .m0auto {
+      @include mobile {
+        width: 100%;
+        padding: 0;
+      }
+      a {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: $white;
+        padding: 0.4rem 2.4rem;
+        border: 0.1rem solid $grayec;
+        border-radius: 0.8rem;
+        box-shadow: rgba(0, 0, 0, 0.06) 0 0.2rem 0.4rem 0;
+        @include mobile {
+          padding: 1rem 2rem;
+          border: none;
+          border-bottom: 0.1rem solid $grayf1;
+          border-radius: 0;
+          box-shadow: none;
+        }
+        span {
           display: flex;
-          flex-direction: column;
-          align-items: center;
-          gap: 0.6rem;
-          font-size: 1.5rem;
-          font-weight: 500;
-          color: $gray28;
-          white-space: nowrap;
-          @include mobile {
-            font-size: 1.1rem;
-          }
-          @include mobileMin {
-            font-size: 0.92rem;
-          }
-          &.new span::after {
-            content: "";
-            width: 1.6rem;
-            height: 1.6rem;
-            position: absolute;
-            top: 0;
-            right: 0;
-            @include bg("new.svg", $x: right, $y: top);
-            @include mobile {
-              top: -0.2rem;
-              right: -0.2rem;
-            }
-          }
-          span {
+          .register-text {
             display: flex;
-            justify-content: center;
             align-items: center;
-            width: 8rem;
-            height: 8rem;
-            position: relative;
-            border-radius: 2.4rem;
-            background-color: $grayf1;
-            &#lottie1 {
-              overflow: hidden;
+            @include mobile {
+              flex-direction: column;
+              align-items: baseline;
+            }
+            .title {
+              line-height: 2.4rem;
+              margin: 0 0.8rem 0 1.2rem;
+              font-size: 1.7rem;
+              font-weight: 700;
+              color: $gray28;
               @include mobile {
-                padding: 0;
+                line-height: 2rem;
+                font-size: 1.5rem;
               }
             }
-            &.quality {
-              background-color: #c61515;
-            }
-            @include mobile {
-              width: 100%;
-              max-width: 8rem;
-              height: auto;
-              aspect-ratio: 1/1;
-              border-radius: 1.8rem;
-              box-sizing: border-box;
-              padding: 0.6rem;
-            }
-            img {
-              width: 6rem;
+            .license {
+              line-height: 2rem;
+              font-size: 1.5rem;
+              font-weight: 500;
+              color: $gray5a;
               @include mobile {
-                width: 100%;
-                max-width: 6rem;
+                font-size: 1.4rem;
+              }
+              strong {
+                margin-left: 0.4rem;
+                color: $purple;
               }
             }
           }
+        }
+        span#lottie2 {
+          width: 5.6rem;
         }
       }
     }
