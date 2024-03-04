@@ -1,41 +1,47 @@
 const bannerImgs = [
   {
-    img: "./assets/images/slide_main01",
+    imgWeb: "./assets/images/slide_main01",
+    imgMobile: "./assets/images/slide_main01_m",
     color: "#d3e3df",
     alt: "주말마다 만나요! 타이어픽 만포인트 참여 시 100% 드려요",
   },
   {
-    img: "./assets/images/slide_main02",
+    imgWeb: "./assets/images/slide_main02",
+    imgMobile: "./assets/images/slide_main02_m",
     color: "#ecf2fb",
     alt: "삼공사공 여성의 픽 인기 타이어 탑 텐 최대 53% 할인",
   },
   {
-    img: "./assets/images/slide_main03",
+    imgWeb: "./assets/images/slide_main03",
+    imgMobile: "./assets/images/slide_main03_m",
     color: "#2b5cd2",
     alt: "와이퍼도 타이어픽 전 상품 무료배송 최대 74% 할인",
   },
   {
-    img: "./assets/images/slide_main04",
+    imgWeb: "./assets/images/slide_main04",
+    imgMobile: "./assets/images/slide_main04_m",
     color: "#6f49fa",
     alt: "구매리뷰 쓰고 만사천 포인트 받자! 타이어픽 리뷰 이벤트",
   },
   {
-    img: "./assets/images/slide_main05",
+    imgWeb: "./assets/images/slide_main05",
+    imgMobile: "./assets/images/slide_main05_m",
     color: "#21273c",
     alt: "신규회원 3천원 할인 앱 설치하면 4천원 더",
   },
   {
-    img: "./assets/images/slide_main06",
+    imgWeb: "./assets/images/slide_main06",
+    imgMobile: "./assets/images/slide_main06_m",
     color: "#070707",
     alt: "나도 친구도 만원씩 사이좋게 혜택받자 친구초대 이벤트",
   },
   {
-    img: "./assets/images/slide_main07",
+    imgWeb: "./assets/images/slide_main07",
+    imgMobile: "./assets/images/slide_main07_m",
     color: "#3264d3",
     alt: "집 앞에서 간편교체! 출장교체 지역 확대 서울부터 경기 성남시까지",
   },
 ];
-let imgChangeFlag = false;
 
 const createSlide = () => {
   const swiperWrapper = document.querySelector(".swiper-wrapper");
@@ -44,48 +50,23 @@ const createSlide = () => {
       "beforeend",
       `<div class="swiper-slide" style="background-color: ${data.color}">
 <div class="slide-bg">
-  <img src="${data.img}.webp" alt="${data.alt}" />
+<picture>
+<source media="(max-width: 769px)" srcset="${data.imgMobile}.webp">
+<img src="${data.imgWeb}.webp" alt="${data.alt}" />
+</picture>
 </div>
 </div>`
     );
   });
 };
-const changeMobileImg = (slide) => {
-  if (window.innerWidth <= 769 && !imgChangeFlag) {
-    slide.forEach((slide) => {
-      const slideBg = slide.children;
-      let slideImg = slideBg[0].children[0];
-      let src = slideImg.src;
-      src = src.replace(".webp", "_m.webp");
-      slideImg.src = src;
-    });
-
-    imgChangeFlag = true;
-  } else if (window.innerWidth > 769 && imgChangeFlag) {
-    slide.forEach((slide) => {
-      const slideBg = slide.children;
-      let slideImg = slideBg[0].children[0];
-      let src = slideImg.src;
-      src = src.replace(/_m(?=.webp)/, "");
-      slideImg.src = src;
-    });
-
-    imgChangeFlag = false;
-  }
-};
-const changeBgColor = (slide) => {
+const changeBgColor = () => {
+  const swiperSlide = document.querySelectorAll(".swiper-slide");
   if (window.innerWidth > 769) {
-    slide.forEach((slide, index) => {
+    swiperSlide.forEach((slide, index) => {
       slide.style.backgroundColor = bannerImgs[index].color;
     });
   }
 };
-const changeSwiper = () => {
-  const swiperSlide = document.querySelectorAll(".swiper-slide");
-  changeMobileImg(swiperSlide);
-  changeBgColor(swiperSlide);
-};
-
 let eventSwiper;
 const initSwiper = () => {
   eventSwiper = new Swiper(".mySwiper", {
@@ -121,7 +102,6 @@ const swiperBtnHover = () => {
 };
 const responsiveApplication = () => {
   const swiperFraction = document.querySelector(".swiper-pagination-fraction");
-
   swiperFraction.insertAdjacentHTML(
     "beforeend",
     `<span class="swiper-pagination-all swiper-res">모두보기</span>
@@ -131,7 +111,7 @@ const responsiveApplication = () => {
 
 const initialize = () => {
   createSlide();
-  changeSwiper();
+  changeBgColor();
   initSwiper();
   swiperBtnHover();
   responsiveApplication();
@@ -140,7 +120,7 @@ const initialize = () => {
 initialize();
 window.addEventListener("resize", () => {
   eventSwiper.destroy();
-  changeSwiper();
+  changeBgColor();
   initSwiper();
   responsiveApplication();
 });

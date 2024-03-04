@@ -602,6 +602,10 @@ label {
   width: 100%;
   cursor: pointer;
 }
+.search__contents nav ul .search__tab a {
+  width: 100%;
+  text-align: center;
+}
 .search__contents--content {
   padding: 2.4rem 1.2rem 1rem;
 }

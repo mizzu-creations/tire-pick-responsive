@@ -19,6 +19,13 @@ const openSearchBox = () => {
     e.stopPropagation();
     searchContent.open = !searchContent.open;
   });
+  searchBtn.addEventListener("keydown", (e) => {
+    let keyCode = e.keyCode || e.which;
+    if (keyCode === 13) {
+      e.stopPropagation();
+      searchContent.open = !searchContent.open;
+    }
+  });
 
   document.addEventListener("click", (e) => {
     if (!e.target.closest("dialog")) {
