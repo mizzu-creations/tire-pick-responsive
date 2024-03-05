@@ -182,19 +182,12 @@
         font-weight: 700;
         color: $black;
       }
-      > ul {
-        display: flex;
-        overflow: hidden;
-        > li {
-          margin-right: 2.4rem;
-        }
-      }
       > button {
         width: 10.4rem;
         line-height: 1.8rem;
         padding: 0.7rem 1rem;
         position: absolute;
-        top: 0;
+        top: 2.4rem;
         right: 0;
         font-size: 1.3rem;
         font-weight: 500;

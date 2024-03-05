@@ -45,7 +45,9 @@ const bannerImgs = [
 let eventSwiper;
 
 const createSlide = () => {
-  const swiperWrapper = document.querySelector(".swiper-wrapper");
+  const swiperWrapper = document.querySelector(
+    ".swiper.visual .swiper-wrapper"
+  );
   bannerImgs.forEach((data) => {
     swiperWrapper.insertAdjacentHTML(
       "beforeend",
@@ -64,7 +66,7 @@ const createSlide = () => {
   });
 };
 const changeBgColor = () => {
-  const swiperSlide = document.querySelectorAll(".swiper-slide");
+  const swiperSlide = document.querySelectorAll(".swiper.visual .swiper-slide");
   if (window.innerWidth > 769) {
     swiperSlide.forEach((slide, index) => {
       slide.style.backgroundColor = bannerImgs[index].color;
@@ -72,7 +74,7 @@ const changeBgColor = () => {
   }
 };
 const initSwiper = () => {
-  eventSwiper = new Swiper(".mySwiper", {
+  eventSwiper = new Swiper(".swiper.visual", {
     slidesPerView: 1,
     loop: true,
     autoplay: {
@@ -90,9 +92,9 @@ const initSwiper = () => {
   });
 };
 const swiperBtnHover = () => {
-  const swiper = document.querySelector(".swiper");
-  const next = document.querySelector(".swiper-button-next");
-  const prev = document.querySelector(".swiper-button-prev");
+  const swiper = document.querySelector(".swiper.visual");
+  const next = document.querySelector(".swiper.visual .swiper-button-next");
+  const prev = document.querySelector(".swiper.visual .swiper-button-prev");
 
   swiper.addEventListener("mouseenter", () => {
     next.style.display = "flex";
@@ -104,7 +106,9 @@ const swiperBtnHover = () => {
   });
 };
 const responsiveApplication = () => {
-  const swiperFraction = document.querySelector(".swiper-pagination-fraction");
+  const swiperFraction = document.querySelector(
+    ".swiper.visual .swiper-pagination-fraction"
+  );
   swiperFraction.insertAdjacentHTML(
     "beforeend",
     `<span class="swiper-pagination-all swiper-res">모두보기</span>

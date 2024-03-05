@@ -8,3 +8,4 @@
 - scss 활용구간 / 반복문과 mixin
 - 슬라이더 버벅임
 - 커스텀 input
+- flex -> grid order
