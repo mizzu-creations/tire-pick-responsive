@@ -8,7 +8,7 @@
     padding: 5rem 0;
     @include mobile {
       padding: 2rem;
-      border-bottom: 0.8rem solid $grayf1;
+      border-bottom: 0.8rem solid $whitef1;
     }
     .m0auto {
       @include mobile {
@@ -69,7 +69,7 @@
               height: 8rem;
               position: relative;
               border-radius: 2.4rem;
-              background-color: $grayf1;
+              background-color: $whitef1;
               &#lottie1 {
                 overflow: hidden;
                 @include mobile {
@@ -119,7 +119,7 @@
         @include mobile {
           padding: 1rem 2rem;
           border: none;
-          border-bottom: 0.1rem solid $grayf1;
+          border-bottom: 0.1rem solid $whitef1;
           border-radius: 0;
           box-shadow: none;
         }
@@ -161,6 +161,46 @@
         span#lottie2 {
           width: 5.6rem;
         }
+      }
+    }
+  }
+  &__best {
+    padding: 4rem 3rem;
+    .m0auto {
+      position: relative;
+      padding: 0;
+      > span {
+        line-height: 2.4rem;
+        font-size: 1.7rem;
+        font-weight: 500;
+        color: $gray5a;
+      }
+      > h2 {
+        padding-bottom: 1.6rem;
+        line-height: 3.4rem;
+        font-size: 2.2rem;
+        font-weight: 700;
+        color: $black;
+      }
+      > ul {
+        display: flex;
+        overflow: hidden;
+        > li {
+          margin-right: 2.4rem;
+        }
+      }
+      > button {
+        width: 10.4rem;
+        line-height: 1.8rem;
+        padding: 0.7rem 1rem;
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 1.3rem;
+        font-weight: 500;
+        border: 0.1rem solid $graybe;
+        border-radius: 0.8rem;
+        color: $gray28;
       }
     }
   }

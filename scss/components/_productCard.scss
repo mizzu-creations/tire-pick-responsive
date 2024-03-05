@@ -1,0 +1,130 @@
+.product {
+  display: flex;
+  flex-direction: column;
+  width: 27.8rem;
+  background-color: $white;
+  &__img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    aspect-ratio: 1/1;
+    position: relative;
+    background-color: $whitef6;
+    border-radius: 0.8rem;
+    overflow: hidden;
+    &:hover {
+      img {
+        transform: scale(1.1);
+      }
+    }
+    &::after {
+      content: "";
+      display: block;
+      width: 8.1rem;
+      height: 2.2rem;
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+      @include bg(
+        "logo_kumho.webp",
+        $x: right,
+        $y: top,
+        $width: 8.1rem,
+        $height: 2.2rem
+      );
+    }
+    &-rank {
+      display: inline-block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 0.5rem 1rem;
+      background-color: $purple;
+      color: $white;
+      font-size: 1.5rem;
+      font-weight: 500;
+      line-height: 1.8rem;
+      border-radius: 0.8rem 0;
+    }
+    img {
+      width: 18.8rem;
+      transition: transform 0.3s ease-in-out;
+    }
+  }
+  &__brand {
+    line-height: 2rem;
+    padding: 1.2rem 0 0.4rem;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: $gray5a;
+  }
+  &__title {
+    line-height: 2.4rem;
+    font-size: 1.7rem;
+    font-weight: 500;
+    color: $gray28;
+  }
+  &__model {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: $gray5a;
+  }
+  &__price {
+    display: flex;
+    gap: 0.8rem;
+    line-height: 2.4rem;
+    padding: 0.4rem 0;
+    font-size: 1.7rem;
+    font-weight: 700;
+    &-discount {
+      color: $skyblue;
+    }
+    &-value {
+      color: $gray28;
+    }
+  }
+  &__review {
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+    &-rate {
+      display: flex;
+      line-height: 2rem;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: $gray28;
+      &::before {
+        content: "";
+        width: 1.6rem;
+        aspect-ratio: 1/1;
+        @include bg(
+          "star_gold.svg",
+          $width: 1.6rem,
+          $height: 1.6rem,
+          $x: center,
+          $y: center
+        );
+      }
+    }
+    &-count {
+      line-height: 1.8rem;
+      font-size: 1.3rem;
+      font-weight: 400;
+      color: $gray5a;
+    }
+    padding-bottom: 0.4rem;
+  }
+  &__keywords {
+    display: flex;
+    gap: 0.4rem;
+    li {
+      padding: 0.4rem 0.6rem;
+      font-size: 1.3rem;
+      font-weight: 500;
+      border-radius: 0.4rem;
+      background-color: $whitef1;
+      color: $gray28;
+    }
+  }
+}

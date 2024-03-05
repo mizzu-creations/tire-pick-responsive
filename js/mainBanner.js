@@ -42,6 +42,7 @@ const bannerImgs = [
     alt: "집 앞에서 간편교체! 출장교체 지역 확대 서울부터 경기 성남시까지",
   },
 ];
+let eventSwiper;
 
 const createSlide = () => {
   const swiperWrapper = document.querySelector(".swiper-wrapper");
@@ -49,13 +50,16 @@ const createSlide = () => {
     swiperWrapper.insertAdjacentHTML(
       "beforeend",
       `<div class="swiper-slide" style="background-color: ${data.color}">
-<div class="slide-bg">
-<picture>
-<source media="(max-width: 769px)" srcset="${data.imgMobile}.webp">
-<img src="${data.imgWeb}.webp" alt="${data.alt}" />
-</picture>
-</div>
-</div>`
+      <div class="slide-bg">
+        <picture>
+          <source
+            media="(max-width: 769px)"
+            srcset="${data.imgMobile}.webp"
+          />
+          <img src="${data.imgWeb}.webp" alt="${data.alt}" />
+        </picture>
+      </div>
+    </div>`
     );
   });
 };
@@ -67,7 +71,6 @@ const changeBgColor = () => {
     });
   }
 };
-let eventSwiper;
 const initSwiper = () => {
   eventSwiper = new Swiper(".mySwiper", {
     slidesPerView: 1,
