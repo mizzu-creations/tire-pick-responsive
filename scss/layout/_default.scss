@@ -1,0 +1,14 @@
+.only-mobile {
+  display: none;
+  @include mobile {
+    display: block;
+  }
+}
+
+%layout-center {
+  width: 118.4rem;
+  margin: 0 auto;
+  @include mobile {
+    width: 100%;
+  }
+}

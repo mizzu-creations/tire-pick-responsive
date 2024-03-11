@@ -1,3 +1,30 @@
+// Font
+@mixin font11 {
+  line-height: 1.2rem;
+  font-size: 1.1rem;
+}
+@mixin font13 {
+  line-height: 1.8rem;
+  font-size: 1.3rem;
+}
+@mixin font15 {
+  line-height: 2rem;
+  font-size: 1.5rem;
+}
+@mixin font17 {
+  line-height: 2.4rem;
+  font-size: 1.7rem;
+}
+@mixin font19 {
+  line-height: 2.6rem;
+  font-size: 1.9rem;
+}
+
+// Divider
+@mixin mobileDivider {
+  border-bottom: 0.8rem solid $whitef1;
+}
+
 // Position
 @mixin position($x, $xvalue, $y, $yvalue) {
   position: absolute;

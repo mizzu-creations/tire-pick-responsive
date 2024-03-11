@@ -9,3 +9,6 @@
 - 슬라이더 버벅임
 - 커스텀 input
 - flex -> grid order
+- figure, figcaption
+- picture로 반응형
+- aside <- 전체 콘텐츠와 상관없을 때
