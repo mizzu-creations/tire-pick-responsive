@@ -133,7 +133,7 @@ const productList = [
 ];
 
 const addComma = (number) => {
-  return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  return number.toLocaleString();
 };
 const createProductCard = () => {
   const swiperWrapper = document.querySelector(

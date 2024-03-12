@@ -1,0 +1,87 @@
+.mobile-modal {
+  display: none;
+  @include mobile {
+    display: block;
+    @include position(bottom, 0, left, 0);
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.3);
+    width: 100%;
+    height: 100vh;
+    dialog {
+      max-width: $web;
+      min-width: 32.8rem;
+      width: 100%;
+      position: absolute;
+      bottom: -100%;
+      padding: 0;
+      box-sizing: border-box;
+      border: none;
+      border-radius: 1.6rem 1.6rem 0 0;
+      overflow: hidden;
+      &.show {
+        animation: slide-up 0.4s forwards;
+      }
+      .swiper {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        .swiper-wrapper {
+          .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            img {
+              display: block;
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+          }
+        }
+        .swiper-pagination {
+          display: flex;
+          gap: 0.4rem;
+          width: fit-content;
+          line-height: 1.5rem;
+          position: absolute;
+          right: 1.5rem;
+          left: auto;
+          bottom: 1.4rem;
+          padding: 0.6rem 1rem 0.6rem 1.2rem;
+          background: rgba(0, 0, 0, 0.4);
+          box-shadow: rgba(0, 0, 0, 0.16) 0 0 0.8rem 0;
+          border-radius: 10rem;
+          font-size: 1.5rem;
+          font-weight: 500;
+          color: $white;
+        }
+      }
+    }
+    &__btns {
+      display: flex;
+      background-color: $white;
+      button {
+        flex: 1;
+        padding: 1.6rem 2rem;
+        @include font15;
+        font-weight: 500;
+        color: $gray5a;
+        &:last-child {
+          font-weight: 700;
+        }
+      }
+    }
+  }
+}
+
+@keyframes slide-up {
+  0% {
+    bottom: -100%;
+  }
+  100% {
+    bottom: 0;
+  }
+}

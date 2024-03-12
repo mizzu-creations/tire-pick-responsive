@@ -26,6 +26,7 @@
     <script defer src="./js/mainBannerSwiper.js"></script>
     <script defer src="./js/lottieAnimation.js"></script>
     <script defer src="./js/productListSwiper.js"></script>
+    <script defer src="./js/mobileModalSwiper.js"></script>
   </head>
   <body>
     <div class="top-banner">
@@ -73,15 +74,15 @@
                 <span class="search__tab-focus">타이어</span>
                 <ul>
                   <li class="search__tab">
-                    <a class="--active" href="javascript:void(0)" tabindex="3"
+                    <a class="--active" href="javascript:void(0)"
                       >타이어</a
                     >
                   </li>
                   <li class="search__tab">
-                    <a href="javascript:void(0)" tabindex="3">배터리</a>
+                    <a href="javascript:void(0)">배터리</a>
                   </li>
                   <li class="search__tab">
-                    <a href="javascript:void(0)" tabindex="3">엔진오일</a>
+                    <a href="javascript:void(0)">엔진오일</a>
                   </li>
                 </ul>
               </nav>
@@ -315,6 +316,21 @@
           <a href="javascript:void(0)"><span>내 정보</span></a>
         </li>
       </ul>
+    </div>
+    <div class="mobile-modal">
+      <dialog open>
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><a href="javscript:void(0)"><img src="./assets/images/modal_slide_01_m.webp" alt="주말 구매 이벤트 토요일 일요일엔? 1만 포인트 적립 찬스"></a></div>
+            <div class="swiper-slide"><a href="javscript:void(0)"><img src="./assets/images/modal_slide_02_m.webp" alt="친구 초대 이벤트 나도 친구도 만 원씩 사이좋게 혜택받자!"></a></div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+        <div class="mobile-modal__btns">
+          <button>오늘은 그만보기</button>
+          <button>닫기</button>
+        </div>
+      </dialog>
     </div>
   </body>
 </html>
