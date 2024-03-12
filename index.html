@@ -30,7 +30,13 @@
   <body>
     <div class="top-banner">
       <div>
-        <img src="./assets/images/event_100won.webp" alt="">
+        <picture>
+          <source
+            media="(max-width: 769px)"
+            srcset="./assets/images/event_free.webp"
+          />
+          <img src="./assets/images/event_100won.webp" alt="" />
+        </picture>
         <span>타이어픽 앱 설치하면 세차 100원</span>
       </div>
       <button aria-label="닫기">
