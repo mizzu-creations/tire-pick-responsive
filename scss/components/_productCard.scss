@@ -122,7 +122,7 @@
           width: 1.6rem;
           height: 1.6rem;
           @include bg(
-            "star_gold.svg",
+            "svg/star_gold.svg",
             $width: 1.6rem,
             $height: 1.6rem,
             $x: center,
@@ -134,7 +134,7 @@
           &::before {
             width: 1.4rem;
             height: 1.4rem;
-            @include bg("star_gold.svg", $width: 1.4rem, $height: 1.4rem);
+            @include bg("svg/star_gold.svg", $width: 1.4rem, $height: 1.4rem);
           }
         }
       }
