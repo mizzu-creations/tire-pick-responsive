@@ -14,7 +14,7 @@
         width: 1.6rem;
         height: 1.6rem;
         @include position(top, -0.1rem, right, -1.6rem);
-        @include bg("new.svg", $x: right, $y: top);
+        @include bg("svg/new.svg", $x: right, $y: top);
       }
     }
   }

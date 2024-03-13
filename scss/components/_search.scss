@@ -83,14 +83,14 @@
           input[type="radio"] {
             display: none;
             &:checked + label {
-              background-image: url("../../assets/images/radio_active.svg");
+              background-image: url("../../assets/images/svg/radio_active.svg");
             }
           }
           label {
             display: inline-block;
             padding-left: 2rem;
             @include bg(
-              "radio.svg",
+              "svg/radio.svg",
               $x: left,
               $y: center,
               $width: 1rem,
@@ -137,14 +137,14 @@
             input[type="checkbox"] {
               display: none;
               &:checked + label {
-                background-image: url("../../assets/images/check_active.svg");
+                background-image: url("../../assets/images/svg/check_active.svg");
               }
             }
             label {
               display: inline-block;
               padding-left: 2rem;
               @include bg(
-                "check.svg",
+                "svg/check.svg",
                 $x: left,
                 $y: center,
                 $width: 1.5rem,
@@ -187,7 +187,7 @@
   width: 100%;
   position: relative;
   @include bg(
-    "chevron_down-black.svg",
+    "svg/chevron_down-black.svg",
     $x: right calc(1.2rem),
     $y: center,
     $width: 2.4rem
@@ -217,7 +217,7 @@
   }
   &.--active {
     @include bg(
-      "chevron_up-black.svg",
+      "svg/chevron_up-black.svg",
       $x: right calc(1.2rem),
       $y: center,
       $width: 2.4rem
@@ -234,7 +234,7 @@
     cursor: pointer;
     &.selected {
       @include bg(
-        "input-check-selected.svg",
+        "svg/input_check_selected.svg",
         $x: right calc(1.2rem),
         $y: center,
         $width: 2

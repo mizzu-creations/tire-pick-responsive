@@ -112,7 +112,7 @@ const responsiveApplication = () => {
   swiperFraction.insertAdjacentHTML(
     "beforeend",
     `<span class="swiper-pagination-all swiper-res">모두보기</span>
-    <img class="swiper-res" src="./assets/images/menu.svg" alt="">`
+    <img class="swiper-res" src="./assets/images/svg/menu.svg" alt="">`
   );
 };
 

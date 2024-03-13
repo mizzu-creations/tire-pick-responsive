@@ -1,4 +1,4 @@
-const imgSrc = "./assets/images/";
+const imgSrc = "./assets/images/webp/";
 const productList = [
   {
     rank: 1,

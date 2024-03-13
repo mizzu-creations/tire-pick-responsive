@@ -50,7 +50,7 @@
       display: block;
       width: 2.4rem;
       height: 2.4rem;
-      @include bg("close.svg");
+      @include bg("svg/close.svg");
     }
   }
 }
