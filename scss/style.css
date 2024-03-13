@@ -566,6 +566,11 @@ label {
     width: 100%;
   }
 }
+@media (min-width: 0px) and (max-width: 769px) {
+  .main__best .m0auto > h2 {
+    margin-left: 2rem;
+  }
+}
 .main__best .m0auto > span {
   line-height: 2.4rem;
   font-size: 1.7rem;
@@ -595,6 +600,66 @@ label {
 @media (min-width: 0px) and (max-width: 769px) {
   .main__best .m0auto > button {
     display: none;
+  }
+}
+.main__monthly-special {
+  padding: 4rem 3rem 4rem;
+}
+@media (min-width: 0px) and (max-width: 769px) {
+  .main__monthly-special {
+    padding: 2.4rem 0;
+    border-bottom: 0.8rem solid #f1f3f6;
+    box-sizing: border-box;
+  }
+  .main__monthly-special > h2.section-title {
+    margin-left: 2rem;
+  }
+}
+.main__monthly-special .swiper.monthly-special {
+  width: 100%;
+  height: 100%;
+}
+@media (min-width: 0px) and (max-width: 769px) {
+  .main__monthly-special .swiper.monthly-special .swiper-wrapper .swiper-slide {
+    width: 26rem !important;
+  }
+}
+.main__monthly-special .swiper.monthly-special .swiper-wrapper .swiper-slide figure {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+@media (min-width: 0px) and (max-width: 769px) {
+  .main__monthly-special .swiper.monthly-special .swiper-wrapper .swiper-slide figure {
+    gap: 1.2rem;
+    margin-left: 2rem;
+  }
+}
+.main__monthly-special .swiper.monthly-special .swiper-wrapper .swiper-slide figure div {
+  border-radius: 0.8rem;
+  overflow: hidden;
+}
+.main__monthly-special .swiper.monthly-special .swiper-wrapper .swiper-slide figure div img {
+  width: 100%;
+}
+.main__monthly-special .swiper.monthly-special .swiper-wrapper .swiper-slide figure figcaption {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.main__monthly-special .swiper.monthly-special .swiper-wrapper .swiper-slide figure figcaption .section-title {
+  padding-bottom: 0;
+}
+.main__monthly-special .swiper.monthly-special .swiper-wrapper .swiper-slide figure figcaption span:not(.section-title) {
+  line-height: 2.4rem;
+  font-size: 1.7rem;
+  font-weight: 500;
+  color: #5a5c60;
+}
+@media (min-width: 0px) and (max-width: 769px) {
+  .main__monthly-special .swiper.monthly-special .swiper-wrapper .swiper-slide figure figcaption span:not(.section-title) {
+    line-height: 1.8rem;
+    font-size: 1.3rem;
   }
 }
 .main__buyoption-partnership {
@@ -1589,7 +1654,7 @@ label {
 }
 
 .section-title {
-  padding-bottom: 1.6rem;
+  padding-bottom: 2.4rem;
   line-height: 3.4rem;
   font-size: 2.2rem;
   font-weight: 700;
@@ -1597,7 +1662,6 @@ label {
 }
 @media (min-width: 0px) and (max-width: 769px) {
   .section-title {
-    margin-left: 2rem;
     line-height: 2.4rem;
     font-size: 1.7rem;
   }
