@@ -208,12 +208,12 @@ label {
   }
 }
 
-.footer section, .main__buyoption-partnership {
+.footer section, .main__buyoption-partnership, .main__monthly-special {
   width: 118.4rem;
   margin: 0 auto;
 }
 @media (min-width: 0px) and (max-width: 769px) {
-  .footer section, .main__buyoption-partnership {
+  .footer section, .main__buyoption-partnership, .main__monthly-special {
     width: 100%;
   }
 }
@@ -577,20 +577,6 @@ label {
     margin-left: 2rem;
     line-height: 1.8rem;
     font-size: 1.3rem;
-  }
-}
-.main__best .m0auto > h2 {
-  padding-bottom: 1.6rem;
-  line-height: 3.4rem;
-  font-size: 2.2rem;
-  font-weight: 700;
-  color: #000000;
-}
-@media (min-width: 0px) and (max-width: 769px) {
-  .main__best .m0auto > h2 {
-    margin-left: 2rem;
-    line-height: 2.4rem;
-    font-size: 1.7rem;
   }
 }
 .main__best .m0auto > button {
@@ -1599,6 +1585,21 @@ label {
     line-height: 1.2rem;
     font-size: 1.1rem;
     white-space: nowrap;
+  }
+}
+
+.section-title {
+  padding-bottom: 1.6rem;
+  line-height: 3.4rem;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #000000;
+}
+@media (min-width: 0px) and (max-width: 769px) {
+  .section-title {
+    margin-left: 2rem;
+    line-height: 2.4rem;
+    font-size: 1.7rem;
   }
 }
 
