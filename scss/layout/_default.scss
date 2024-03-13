@@ -6,7 +6,7 @@
 }
 
 %layout-center {
-  width: 118.4rem;
+  width: $width;
   margin: 0 auto;
   @include mobile {
     width: 100%;

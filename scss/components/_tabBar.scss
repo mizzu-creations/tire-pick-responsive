@@ -1,12 +1,10 @@
 $icons: ("home_on.svg", "store_on.svg", "search_on.svg", "my_on.svg");
-
 $inactiveIcons: (
   "home_off.svg",
   "store_off.svg",
   "search_off.svg",
   "my_off.svg"
 );
-
 $iconCount: length($icons);
 
 .tab-bar {
@@ -14,7 +12,7 @@ $iconCount: length($icons);
   @include mobile {
     display: block;
     width: 100%;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     border-top: 0.1rem solid $grayec;
     background-color: $white;

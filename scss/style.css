@@ -1339,7 +1339,7 @@ label {
   .tab-bar {
     display: block;
     width: 100%;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     border-top: 0.1rem solid #eceef1;
     background-color: #fff;
@@ -1463,13 +1463,12 @@ label {
 @media (min-width: 0px) and (max-width: 769px) {
   .mobile-modal {
     display: block;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    z-index: 1000;
-    background-color: rgba(0, 0, 0, 0.3);
     width: 100%;
     height: 100vh;
+    position: fixed;
+    bottom: 0;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.3);
   }
   .mobile-modal dialog {
     max-width: 769px;
@@ -1486,27 +1485,27 @@ label {
   .mobile-modal dialog.show {
     animation: slide-up 0.4s forwards;
   }
-  .mobile-modal dialog .swiper {
+  .mobile-modal dialog .swiper.mobile-modal {
     width: 100%;
     height: 100%;
     position: relative;
+    background: #fff;
   }
-  .mobile-modal dialog .swiper .swiper-wrapper .swiper-slide {
+  .mobile-modal dialog .swiper.mobile-modal .swiper-wrapper .swiper-slide {
     text-align: center;
     font-size: 18px;
-    background: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
   }
-  .mobile-modal dialog .swiper .swiper-wrapper .swiper-slide img {
+  .mobile-modal dialog .swiper.mobile-modal .swiper-wrapper .swiper-slide img {
     display: block;
     width: 100%;
     height: 100%;
     -o-object-fit: cover;
        object-fit: cover;
   }
-  .mobile-modal dialog .swiper .swiper-pagination {
+  .mobile-modal dialog .swiper.mobile-modal .swiper-pagination {
     display: flex;
     gap: 0.4rem;
     width: -moz-fit-content;
