@@ -208,12 +208,12 @@ label {
   }
 }
 
-.footer section {
+.footer section, .main__buyoption-partnership {
   width: 118.4rem;
   margin: 0 auto;
 }
 @media (min-width: 0px) and (max-width: 769px) {
-  .footer section {
+  .footer section, .main__buyoption-partnership {
     width: 100%;
   }
 }
@@ -609,6 +609,119 @@ label {
 @media (min-width: 0px) and (max-width: 769px) {
   .main__best .m0auto > button {
     display: none;
+  }
+}
+.main__buyoption-partnership {
+  display: flex;
+  justify-content: space-between;
+  gap: 2.4rem;
+  padding: 4rem 3rem;
+}
+@media (min-width: 0px) and (max-width: 769px) {
+  .main__buyoption-partnership {
+    gap: 0;
+    width: 100%;
+    max-width: 769px;
+    padding: 2.4rem 2rem;
+    box-sizing: border-box;
+  }
+}
+.main__buyoption-partnership .card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  gap: 1.2rem;
+  padding: 2.4rem 5rem;
+  border-radius: 1.6rem;
+  border: 1px solid #dddfe2;
+  cursor: pointer;
+}
+@media (min-width: 0px) and (max-width: 769px) {
+  .main__buyoption-partnership .card {
+    width: 100%;
+    gap: 0.8rem;
+    padding: 1.2rem 1.6rem;
+    border: none;
+    border-radius: 0;
+    background-color: #f6f8fb;
+  }
+}
+.main__buyoption-partnership .card .icon {
+  width: 5.6rem;
+  height: 5.6rem;
+}
+@media (min-width: 0px) and (max-width: 769px) {
+  .main__buyoption-partnership .card .icon {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+}
+.main__buyoption-partnership .card .txt {
+  display: flex;
+  flex-direction: column;
+  color: #282a2e;
+}
+.main__buyoption-partnership .card .txt .title {
+  line-height: 2.6rem;
+  font-size: 1.9rem;
+  font-weight: 700;
+}
+@media (min-width: 0px) and (max-width: 769px) {
+  .main__buyoption-partnership .card .txt .title {
+    line-height: 1.8rem;
+    font-size: 1.3rem;
+  }
+}
+.main__buyoption-partnership .card .txt .description {
+  line-height: 2rem;
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+@media (min-width: 0px) and (max-width: 769px) {
+  .main__buyoption-partnership .card .txt .description {
+    display: none;
+  }
+}
+.main__buyoption-partnership .buy-option {
+  position: relative;
+}
+@media (min-width: 0px) and (max-width: 769px) {
+  .main__buyoption-partnership .buy-option {
+    border-radius: 0.8rem 0 0 0.8rem;
+  }
+  .main__buyoption-partnership .buy-option::after {
+    content: "";
+    width: 0.1rem;
+    height: 3.2rem;
+    position: absolute;
+    right: 0;
+    background-color: #e7e9ec;
+  }
+}
+.main__buyoption-partnership .buy-option__icon {
+  background: url(../../assets/images/svg/shopping_bag.svg) no-repeat;
+  background-size: 5.6rem 5.6rem;
+}
+@media (min-width: 0px) and (max-width: 769px) {
+  .main__buyoption-partnership .buy-option__icon {
+    background: url(../../assets/images/svg/shopping_bag.svg) no-repeat;
+    background-size: 2.4rem 2.4rem;
+  }
+}
+@media (min-width: 0px) and (max-width: 769px) {
+  .main__buyoption-partnership .partnership {
+    border-radius: 0 0.8rem 0.8rem 0;
+  }
+}
+.main__buyoption-partnership .partnership__icon {
+  background: url(../../assets/images/svg/handshake.svg) no-repeat;
+  background-size: 5.6rem 5.6rem;
+}
+@media (min-width: 0px) and (max-width: 769px) {
+  .main__buyoption-partnership .partnership__icon {
+    background: url(../../assets/images/svg/handshake.svg) no-repeat;
+    background-size: 2.4rem 2.4rem;
   }
 }
 

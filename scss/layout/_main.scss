@@ -211,4 +211,95 @@
       }
     }
   }
+  &__buyoption-partnership {
+    display: flex;
+    justify-content: space-between;
+    gap: 2.4rem;
+    @extend %layout-center;
+    padding: 4rem 3rem;
+    @include mobile {
+      gap: 0;
+      width: 100%;
+      max-width: $web;
+      padding: 2.4rem 2rem;
+      box-sizing: border-box;
+    }
+    .card {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex: 1;
+      gap: 1.2rem;
+      padding: 2.4rem 5rem;
+      border-radius: 1.6rem;
+      border: 1px solid $graydd;
+      cursor: pointer;
+      @include mobile {
+        width: 100%;
+        gap: 0.8rem;
+        padding: 1.2rem 1.6rem;
+        border: none;
+        border-radius: 0;
+        background-color: $whitef6;
+      }
+      .icon {
+        width: 5.6rem;
+        height: 5.6rem;
+        @include mobile {
+          width: 2.4rem;
+          height: 2.4rem;
+        }
+      }
+      .txt {
+        display: flex;
+        flex-direction: column;
+        color: $gray28;
+        .title {
+          @include font19;
+          font-weight: 700;
+          @include mobile {
+            @include font13;
+          }
+        }
+        .description {
+          @include font15;
+          font-weight: 400;
+          @include mobile {
+            display: none;
+          }
+        }
+      }
+    }
+    .buy-option {
+      position: relative;
+      @include mobile {
+        border-radius: 0.8rem 0 0 0.8rem;
+        &::after {
+          content: "";
+          width: 0.1rem;
+          height: 3.2rem;
+          position: absolute;
+          right: 0;
+          background-color: $graye7;
+        }
+      }
+      &__icon {
+        @include bg("svg/shopping_bag.svg", $width: 5.6rem, $height: 5.6rem);
+        @include mobile {
+          @include bg("svg/shopping_bag.svg", $width: 2.4rem, $height: 2.4rem);
+        }
+      }
+    }
+    .partnership {
+      @include mobile {
+        border-radius: 0 0.8rem 0.8rem 0;
+      }
+      &__icon {
+        @include bg("svg/handshake.svg", $width: 5.6rem, $height: 5.6rem);
+        @include mobile {
+          @include bg("svg/handshake.svg", $width: 2.4rem, $height: 2.4rem);
+        }
+      }
+    }
+  }
 }
