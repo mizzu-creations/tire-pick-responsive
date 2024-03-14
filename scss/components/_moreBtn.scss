@@ -1,0 +1,12 @@
+.more-btn {
+  width: 10.4rem;
+  padding: 0.7rem 1rem;
+  @include font13;
+  font-weight: 500;
+  border: 0.1rem solid $graybe;
+  border-radius: 0.8rem;
+  color: $gray28;
+  @include mobile {
+    display: none;
+  }
+}
