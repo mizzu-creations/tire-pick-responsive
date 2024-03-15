@@ -433,9 +433,14 @@
               display: flex;
               align-items: center;
               gap: 1rem;
+              min-width: 20rem;
               margin-bottom: 5.4rem;
               padding: 1.2rem;
               background-color: $whitef6;
+            }
+            @include mobileMin {
+              flex-direction: column;
+              align-items: flex-start;
             }
             .product-info {
               display: flex;
@@ -448,11 +453,19 @@
                 gap: 1rem;
                 margin-bottom: 0;
                 padding-bottom: 0;
+                border-bottom: none;
                 &::after {
                   content: "";
                   width: 0.1rem;
                   height: 7.5rem;
                   background-color: $grayec;
+                }
+              }
+              @include mobileMin {
+                border-bottom: 0.1rem solid $grayec;
+                &::after {
+                  content: "";
+                  background-color: transparent;
                 }
               }
               &__img {

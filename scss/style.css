@@ -875,9 +875,16 @@ label {
     display: flex;
     align-items: center;
     gap: 1rem;
+    min-width: 20rem;
     margin-bottom: 5.4rem;
     padding: 1.2rem;
     background-color: #f6f8fb;
+  }
+}
+@media (min-width: 0px) and (max-width: 380px) {
+  .main__review__right > ul .review-card__right {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
 .main__review__right > ul .review-card__right .product-info {
@@ -893,12 +900,22 @@ label {
     gap: 1rem;
     margin-bottom: 0;
     padding-bottom: 0;
+    border-bottom: none;
   }
   .main__review__right > ul .review-card__right .product-info::after {
     content: "";
     width: 0.1rem;
     height: 7.5rem;
     background-color: #eceef1;
+  }
+}
+@media (min-width: 0px) and (max-width: 380px) {
+  .main__review__right > ul .review-card__right .product-info {
+    border-bottom: 0.1rem solid #eceef1;
+  }
+  .main__review__right > ul .review-card__right .product-info::after {
+    content: "";
+    background-color: transparent;
   }
 }
 .main__review__right > ul .review-card__right .product-info__img {
