@@ -1,0 +1,32 @@
+$review-icons: (
+  jedong: "svg/review_jedong.svg",
+  seoungchagam: "svg/review_seoungchagam.svg",
+  soeum: "svg/review_soeum.svg",
+  gosoc: "svg/review_gosoc.svg",
+);
+
+@mixin review-tag-icon($icon) {
+  &.#{$icon}::before {
+    @include bg(map-get($review-icons, $icon), $width: 1.6rem, $height: 1.6rem);
+  }
+}
+
+.review-tag {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.4rem 0.8rem;
+  background-color: $whitef1;
+  border-radius: 0.4rem;
+  font-weight: 500;
+  @include font15;
+  color: $gray28;
+  &::before {
+    content: "";
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+  @each $icon, $path in $review-icons {
+    @include review-tag-icon($icon);
+  }
+}
