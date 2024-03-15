@@ -1,8 +1,13 @@
 .header {
-  position: relative;
+  width: 100%;
+  position: sticky;
+  top: 0;
   padding-top: 3.2rem;
+  background-color: $white;
+  z-index: 500;
   @include mobile {
     padding: 1.6rem 1.6rem;
+    box-sizing: border-box;
   }
   .m0auto {
     display: flex;

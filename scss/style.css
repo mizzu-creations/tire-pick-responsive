@@ -225,12 +225,17 @@ label {
 }
 
 .header {
-  position: relative;
+  width: 100%;
+  position: sticky;
+  top: 0;
   padding-top: 3.2rem;
+  background-color: #fff;
+  z-index: 500;
 }
 @media (min-width: 0px) and (max-width: 769px) {
   .header {
     padding: 1.6rem 1.6rem;
+    box-sizing: border-box;
   }
 }
 .header .m0auto {
@@ -601,9 +606,11 @@ label {
     flex-direction: column;
     align-items: flex-start;
     gap: 1.6rem;
+    width: 100%;
     position: relative;
-    padding: 2.4rem 2rem;
+    padding: 2.4rem 2rem 9.2rem;
     border-bottom: 0.8rem solid #f1f3f6;
+    box-sizing: border-box;
   }
 }
 .main__review__left {
@@ -668,6 +675,7 @@ label {
     bottom: 2.4rem;
     transform: translateX(-50%);
     position: absolute;
+    z-index: 1;
   }
 }
 .main__review__left .more-review:hover {
@@ -689,6 +697,7 @@ label {
   gap: 4rem;
   width: 76rem;
   padding: 2rem;
+  position: relative;
   background-color: #f6f8fb;
   border-radius: 0.8rem;
 }
@@ -696,6 +705,9 @@ label {
   .main__review__right > ul .review-card {
     flex-direction: column;
     width: 100%;
+    height: -moz-fit-content;
+    height: fit-content;
+    box-sizing: border-box;
   }
 }
 .main__review__right > ul .review-card__left .customer-cartype {
@@ -774,6 +786,11 @@ label {
   gap: 1.2rem;
   margin-bottom: 1.6rem;
 }
+@media (min-width: 0px) and (max-width: 769px) {
+  .main__review__right > ul .review-card__left .review-tags {
+    gap: 0.8rem;
+  }
+}
 .main__review__right > ul .review-card__left .recommend-btn {
   display: flex;
   align-items: center;
@@ -785,6 +802,12 @@ label {
   font-weight: 500;
   line-height: 2rem;
   font-size: 1.5rem;
+}
+@media (min-width: 0px) and (max-width: 769px) {
+  .main__review__right > ul .review-card__left .recommend-btn {
+    position: absolute;
+    bottom: 0;
+  }
 }
 .main__review__right > ul .review-card__left .recommend-btn::before {
   content: "";
@@ -2012,6 +2035,13 @@ label {
   line-height: 2rem;
   font-size: 1.5rem;
   color: #282a2e;
+}
+@media (min-width: 0px) and (max-width: 769px) {
+  .review-tag {
+    padding: 0.6rem;
+    line-height: 1.8rem;
+    font-size: 1.3rem;
+  }
 }
 .review-tag::before {
   content: "";

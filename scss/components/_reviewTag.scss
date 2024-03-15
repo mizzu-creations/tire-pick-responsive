@@ -21,6 +21,10 @@ $review-icons: (
   font-weight: 500;
   @include font15;
   color: $gray28;
+  @include mobile {
+    padding: 0.6rem;
+    @include font13;
+  }
   &::before {
     content: "";
     width: 1.6rem;
