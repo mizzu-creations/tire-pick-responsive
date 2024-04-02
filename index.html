@@ -96,6 +96,7 @@
     <script defer src="./js/mainBannerSwiper.js"></script>
     <script defer src="./js/lottieAnimation.js"></script>
     <script defer src="./js/productListSwiper.js"></script>
+    <script defer src="./js/reviewCardSwiper.js"></script>
     <script defer src="./js/reviewMore.js"></script>
     <script defer src="./js/monthlySwiper.js"></script>
     <script defer src="./js/mobileModalSwiper.js"></script>
@@ -381,9 +382,240 @@
           </div>
           <button class="more-review">리뷰 더보기</button>
         </div>
-        <div class="main__review__right">
-          <ul>
-            <li class="review-card">
+        <div class="swiper review main__review__right">
+          <ul class="swiper-wrapper">
+            <li class="swiper-slide review-card">
+              <span class="hide">고객리뷰</span>
+              <div class="review-card__left">
+                <div class="customer-cartype">
+                  <span class="hide">고객명</span>
+                  <span class="customer">이*지</span>
+                  <span class="hide">차종</span>
+                  <span class="cartype">기아 K5</span>
+                </div>
+                <div class="star-rate">
+                  <span class="hide">별점</span>
+                  <div class="star">
+                    <img src="./assets/images/svg/star_gold.svg" alt="" />
+                    <img src="./assets/images/svg/star_gold.svg" alt="" />
+                    <img src="./assets/images/svg/star_gold.svg" alt="" />
+                    <img src="./assets/images/svg/star_gold.svg" alt="" />
+                    <img src="./assets/images/svg/star_gold.svg" alt="" />
+                  </div>
+                  <span class="hide">작성 날짜</span>
+                  <div class="date">22.11.25</div>
+                </div>
+                <span class="hide">리뷰내용</span>
+                <p class="customer-review">
+                  피렐리 에서 굿이어로, 굿이어에서 마제스티로 ! <br />
+                  k5오너분들의 추천이 많은 타이어여서 해당 타이어로
+                  교체해봤습니다~ <br />
+                  사장님께서 정말 많이 친절하셨습니다!😄 <br />
+                  설명도 잘해주셨구요.
+                  <br /><br />
+                  타이어 교체하고나니 코너링시에도 흔들림없이 착 감키고 제동력도
+                  끝내줍니다. <br />
+                  고속주행을 많이 하는편이라서 착 감키는 안정감이 너무 마음에
+                  듭니다. <br />
+                  사장님 정말 감사했습니다~~!
+                </p>
+                <button class="review-more">더보기</button>
+                <span class="hide">리뷰태그</span>
+                <ul class="review-tags">
+                  <li class="review-tag jedong">제동력이 좋아요</li>
+                  <li class="review-tag seoungchagam">승차감이 편안해요</li>
+                  <li class="review-tag soeum">소음이 없어요</li>
+                  <li class="review-tag gosoc">고속주행에도 안정적이에요</li>
+                </ul>
+                <button class="recommend-btn" aria-label="추천버튼">
+                  도움이 돼요 <span>4</span>
+                </button>
+              </div>
+              <div class="review-card__right">
+                <div class="product-info">
+                  <div class="product-info__img">
+                    <span class="img-label">hot</span>
+                    <img
+                      src="./assets/images/webp/tire_kh_hp71_11_45degree.webp"
+                      alt=""
+                    />
+                  </div>
+                  <div class="product-info__txt">
+                    <span class="brand">금호</span>
+                    <span class="title">마제스티9 솔루스 TA91</span>
+                    <span class="model">245/40R19</span>
+                  </div>
+                </div>
+                <div class="store-info">
+                  <div class="visit-store"><span>매장방문</span></div>
+                  <div class="wheel-align">
+                    <div><span>휠 얼라인먼트</span><span>추가</span></div>
+                  </div>
+                  <div class="store-location">
+                    <div>
+                      <span>스피드메이트 이마트군산점</span
+                      ><span>전라북도 군산시 경암동</span>
+                    </div>
+                  </div>
+                </div>
+                <button class="more-btn product">상품 보기</button>
+              </div>
+            </li>
+            <li class="swiper-slide review-card">
+              <span class="hide">고객리뷰</span>
+              <div class="review-card__left">
+                <div class="customer-cartype">
+                  <span class="hide">고객명</span>
+                  <span class="customer">이*지</span>
+                  <span class="hide">차종</span>
+                  <span class="cartype">기아 K5</span>
+                </div>
+                <div class="star-rate">
+                  <span class="hide">별점</span>
+                  <div class="star">
+                    <img src="./assets/images/svg/star_gold.svg" alt="" />
+                    <img src="./assets/images/svg/star_gold.svg" alt="" />
+                    <img src="./assets/images/svg/star_gold.svg" alt="" />
+                    <img src="./assets/images/svg/star_gold.svg" alt="" />
+                    <img src="./assets/images/svg/star_gold.svg" alt="" />
+                  </div>
+                  <span class="hide">작성 날짜</span>
+                  <div class="date">22.11.25</div>
+                </div>
+                <span class="hide">리뷰내용</span>
+                <p class="customer-review">
+                  피렐리 에서 굿이어로, 굿이어에서 마제스티로 ! <br />
+                  k5오너분들의 추천이 많은 타이어여서 해당 타이어로
+                  교체해봤습니다~ <br />
+                  사장님께서 정말 많이 친절하셨습니다!😄 <br />
+                  설명도 잘해주셨구요.
+                  <br /><br />
+                  타이어 교체하고나니 코너링시에도 흔들림없이 착 감키고 제동력도
+                  끝내줍니다. <br />
+                  고속주행을 많이 하는편이라서 착 감키는 안정감이 너무 마음에
+                  듭니다. <br />
+                  사장님 정말 감사했습니다~~!
+                </p>
+                <button class="review-more">더보기</button>
+                <span class="hide">리뷰태그</span>
+                <ul class="review-tags">
+                  <li class="review-tag jedong">제동력이 좋아요</li>
+                  <li class="review-tag seoungchagam">승차감이 편안해요</li>
+                  <li class="review-tag soeum">소음이 없어요</li>
+                  <li class="review-tag gosoc">고속주행에도 안정적이에요</li>
+                </ul>
+                <button class="recommend-btn" aria-label="추천버튼">
+                  도움이 돼요 <span>4</span>
+                </button>
+              </div>
+              <div class="review-card__right">
+                <div class="product-info">
+                  <div class="product-info__img">
+                    <span class="img-label">hot</span>
+                    <img
+                      src="./assets/images/webp/tire_kh_hp71_11_45degree.webp"
+                      alt=""
+                    />
+                  </div>
+                  <div class="product-info__txt">
+                    <span class="brand">금호</span>
+                    <span class="title">마제스티9 솔루스 TA91</span>
+                    <span class="model">245/40R19</span>
+                  </div>
+                </div>
+                <div class="store-info">
+                  <div class="visit-store"><span>매장방문</span></div>
+                  <div class="wheel-align">
+                    <div><span>휠 얼라인먼트</span><span>추가</span></div>
+                  </div>
+                  <div class="store-location">
+                    <div>
+                      <span>스피드메이트 이마트군산점</span
+                      ><span>전라북도 군산시 경암동</span>
+                    </div>
+                  </div>
+                </div>
+                <button class="more-btn product">상품 보기</button>
+              </div>
+            </li>
+            <li class="swiper-slide review-card">
+              <span class="hide">고객리뷰</span>
+              <div class="review-card__left">
+                <div class="customer-cartype">
+                  <span class="hide">고객명</span>
+                  <span class="customer">이*지</span>
+                  <span class="hide">차종</span>
+                  <span class="cartype">기아 K5</span>
+                </div>
+                <div class="star-rate">
+                  <span class="hide">별점</span>
+                  <div class="star">
+                    <img src="./assets/images/svg/star_gold.svg" alt="" />
+                    <img src="./assets/images/svg/star_gold.svg" alt="" />
+                    <img src="./assets/images/svg/star_gold.svg" alt="" />
+                    <img src="./assets/images/svg/star_gold.svg" alt="" />
+                    <img src="./assets/images/svg/star_gold.svg" alt="" />
+                  </div>
+                  <span class="hide">작성 날짜</span>
+                  <div class="date">22.11.25</div>
+                </div>
+                <span class="hide">리뷰내용</span>
+                <p class="customer-review">
+                  피렐리 에서 굿이어로, 굿이어에서 마제스티로 ! <br />
+                  k5오너분들의 추천이 많은 타이어여서 해당 타이어로
+                  교체해봤습니다~ <br />
+                  사장님께서 정말 많이 친절하셨습니다!😄 <br />
+                  설명도 잘해주셨구요.
+                  <br /><br />
+                  타이어 교체하고나니 코너링시에도 흔들림없이 착 감키고 제동력도
+                  끝내줍니다. <br />
+                  고속주행을 많이 하는편이라서 착 감키는 안정감이 너무 마음에
+                  듭니다. <br />
+                  사장님 정말 감사했습니다~~!
+                </p>
+                <button class="review-more">더보기</button>
+                <span class="hide">리뷰태그</span>
+                <ul class="review-tags">
+                  <li class="review-tag jedong">제동력이 좋아요</li>
+                  <li class="review-tag seoungchagam">승차감이 편안해요</li>
+                  <li class="review-tag soeum">소음이 없어요</li>
+                  <li class="review-tag gosoc">고속주행에도 안정적이에요</li>
+                </ul>
+                <button class="recommend-btn" aria-label="추천버튼">
+                  도움이 돼요 <span>4</span>
+                </button>
+              </div>
+              <div class="review-card__right">
+                <div class="product-info">
+                  <div class="product-info__img">
+                    <span class="img-label">hot</span>
+                    <img
+                      src="./assets/images/webp/tire_kh_hp71_11_45degree.webp"
+                      alt=""
+                    />
+                  </div>
+                  <div class="product-info__txt">
+                    <span class="brand">금호</span>
+                    <span class="title">마제스티9 솔루스 TA91</span>
+                    <span class="model">245/40R19</span>
+                  </div>
+                </div>
+                <div class="store-info">
+                  <div class="visit-store"><span>매장방문</span></div>
+                  <div class="wheel-align">
+                    <div><span>휠 얼라인먼트</span><span>추가</span></div>
+                  </div>
+                  <div class="store-location">
+                    <div>
+                      <span>스피드메이트 이마트군산점</span
+                      ><span>전라북도 군산시 경암동</span>
+                    </div>
+                  </div>
+                </div>
+                <button class="more-btn product">상품 보기</button>
+              </div>
+            </li>
+            <li class="swiper-slide review-card">
               <span class="hide">고객리뷰</span>
               <div class="review-card__left">
                 <div class="customer-cartype">
@@ -461,6 +693,85 @@
               </div>
             </li>
           </ul>
+        </div>
+        <div class="main__review__right mobile">
+          <div class="review-card">
+            <span class="hide">고객리뷰</span>
+            <div class="review-card__left">
+              <div class="customer-cartype">
+                <span class="hide">고객명</span>
+                <span class="customer">이*지</span>
+                <span class="hide">차종</span>
+                <span class="cartype">기아 K5</span>
+              </div>
+              <div class="star-rate">
+                <span class="hide">별점</span>
+                <div class="star">
+                  <img src="./assets/images/svg/star_gold.svg" alt="" />
+                  <img src="./assets/images/svg/star_gold.svg" alt="" />
+                  <img src="./assets/images/svg/star_gold.svg" alt="" />
+                  <img src="./assets/images/svg/star_gold.svg" alt="" />
+                  <img src="./assets/images/svg/star_gold.svg" alt="" />
+                </div>
+                <span class="hide">작성 날짜</span>
+                <div class="date">22.11.25</div>
+              </div>
+              <span class="hide">리뷰내용</span>
+              <p class="customer-review">
+                피렐리 에서 굿이어로, 굿이어에서 마제스티로 ! <br />
+                k5오너분들의 추천이 많은 타이어여서 해당 타이어로
+                교체해봤습니다~ <br />
+                사장님께서 정말 많이 친절하셨습니다!😄 <br />
+                설명도 잘해주셨구요.
+                <br /><br />
+                타이어 교체하고나니 코너링시에도 흔들림없이 착 감키고 제동력도
+                끝내줍니다. <br />
+                고속주행을 많이 하는편이라서 착 감키는 안정감이 너무 마음에
+                듭니다. <br />
+                사장님 정말 감사했습니다~~!
+              </p>
+              <button class="review-more">더보기</button>
+              <span class="hide">리뷰태그</span>
+              <ul class="review-tags">
+                <li class="review-tag jedong">제동력이 좋아요</li>
+                <li class="review-tag seoungchagam">승차감이 편안해요</li>
+                <li class="review-tag soeum">소음이 없어요</li>
+                <li class="review-tag gosoc">고속주행에도 안정적이에요</li>
+              </ul>
+              <button class="recommend-btn" aria-label="추천버튼">
+                도움이 돼요 <span>4</span>
+              </button>
+            </div>
+            <div class="review-card__right">
+              <div class="product-info">
+                <div class="product-info__img">
+                  <span class="img-label">hot</span>
+                  <img
+                    src="./assets/images/webp/tire_kh_hp71_11_45degree.webp"
+                    alt=""
+                  />
+                </div>
+                <div class="product-info__txt">
+                  <span class="brand">금호</span>
+                  <span class="title">마제스티9 솔루스 TA91</span>
+                  <span class="model">245/40R19</span>
+                </div>
+              </div>
+              <div class="store-info">
+                <div class="visit-store"><span>매장방문</span></div>
+                <div class="wheel-align">
+                  <div><span>휠 얼라인먼트</span><span>추가</span></div>
+                </div>
+                <div class="store-location">
+                  <div>
+                    <span>스피드메이트 이마트군산점</span
+                    ><span>전라북도 군산시 경암동</span>
+                  </div>
+                </div>
+              </div>
+              <button class="more-btn product">상품 보기</button>
+            </div>
+          </div>
         </div>
       </section>
       <section class="main__monthly-special">

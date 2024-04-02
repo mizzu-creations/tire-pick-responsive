@@ -1,0 +1,31 @@
+.swiper.review {
+  width: 100%;
+  height: 61.6rem;
+  position: relative;
+  &::before,
+  &::after {
+    width: 100%;
+    height: 6rem;
+    position: absolute;
+    z-index: 10;
+  }
+  &::before {
+    content: "";
+    top: 0;
+    background: linear-gradient(rgb(255, 255, 255), rgba(255, 255, 255, 0));
+  }
+  &::after {
+    content: "";
+    bottom: 0;
+    background: linear-gradient(rgba(255, 255, 255, 0), rgb(255, 255, 255));
+  }
+  @include mobile {
+    display: none;
+  }
+  .swiper-wrapper {
+    height: 100%;
+    .swiper-slide {
+      height: fit-content !important;
+    }
+  }
+}
