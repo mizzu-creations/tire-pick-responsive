@@ -1826,11 +1826,16 @@ label {
 
 .review-card {
   display: flex;
+  justify-content: space-between;
+  gap: 4rem;
   padding: 2rem;
   position: relative;
   background-color: #f6f8fb;
   border-radius: 0.8rem;
   box-sizing: border-box;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 @media (min-width: 0px) and (max-width: 769px) {
   .review-card {
@@ -1894,8 +1899,7 @@ label {
 }
 .review-card__left .customer-review {
   max-width: 36.9rem;
-  height: 14rem;
-  margin: 1.6rem 0;
+  margin: 2rem 0;
   font-weight: 400;
   line-height: 2rem;
   font-size: 1.5rem;
@@ -1938,6 +1942,19 @@ label {
   .review-card__left .review-more {
     margin-bottom: 2.2rem;
   }
+}
+.review-card__left .review-imgs {
+  display: flex;
+  gap: 0.8rem;
+  margin-bottom: 1.6rem;
+}
+.review-card__left .review-imgs li {
+  border-radius: 0.8rem;
+  overflow: hidden;
+}
+.review-card__left .review-imgs li img {
+  width: 8rem;
+  aspect-ratio: 1/1;
 }
 .review-card__left .review-tags {
   display: flex;
@@ -2106,14 +2123,25 @@ label {
     font-size: 1.3rem;
   }
 }
+.review-card__right .product-info__txt .review-customer {
+  line-height: 1.8rem;
+  font-size: 1.3rem;
+}
+.review-card__right .store-info {
+  min-height: 8.6rem;
+}
 @media (min-width: 0px) and (max-width: 769px) {
   .review-card__right .store-info {
+    display: flex;
     flex-direction: column;
+    justify-content: center;
   }
 }
 .review-card__right .store-info .visit-store,
 .review-card__right .store-info .wheel-align,
-.review-card__right .store-info .store-location {
+.review-card__right .store-info .store-location,
+.review-card__right .store-info .standard-shipping,
+.review-card__right .store-info .tire-replacement {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -2121,7 +2149,9 @@ label {
 }
 .review-card__right .store-info .visit-store::before,
 .review-card__right .store-info .wheel-align::before,
-.review-card__right .store-info .store-location::before {
+.review-card__right .store-info .store-location::before,
+.review-card__right .store-info .standard-shipping::before,
+.review-card__right .store-info .tire-replacement::before {
   content: "";
   display: inline-block;
   width: 2.4rem;
@@ -2130,19 +2160,25 @@ label {
 @media (min-width: 0px) and (max-width: 769px) {
   .review-card__right .store-info .visit-store::before,
   .review-card__right .store-info .wheel-align::before,
-  .review-card__right .store-info .store-location::before {
+  .review-card__right .store-info .store-location::before,
+  .review-card__right .store-info .standard-shipping::before,
+  .review-card__right .store-info .tire-replacement::before {
     display: none;
   }
 }
 .review-card__right .store-info .visit-store > div,
 .review-card__right .store-info .wheel-align > div,
-.review-card__right .store-info .store-location > div {
+.review-card__right .store-info .store-location > div,
+.review-card__right .store-info .standard-shipping > div,
+.review-card__right .store-info .tire-replacement > div {
   display: flex;
   flex-direction: column;
 }
 .review-card__right .store-info .visit-store > div span,
 .review-card__right .store-info .wheel-align > div span,
-.review-card__right .store-info .store-location > div span {
+.review-card__right .store-info .store-location > div span,
+.review-card__right .store-info .standard-shipping > div span,
+.review-card__right .store-info .tire-replacement > div span {
   font-weight: 400;
   line-height: 2rem;
   font-size: 1.5rem;
@@ -2151,7 +2187,9 @@ label {
 @media (min-width: 0px) and (max-width: 769px) {
   .review-card__right .store-info .visit-store > div span,
   .review-card__right .store-info .wheel-align > div span,
-  .review-card__right .store-info .store-location > div span {
+  .review-card__right .store-info .store-location > div span,
+  .review-card__right .store-info .standard-shipping > div span,
+  .review-card__right .store-info .tire-replacement > div span {
     line-height: 1.8rem;
     font-size: 1.3rem;
     color: #5a5c60;
@@ -2159,7 +2197,9 @@ label {
 }
 .review-card__right .store-info .visit-store > div span:last-child,
 .review-card__right .store-info .wheel-align > div span:last-child,
-.review-card__right .store-info .store-location > div span:last-child {
+.review-card__right .store-info .store-location > div span:last-child,
+.review-card__right .store-info .standard-shipping > div span:last-child,
+.review-card__right .store-info .tire-replacement > div span:last-child {
   font-weight: 400;
   line-height: 1.8rem;
   font-size: 1.3rem;
@@ -2168,33 +2208,43 @@ label {
 @media (min-width: 0px) and (max-width: 769px) {
   .review-card__right .store-info .visit-store > div span:last-child,
   .review-card__right .store-info .wheel-align > div span:last-child,
-  .review-card__right .store-info .store-location > div span:last-child {
+  .review-card__right .store-info .store-location > div span:last-child,
+  .review-card__right .store-info .standard-shipping > div span:last-child,
+  .review-card__right .store-info .tire-replacement > div span:last-child {
     display: none;
   }
 }
 @media (min-width: 0px) and (max-width: 769px) {
   .review-card__right .store-info .visit-store span,
   .review-card__right .store-info .wheel-align span,
-  .review-card__right .store-info .store-location span {
+  .review-card__right .store-info .store-location span,
+  .review-card__right .store-info .standard-shipping span,
+  .review-card__right .store-info .tire-replacement span {
     display: flex;
   }
   .review-card__right .store-info .visit-store span::before,
   .review-card__right .store-info .wheel-align span::before,
-  .review-card__right .store-info .store-location span::before {
+  .review-card__right .store-info .store-location span::before,
+  .review-card__right .store-info .standard-shipping span::before,
+  .review-card__right .store-info .tire-replacement span::before {
     content: "";
     min-width: 1.8rem;
     height: 1.8rem;
     background: url(../../assets/images/svg/dot.svg) no-repeat;
   }
 }
-.review-card__right .store-info .visit-store {
+.review-card__right .store-info .visit-store,
+.review-card__right .store-info .standard-shipping,
+.review-card__right .store-info .tire-replacement {
   font-weight: 400;
   line-height: 2rem;
   font-size: 1.5rem;
   color: #282a2e;
 }
 @media (min-width: 0px) and (max-width: 769px) {
-  .review-card__right .store-info .visit-store {
+  .review-card__right .store-info .visit-store,
+  .review-card__right .store-info .standard-shipping,
+  .review-card__right .store-info .tire-replacement {
     line-height: 1.8rem;
     font-size: 1.3rem;
     color: #5a5c60;
@@ -2202,6 +2252,14 @@ label {
 }
 .review-card__right .store-info .visit-store::before {
   background: url(../../assets/images/svg/repair.svg) no-repeat;
+  background-size: 2.4rem 2.4rem;
+}
+.review-card__right .store-info .standard-shipping::before {
+  background: url(../../assets/images/svg/delivery.svg) no-repeat;
+  background-size: 2.4rem 2.4rem;
+}
+.review-card__right .store-info .tire-replacement::before {
+  background: url(../../assets/images/svg/type=tire2.svg) no-repeat;
   background-size: 2.4rem 2.4rem;
 }
 .review-card__right .store-info .wheel-align {
@@ -2216,9 +2274,6 @@ label {
   background: url(../../assets/images/svg/type=repair.svg) no-repeat;
   background-size: 2.4rem 2.4rem;
 }
-.review-card__right .store-info .store-location {
-  margin-bottom: 1.6rem;
-}
 @media (min-width: 0px) and (max-width: 769px) {
   .review-card__right .store-info .store-location {
     margin-bottom: 0;
@@ -2231,6 +2286,7 @@ label {
 }
 .review-card__right .more-btn.product {
   width: 100%;
+  margin-top: 1.6rem;
 }
 
 .review-tag {
@@ -2271,6 +2327,34 @@ label {
 }
 .review-tag.gosoc::before {
   background: url(../../assets/images/svg/review_gosoc.svg) no-repeat;
+  background-size: 1.6rem 1.6rem;
+}
+.review-tag.clean::before {
+  background: url(../../assets/images/svg/review_clean.svg) no-repeat;
+  background-size: 1.6rem 1.6rem;
+}
+.review-tag.gaseongbi::before {
+  background: url(../../assets/images/svg/review_gaseongbi.svg) no-repeat;
+  background-size: 1.6rem 1.6rem;
+}
+.review-tag.chinjul::before {
+  background: url(../../assets/images/svg/review_chinjul.svg) no-repeat;
+  background-size: 1.6rem 1.6rem;
+}
+.review-tag.sulmyung::before {
+  background: url(../../assets/images/svg/review_sulmyung.svg) no-repeat;
+  background-size: 1.6rem 1.6rem;
+}
+.review-tag.ddabong::before {
+  background: url(../../assets/images/svg/review_ddabong.svg) no-repeat;
+  background-size: 1.6rem 1.6rem;
+}
+.review-tag.jaebangmun::before {
+  background: url(../../assets/images/svg/review_jaebangmun.svg) no-repeat;
+  background-size: 1.6rem 1.6rem;
+}
+.review-tag.huegesil::before {
+  background: url(../../assets/images/svg/review_huegesil.svg) no-repeat;
   background-size: 1.6rem 1.6rem;
 }
 

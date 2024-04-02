@@ -1,10 +1,13 @@
 .review-card {
   display: flex;
+  justify-content: space-between;
+  gap: 4rem;
   padding: 2rem;
   position: relative;
   background-color: $whitef6;
   border-radius: 0.8rem;
   box-sizing: border-box;
+  user-select: none;
   @include mobile {
     flex-direction: column;
     gap: 1.6rem;
@@ -56,8 +59,7 @@
     }
     .customer-review {
       max-width: 36.9rem;
-      height: 14rem;
-      margin: 1.6rem 0;
+      margin: 2rem 0;
       font-weight: 400;
       @include font15;
       color: $gray28;
@@ -90,6 +92,19 @@
       color: $gray5a;
       @include mobile {
         margin-bottom: 2.2rem;
+      }
+    }
+    .review-imgs {
+      display: flex;
+      gap: 0.8rem;
+      margin-bottom: 1.6rem;
+      li {
+        border-radius: 0.8rem;
+        overflow: hidden;
+        img {
+          width: 8rem;
+          aspect-ratio: 1/1;
+        }
       }
     }
     .review-tags {
@@ -230,15 +245,23 @@
             @include font13;
           }
         }
+        .review-customer {
+          @include font13;
+        }
       }
     }
     .store-info {
+      min-height: 8.6rem;
       @include mobile {
+        display: flex;
         flex-direction: column;
+        justify-content: center;
       }
       .visit-store,
       .wheel-align,
-      .store-location {
+      .store-location,
+      .standard-shipping,
+      .tire-replacement {
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -285,7 +308,9 @@
           }
         }
       }
-      .visit-store {
+      .visit-store,
+      .standard-shipping,
+      .tire-replacement {
         font-weight: 400;
         @include font15;
         color: $gray28;
@@ -293,10 +318,23 @@
           @include font13;
           color: $gray5a;
         }
+      }
+      .visit-store {
         &::before {
           @include bg("svg/repair.svg", $width: 2.4rem, $height: 2.4rem);
         }
       }
+      .standard-shipping {
+        &::before {
+          @include bg("svg/delivery.svg", $width: 2.4rem, $height: 2.4rem);
+        }
+      }
+      .tire-replacement {
+        &::before {
+          @include bg("svg/type=tire2.svg", $width: 2.4rem, $height: 2.4rem);
+        }
+      }
+
       .wheel-align {
         margin: 0.8rem 0;
         @include mobile {
@@ -307,7 +345,6 @@
         }
       }
       .store-location {
-        margin-bottom: 1.6rem;
         @include mobile {
           margin-bottom: 0;
           word-break: keep-all;
@@ -320,6 +357,7 @@
 
     .more-btn.product {
       width: 100%;
+      margin-top: 1.6rem;
     }
   }
 }
