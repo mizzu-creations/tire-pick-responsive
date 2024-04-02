@@ -208,12 +208,13 @@ label {
   }
 }
 
-.footer section, .main__buyoption-partnership, .main__monthly-special, .main__review {
+.footer section, .main__buyoption-partnership, .main__monthly-special, .main__mini-banner, .main__review {
   width: 118.4rem;
   margin: 0 auto;
+  padding: 4rem 3rem;
 }
 @media (min-width: 0px) and (max-width: 769px) {
-  .footer section, .main__buyoption-partnership, .main__monthly-special, .main__review {
+  .footer section, .main__buyoption-partnership, .main__monthly-special, .main__mini-banner, .main__review {
     width: 100%;
   }
 }
@@ -599,7 +600,6 @@ label {
   justify-content: space-between;
   align-items: center;
   gap: 4rem;
-  padding: 4rem 3rem;
 }
 @media (min-width: 0px) and (max-width: 769px) {
   .main__review {
@@ -709,6 +709,73 @@ label {
   flex-direction: column;
   gap: 2.5rem;
 }
+@media (min-width: 0px) and (max-width: 769px) {
+  .main__mini-banner {
+    padding: 1.6rem 0;
+    border-bottom: 0.8rem solid #f1f3f6;
+  }
+}
+.main__mini-banner .swiper-container {
+  position: relative;
+}
+.main__mini-banner .swiper-container .swiper.mini {
+  width: 100%;
+  height: 100%;
+}
+.main__mini-banner .swiper-container .swiper.mini .swiper-wrapper {
+  width: 100%;
+}
+@media (min-width: 0px) and (max-width: 769px) {
+  .main__mini-banner .swiper-container .swiper.mini .swiper-wrapper .swiper-slide {
+    width: 36rem !important;
+  }
+}
+.main__mini-banner .swiper-container .swiper.mini .swiper-wrapper .swiper-slide a {
+  display: flex;
+  justify-content: center;
+}
+.main__mini-banner .swiper-container .swiper.mini .swiper-wrapper .swiper-slide a img {
+  width: 58rem;
+  height: 12rem;
+}
+@media (min-width: 0px) and (max-width: 769px) {
+  .main__mini-banner .swiper-container .swiper.mini .swiper-wrapper .swiper-slide a img {
+    width: 32rem;
+    height: 8rem;
+  }
+}
+.main__mini-banner .swiper-container .swiper-button-next.mini,
+.main__mini-banner .swiper-container .swiper-button-prev.mini {
+  width: 4rem;
+  height: 4rem;
+  position: absolute;
+  top: 50%;
+  border-radius: 4rem;
+  background: url(../../assets/images/svg/arrow_next_swiper.svg) no-repeat;
+  box-shadow: rgba(0, 0, 0, 0.12) 0 0.2rem 0.8rem 0;
+}
+.main__mini-banner .swiper-container .swiper-button-next.mini::after,
+.main__mini-banner .swiper-container .swiper-button-prev.mini::after {
+  display: none;
+}
+.main__mini-banner .swiper-container .swiper-button-next.mini[aria-disabled=true],
+.main__mini-banner .swiper-container .swiper-button-prev.mini[aria-disabled=true] {
+  display: none;
+}
+@media (min-width: 0px) and (max-width: 769px) {
+  .main__mini-banner .swiper-container .swiper-button-next.mini,
+  .main__mini-banner .swiper-container .swiper-button-prev.mini {
+    display: none;
+  }
+}
+.main__mini-banner .swiper-container .swiper-button-next.mini {
+  right: -2rem;
+}
+.main__mini-banner .swiper-container .swiper-button-prev.mini {
+  left: -2rem;
+  transform: rotate(180deg);
+  box-shadow: rgba(0, 0, 0, 0.12) 0 -0.2rem 0.8rem 0;
+}
 .main__monthly-special {
   padding: 4rem 3rem 4rem;
 }
@@ -773,7 +840,6 @@ label {
   display: flex;
   justify-content: space-between;
   gap: 2.4rem;
-  padding: 4rem 3rem;
 }
 @media (min-width: 0px) and (max-width: 769px) {
   .main__buyoption-partnership {
@@ -896,6 +962,7 @@ label {
 .footer section {
   display: flex;
   justify-content: space-between;
+  padding: 0;
 }
 @media (min-width: 0px) and (max-width: 769px) {
   .footer section {

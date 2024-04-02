@@ -9,6 +9,7 @@
     @extend %layout-center;
     display: flex;
     justify-content: space-between;
+    padding: 0;
     @include mobile {
       gap: 2.4rem;
     }
