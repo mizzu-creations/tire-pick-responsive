@@ -795,43 +795,47 @@ label {
 }
 @media (min-width: 0px) and (max-width: 769px) {
   .main__monthly-special .swiper.monthly-special .swiper-wrapper .swiper-slide {
-    width: 26rem !important;
+    width: 28rem !important;
   }
 }
-.main__monthly-special .swiper.monthly-special .swiper-wrapper .swiper-slide figure {
+.main__monthly-special .swiper.monthly-special .swiper-wrapper .swiper-slide a {
+  display: flex;
+  justify-content: center;
+}
+.main__monthly-special .swiper.monthly-special .swiper-wrapper .swiper-slide a figure {
   display: flex;
   flex-direction: column;
   gap: 1.6rem;
 }
 @media (min-width: 0px) and (max-width: 769px) {
-  .main__monthly-special .swiper.monthly-special .swiper-wrapper .swiper-slide figure {
+  .main__monthly-special .swiper.monthly-special .swiper-wrapper .swiper-slide a figure {
     gap: 1.2rem;
-    margin-left: 2rem;
+    width: 24rem;
   }
 }
-.main__monthly-special .swiper.monthly-special .swiper-wrapper .swiper-slide figure div {
+.main__monthly-special .swiper.monthly-special .swiper-wrapper .swiper-slide a figure div {
   border-radius: 0.8rem;
   overflow: hidden;
 }
-.main__monthly-special .swiper.monthly-special .swiper-wrapper .swiper-slide figure div img {
+.main__monthly-special .swiper.monthly-special .swiper-wrapper .swiper-slide a figure div img {
   width: 100%;
 }
-.main__monthly-special .swiper.monthly-special .swiper-wrapper .swiper-slide figure figcaption {
+.main__monthly-special .swiper.monthly-special .swiper-wrapper .swiper-slide a figure figcaption {
   display: flex;
   flex-direction: column;
   gap: 0.2rem;
 }
-.main__monthly-special .swiper.monthly-special .swiper-wrapper .swiper-slide figure figcaption .section-title {
+.main__monthly-special .swiper.monthly-special .swiper-wrapper .swiper-slide a figure figcaption .section-title {
   padding-bottom: 0;
 }
-.main__monthly-special .swiper.monthly-special .swiper-wrapper .swiper-slide figure figcaption span:not(.section-title) {
+.main__monthly-special .swiper.monthly-special .swiper-wrapper .swiper-slide a figure figcaption span:not(.section-title) {
   line-height: 2.4rem;
   font-size: 1.7rem;
   font-weight: 500;
   color: #5a5c60;
 }
 @media (min-width: 0px) and (max-width: 769px) {
-  .main__monthly-special .swiper.monthly-special .swiper-wrapper .swiper-slide figure figcaption span:not(.section-title) {
+  .main__monthly-special .swiper.monthly-special .swiper-wrapper .swiper-slide a figure figcaption span:not(.section-title) {
     line-height: 1.8rem;
     font-size: 1.3rem;
   }
@@ -1628,9 +1632,7 @@ label {
   .product {
     display: flex;
     gap: 1.2rem;
-    width: 100%;
-    margin-left: 2rem;
-    margin-right: 1.6rem;
+    width: 32.8rem;
   }
 }
 .product__img {
@@ -2438,6 +2440,14 @@ label {
   .swiper-container .swiper.product-list .swiper-wrapper {
     height: 17.6rem;
     margin-bottom: 3.2rem;
+  }
+  .swiper-container .swiper.product-list .swiper-wrapper .swiper-slide {
+    display: flex;
+    justify-content: center;
+    width: 36.8rem;
+  }
+  .swiper-container .swiper.product-list .swiper-wrapper .swiper-slide a {
+    width: 32.8rem;
   }
 }
 .swiper-container .swiper.product-list .swiper-pagination {

@@ -5,7 +5,6 @@ const miniBannerSwiper = new Swiper(".swiper.mini", {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
   },
-
   breakpoints: {
     769: {
       slidesPerView: 2,

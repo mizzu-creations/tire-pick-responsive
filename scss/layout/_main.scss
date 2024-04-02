@@ -376,36 +376,40 @@
       .swiper-wrapper {
         .swiper-slide {
           @include mobile {
-            width: 26rem !important;
+            width: 28rem !important;
           }
-          figure {
+          a {
             display: flex;
-            flex-direction: column;
-            gap: 1.6rem;
-            @include mobile {
-              gap: 1.2rem;
-              margin-left: 2rem;
-            }
-            div {
-              border-radius: 0.8rem;
-              overflow: hidden;
-              img {
-                width: 100%;
-              }
-            }
-            figcaption {
+            justify-content: center;
+            figure {
               display: flex;
               flex-direction: column;
-              gap: 0.2rem;
-              .section-title {
-                padding-bottom: 0;
+              gap: 1.6rem;
+              @include mobile {
+                gap: 1.2rem;
+                width: 24rem;
               }
-              span:not(.section-title) {
-                @include font17;
-                font-weight: 500;
-                color: $gray5a;
-                @include mobile {
-                  @include font13;
+              div {
+                border-radius: 0.8rem;
+                overflow: hidden;
+                img {
+                  width: 100%;
+                }
+              }
+              figcaption {
+                display: flex;
+                flex-direction: column;
+                gap: 0.2rem;
+                .section-title {
+                  padding-bottom: 0;
+                }
+                span:not(.section-title) {
+                  @include font17;
+                  font-weight: 500;
+                  color: $gray5a;
+                  @include mobile {
+                    @include font13;
+                  }
                 }
               }
             }
