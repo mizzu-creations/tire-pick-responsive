@@ -98,6 +98,7 @@
     <script defer src="./js/productListSwiper.js"></script>
     <script defer src="./js/reviewCardSwiper.js"></script>
     <script defer src="./js/reviewMore.js"></script>
+    <script defer src="./js/imgGalleryModal.js"></script>
     <script defer src="./js/mainMiniBannerSwiper.js"></script>
     <script defer src="./js/monthlySwiper.js"></script>
     <script defer src="./js/mobileModalSwiper.js"></script>
@@ -772,6 +773,13 @@
             </div>
           </div>
         </div>
+        <dialog class="img-modal">
+          <div class="img-modal__wrap">
+            <button class="img-modal__btn prev"></button>
+            <button class="img-modal__btn next"></button>
+            <ul class="img-modal__gallery"></ul>
+          </div>
+        </dialog>
       </section>
       <section class="main__mini-banner">
         <div class="swiper-container">
@@ -915,7 +923,7 @@
           </div>
         </div>
       </section>
-      <section class="footer__bottom">
+      <section class="footer__bottom bottom">
         <ul class="footer__bottom__left">
           <li><a href="javascript:void(0)">인재채용</a></li>
           <li><a href="javascript:void(0)">개인정보처리방침</a></li>

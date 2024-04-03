@@ -149,8 +149,10 @@
     }
   }
   &__bottom {
+    &.bottom {
+      padding-top: 2.4rem;
+    }
     border-top: 0.1rem solid $graye7;
-    padding-top: 2.4rem;
     @include mobile {
       flex-direction: column;
     }
