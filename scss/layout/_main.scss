@@ -1,5 +1,7 @@
 .main {
   @include mobile {
+    display: flex;
+    flex-direction: column;
     width: 100%;
     min-width: 32rem;
     max-width: 76.8rem;
@@ -7,6 +9,7 @@
   &__menu {
     padding: 5rem 0;
     @include mobile {
+      order: 1;
       padding: 2rem;
       @include mobileDivider;
     }
@@ -102,6 +105,7 @@
     }
   }
   &__register {
+    order: 1;
     .m0auto {
       @include mobile {
         width: 100%;
@@ -161,9 +165,10 @@
       }
     }
   }
-  &__best {
+  &__best-seller {
     padding: 4rem 3rem;
     @include mobile {
+      order: 1;
       padding: 2.4rem 0 0 0;
       overflow: hidden;
       @include mobileDivider;
@@ -202,6 +207,7 @@
     gap: 4rem;
     @extend %layout-center;
     @include mobile {
+      order: 2;
       flex-direction: column;
       align-items: flex-start;
       gap: 2.4rem;
@@ -298,9 +304,22 @@
       }
     }
   }
+  &__lowest-price {
+    @include mobile {
+      order: 1;
+      @include mobileDivider;
+    }
+  }
+  &__rising-product {
+    @include mobile {
+      order: 3;
+      @include mobileDivider;
+    }
+  }
   &__mini-banner {
     @extend %layout-center;
     @include mobile {
+      order: 2;
       padding: 1.6rem 0;
       @include mobileDivider;
     }
@@ -363,6 +382,7 @@
     @extend %layout-center;
     padding: 4rem 3rem 4rem;
     @include mobile {
+      order: 4;
       padding: 2.4rem 0;
       @include mobileDivider;
       box-sizing: border-box;
@@ -418,12 +438,36 @@
       }
     }
   }
+  &__spring {
+    @include mobile {
+      order: 4;
+      @include mobileDivider;
+    }
+  }
+  &__women {
+    @include mobile {
+      order: 4;
+      @include mobileDivider;
+    }
+  }
+  &__wiper {
+    @include mobile {
+      order: 4;
+      @include mobileDivider;
+    }
+  }
+  &__storage {
+    @include mobile {
+      order: 4;
+    }
+  }
   &__buyoption-partnership {
     display: flex;
     justify-content: space-between;
     gap: 2.4rem;
     @extend %layout-center;
     @include mobile {
+      order: 4;
       gap: 0;
       width: 100%;
       max-width: $web;

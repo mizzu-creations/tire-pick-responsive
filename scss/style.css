@@ -345,6 +345,8 @@ label {
 
 @media (min-width: 0px) and (max-width: 769px) {
   .main {
+    display: flex;
+    flex-direction: column;
     width: 100%;
     min-width: 32rem;
     max-width: 76.8rem;
@@ -355,6 +357,7 @@ label {
 }
 @media (min-width: 0px) and (max-width: 769px) {
   .main__menu {
+    order: 1;
     padding: 2rem;
     border-bottom: 0.8rem solid #f1f3f6;
   }
@@ -484,6 +487,9 @@ label {
     max-width: 6rem;
   }
 }
+.main__register {
+  order: 1;
+}
 @media (min-width: 0px) and (max-width: 769px) {
   .main__register .m0auto {
     width: 100%;
@@ -553,44 +559,45 @@ label {
 .main__register .m0auto a span#lottie2 {
   width: 5.6rem;
 }
-.main__best {
+.main__best-seller {
   padding: 4rem 3rem;
 }
 @media (min-width: 0px) and (max-width: 769px) {
-  .main__best {
+  .main__best-seller {
+    order: 1;
     padding: 2.4rem 0 0 0;
     overflow: hidden;
     border-bottom: 0.8rem solid #f1f3f6;
   }
 }
-.main__best .m0auto {
+.main__best-seller .m0auto {
   position: relative;
   padding: 0;
 }
 @media (min-width: 0px) and (max-width: 769px) {
-  .main__best .m0auto {
+  .main__best-seller .m0auto {
     width: 100%;
   }
 }
 @media (min-width: 0px) and (max-width: 769px) {
-  .main__best .m0auto > h2 {
+  .main__best-seller .m0auto > h2 {
     margin-left: 2rem;
   }
 }
-.main__best .m0auto > span {
+.main__best-seller .m0auto > span {
   line-height: 2.4rem;
   font-size: 1.7rem;
   font-weight: 500;
   color: #5a5c60;
 }
 @media (min-width: 0px) and (max-width: 769px) {
-  .main__best .m0auto > span {
+  .main__best-seller .m0auto > span {
     margin-left: 2rem;
     line-height: 1.8rem;
     font-size: 1.3rem;
   }
 }
-.main__best .m0auto > button {
+.main__best-seller .m0auto > button {
   position: absolute;
   top: 2.4rem;
   right: 0;
@@ -603,6 +610,7 @@ label {
 }
 @media (min-width: 0px) and (max-width: 769px) {
   .main__review {
+    order: 2;
     flex-direction: column;
     align-items: flex-start;
     gap: 2.4rem;
@@ -710,7 +718,20 @@ label {
   gap: 2.5rem;
 }
 @media (min-width: 0px) and (max-width: 769px) {
+  .main__lowest-price {
+    order: 1;
+    border-bottom: 0.8rem solid #f1f3f6;
+  }
+}
+@media (min-width: 0px) and (max-width: 769px) {
+  .main__rising-product {
+    order: 3;
+    border-bottom: 0.8rem solid #f1f3f6;
+  }
+}
+@media (min-width: 0px) and (max-width: 769px) {
   .main__mini-banner {
+    order: 2;
     padding: 1.6rem 0;
     border-bottom: 0.8rem solid #f1f3f6;
   }
@@ -781,6 +802,7 @@ label {
 }
 @media (min-width: 0px) and (max-width: 769px) {
   .main__monthly-special {
+    order: 4;
     padding: 2.4rem 0;
     border-bottom: 0.8rem solid #f1f3f6;
     box-sizing: border-box;
@@ -840,6 +862,29 @@ label {
     font-size: 1.3rem;
   }
 }
+@media (min-width: 0px) and (max-width: 769px) {
+  .main__spring {
+    order: 4;
+    border-bottom: 0.8rem solid #f1f3f6;
+  }
+}
+@media (min-width: 0px) and (max-width: 769px) {
+  .main__women {
+    order: 4;
+    border-bottom: 0.8rem solid #f1f3f6;
+  }
+}
+@media (min-width: 0px) and (max-width: 769px) {
+  .main__wiper {
+    order: 4;
+    border-bottom: 0.8rem solid #f1f3f6;
+  }
+}
+@media (min-width: 0px) and (max-width: 769px) {
+  .main__storage {
+    order: 4;
+  }
+}
 .main__buyoption-partnership {
   display: flex;
   justify-content: space-between;
@@ -847,6 +892,7 @@ label {
 }
 @media (min-width: 0px) and (max-width: 769px) {
   .main__buyoption-partnership {
+    order: 4;
     gap: 0;
     width: 100%;
     max-width: 769px;
