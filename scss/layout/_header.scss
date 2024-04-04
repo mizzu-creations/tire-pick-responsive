@@ -56,7 +56,7 @@
           display: inline-block;
           width: 2.4rem;
           height: 2.4rem;
-          @include bg("svg/cart.svg", $x: right, $y: center);
+          @include bg("svg/icons/cart.svg", $x: right, $y: center);
           span {
             @include hide;
           }

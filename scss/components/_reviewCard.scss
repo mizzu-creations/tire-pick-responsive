@@ -338,7 +338,7 @@
         @include bg("svg/delivery.svg", $width: 2.4rem, $height: 2.4rem);
       }
       .replacement::before {
-        @include bg("svg/type=tire2.svg", $width: 2.4rem, $height: 2.4rem);
+        @include bg("svg/type/type=tire2.svg", $width: 2.4rem, $height: 2.4rem);
       }
       .service-item.wheelalign,
       .service-item.wheelbalance {
@@ -349,11 +349,15 @@
         }
       }
       .wheelalign::before {
-        @include bg("svg/type=repair.svg", $width: 2.4rem, $height: 2.4rem);
+        @include bg(
+          "svg/type/type=repair.svg",
+          $width: 2.4rem,
+          $height: 2.4rem
+        );
       }
       .wheelbalance::before {
         @include bg(
-          "svg/type=wheel-balance.svg",
+          "svg/type/type=wheel-balance.svg",
           $width: 2.4rem,
           $height: 2.4rem
         );
@@ -364,7 +368,11 @@
           word-break: keep-all;
         }
         &::before {
-          @include bg("svg/type=spot.svg", $width: 2.4rem, $height: 2.4rem);
+          @include bg(
+            "svg/type/type=spot.svg",
+            $width: 2.4rem,
+            $height: 2.4rem
+          );
         }
       }
     }

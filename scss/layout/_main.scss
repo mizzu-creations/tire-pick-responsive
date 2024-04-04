@@ -169,36 +169,6 @@
   &__best-seller {
     @include mobile {
       order: 1;
-      padding: 2.4rem 0 0 0;
-      overflow: hidden;
-      @include mobileDivider;
-    }
-    .list-wrap {
-      @extend %layout-center;
-      position: relative;
-      @include mobile {
-        width: 100%;
-        padding: 0;
-      }
-      > h2 {
-        @include mobile {
-          margin-left: 2rem;
-        }
-      }
-      > span {
-        @include font17;
-        font-weight: 500;
-        color: $gray5a;
-        @include mobile {
-          margin-left: 2rem;
-          @include font13;
-        }
-      }
-      > button {
-        position: absolute;
-        top: 6.5rem;
-        right: 3rem;
-      }
     }
   }
   &__review {
@@ -308,13 +278,11 @@
   &__lowest-price {
     @include mobile {
       order: 1;
-      @include mobileDivider;
     }
   }
   &__rising-product {
     @include mobile {
       order: 3;
-      @include mobileDivider;
     }
   }
   &__mini-banner {
@@ -442,19 +410,16 @@
   &__spring {
     @include mobile {
       order: 4;
-      @include mobileDivider;
     }
   }
   &__women {
     @include mobile {
       order: 4;
-      @include mobileDivider;
     }
   }
   &__wiper {
     @include mobile {
       order: 4;
-      @include mobileDivider;
     }
   }
   &__storage {

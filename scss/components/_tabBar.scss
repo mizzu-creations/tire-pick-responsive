@@ -29,7 +29,7 @@ $iconCount: length($icons);
           &:nth-child(#{$i}) {
             &.--active {
               a:before {
-                @include bg("svg/#{$icon}", $x: center);
+                @include bg("svg/icons/#{$icon}", $x: center);
               }
               span {
                 color: $gray28;
@@ -55,7 +55,7 @@ $iconCount: length($icons);
           }
           &:nth-child(#{$i}):not(--active) {
             a:before {
-              @include bg("svg/#{$inactiveIcon}", $x: center);
+              @include bg("svg/icons/#{$inactiveIcon}", $x: center);
             }
           }
         }

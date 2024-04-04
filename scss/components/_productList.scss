@@ -1,0 +1,33 @@
+section.product-list {
+  @include mobile {
+    padding: 2.4rem 0 0 0;
+    @include mobileDivider;
+  }
+  .list-wrap {
+    @extend %layout-center;
+    position: relative;
+    @include mobile {
+      width: 100%;
+      padding: 0;
+    }
+    > h2 {
+      @include mobile {
+        margin-left: 2rem;
+      }
+    }
+    > span {
+      @include font17;
+      font-weight: 500;
+      color: $gray5a;
+      @include mobile {
+        margin-left: 2rem;
+        @include font13;
+      }
+    }
+    > button {
+      position: absolute;
+      top: 6.5rem;
+      right: 3rem;
+    }
+  }
+}
