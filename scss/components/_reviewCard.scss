@@ -215,8 +215,13 @@
           font-weight: 500;
           font-size: 1.3rem;
           text-transform: uppercase;
-          background-color: $purple;
           color: $white;
+          &.hot {
+            background-color: $purple;
+          }
+          &.best {
+            background-color: $red;
+          }
           @include mobile {
             padding: 0.2rem 0.4rem;
             font-size: 1rem;
@@ -258,11 +263,7 @@
         flex-direction: column;
         justify-content: center;
       }
-      .visit-store,
-      .wheel-align,
-      .store-location,
-      .standard-shipping,
-      .tire-replacement {
+      .service-item {
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -272,6 +273,7 @@
           display: inline-block;
           width: 2.4rem;
           height: 2.4rem;
+
           @include mobile {
             display: none;
           }
@@ -283,6 +285,7 @@
             font-weight: 400;
             @include font15;
             color: $gray28;
+
             @include mobile {
               @include font13;
               color: $gray5a;
@@ -291,6 +294,7 @@
               font-weight: 400;
               @include font13;
               color: $gray96;
+
               @include mobile {
                 display: none;
               }
@@ -309,9 +313,9 @@
           }
         }
       }
-      .visit-store,
-      .standard-shipping,
-      .tire-replacement {
+      .visit,
+      .shipping,
+      .replacement {
         font-weight: 400;
         @include font15;
         color: $gray28;
@@ -320,30 +324,32 @@
           color: $gray5a;
         }
       }
-      .visit-store {
-        &::before {
-          @include bg("svg/repair.svg", $width: 2.4rem, $height: 2.4rem);
-        }
+      .visit::before {
+        @include bg("svg/repair.svg", $width: 2.4rem, $height: 2.4rem);
       }
-      .standard-shipping {
-        &::before {
-          @include bg("svg/delivery.svg", $width: 2.4rem, $height: 2.4rem);
-        }
+      .shipping::before {
+        @include bg("svg/delivery.svg", $width: 2.4rem, $height: 2.4rem);
       }
-      .tire-replacement {
-        &::before {
-          @include bg("svg/type=tire2.svg", $width: 2.4rem, $height: 2.4rem);
-        }
+      .replacement::before {
+        @include bg("svg/type=tire2.svg", $width: 2.4rem, $height: 2.4rem);
       }
-
-      .wheel-align {
+      .service-item.wheelalign,
+      .service-item.wheelbalance {
         margin: 0.8rem 0;
+
         @include mobile {
           margin: 0;
         }
-        &::before {
-          @include bg("svg/type=repair.svg", $width: 2.4rem, $height: 2.4rem);
-        }
+      }
+      .wheelalign::before {
+        @include bg("svg/type=repair.svg", $width: 2.4rem, $height: 2.4rem);
+      }
+      .wheelbalance::before {
+        @include bg(
+          "svg/type=wheel-balance.svg",
+          $width: 2.4rem,
+          $height: 2.4rem
+        );
       }
       .store-location {
         @include mobile {
@@ -355,7 +361,6 @@
         }
       }
     }
-
     .more-btn.product {
       width: 100%;
       margin-top: 1.6rem;

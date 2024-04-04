@@ -1,4 +1,21 @@
 const swiWrapper = document.querySelector(".swiper.review .swiper-wrapper");
+const tagDescriptions = {
+  jedong: "제동력이 좋아요",
+  seoungchagam: "승차감이 편안해요",
+  soeum: "소음이 없어요",
+  gosoc: "고속주행에도 안정적이에요",
+  clean: "잘 닦여요",
+  gaseongbi: "가성비가 좋아요",
+  chinjul: "친절해요",
+  sulmyung: "잘 설명해주셨어요",
+  ddabong: "작업이 만족스러워요",
+  jaebangmun: "재방문하고 싶어요",
+  huegesil: "휴게 공간이 있어요",
+  choisin: "최신 제품이에요",
+  budrum: "부드러워요",
+  mikrub: "비올 때 미끄럽지 않아요",
+  conur: "코너링할 때 좋아요",
+};
 const userReviewData = [
   {
     customerInfo: {
@@ -32,6 +49,10 @@ const userReviewData = [
         ddabong: false,
         jaebangmun: false,
         huegesil: false,
+        choisin: false,
+        budrum: false,
+        mikrub: false,
+        conur: false,
       },
       recommend: 4,
     },
@@ -57,7 +78,8 @@ const userReviewData = [
       visit: true,
       shipping: false,
       replacement: false,
-      wheelAlign: true,
+      wheelbalance: false,
+      wheelalign: true,
     },
   },
   {
@@ -90,6 +112,10 @@ const userReviewData = [
         ddabong: false,
         jaebangmun: false,
         huegesil: false,
+        choisin: false,
+        budrum: false,
+        mikrub: false,
+        conur: false,
       },
       recommend: 3,
     },
@@ -115,7 +141,8 @@ const userReviewData = [
       visit: false,
       shipping: true,
       replacement: false,
-      wheelAlign: false,
+      wheelbalance: false,
+      wheelalign: false,
     },
   },
   {
@@ -155,6 +182,10 @@ const userReviewData = [
         ddabong: true,
         jaebangmun: true,
         huegesil: true,
+        choisin: false,
+        budrum: false,
+        mikrub: false,
+        conur: false,
       },
       recommend: 1,
     },
@@ -180,7 +211,69 @@ const userReviewData = [
       visit: false,
       shipping: false,
       replacement: true,
-      wheelAlign: true,
+      wheelbalance: false,
+      wheelalign: true,
+    },
+  },
+  {
+    customerInfo: {
+      name: "김*미",
+      car: "벤츠 C-class",
+    },
+    review: {
+      star: 5,
+      date: "24.02.01",
+      text: `4개 한꺼번에 타이어를 교체했어요 <br>
+      승차감도 좋아지고  <br>
+      코너링시 쏠림 현상이 아예 없어졌어요  <br>
+      브리짓 스톤은 처음인데 잘선택한것 같아요 <br>
+      아울러 온라인주문해서 스피드메이트에서 시간맞춰 가니 너무 <br>
+      편리하고 좋았어요 가격도 좀더 저렴하구요 <br>
+      다음에 또 이용할려구요 !!`,
+      imgs: ["./assets/images/jpg/review_user04_img01.jpeg"],
+      tags: {
+        jedong: true,
+        seoungchagam: true,
+        soeum: false,
+        gosoc: false,
+        clean: false,
+        gaseongbi: false,
+        chinjul: false,
+        sulmyung: false,
+        ddabong: false,
+        jaebangmun: false,
+        huegesil: false,
+        choisin: false,
+        budrum: true,
+        mikrub: true,
+        conur: true,
+      },
+      recommend: 2,
+    },
+    product: {
+      label: {
+        hot: false,
+        best: false,
+      },
+      img: "./assets/images/webp/tire_br_turanzaSerenityPlus_1_45degree.webp",
+      brand: "브리지스톤",
+      title: "투란자 세레니티 플러스",
+      model: "225/45R17",
+    },
+    store: {
+      location: {
+        name: "스피드메이트 이마트마산점",
+        address: "경상남도 창원시",
+      },
+      countInfo: {
+        review: null,
+        visit: null,
+      },
+      visit: true,
+      shipping: false,
+      replacement: false,
+      wheelbalance: true,
+      wheelalign: false,
     },
   },
   {
@@ -210,6 +303,10 @@ const userReviewData = [
         ddabong: false,
         jaebangmun: false,
         huegesil: false,
+        choisin: false,
+        budrum: false,
+        mikrub: false,
+        conur: false,
       },
       recommend: 1,
     },
@@ -235,7 +332,8 @@ const userReviewData = [
       visit: true,
       shipping: false,
       replacement: false,
-      wheelAlign: true,
+      wheelbalance: false,
+      wheelalign: true,
     },
   },
   {
@@ -268,6 +366,10 @@ const userReviewData = [
         ddabong: false,
         jaebangmun: false,
         huegesil: false,
+        choisin: true,
+        budrum: true,
+        mikrub: false,
+        conur: true,
       },
       recommend: 3,
     },
@@ -293,223 +395,176 @@ const userReviewData = [
       visit: true,
       shipping: false,
       replacement: false,
-      wheelAlign: true,
+      wheelbalance: false,
+      wheelalign: true,
     },
   },
 ];
-userReviewData.forEach((data) => {
+function createReviewCard(data) {
   const { customerInfo, review, product, store } = data;
-  swiWrapper.insertAdjacentHTML(
-    "beforeend",
-    `<li class="swiper-slide review-card">
-      <span class="hide">고객리뷰</span>
-      <div class="review-card__left">
-        <div class="customer-cartype">
-          <span class="hide">고객명</span>
-          <span class="customer">${customerInfo.name}</span>
-          ${
-            customerInfo.car
-              ? `<span class="hide">차종</span>
-          <span class="cartype">${customerInfo.car}</span>`
-              : ""
-          }
-        </div>
-        <div class="star-rate">
-          <span class="hide">별점</span>
-          <div class="star">
-            ${`<img src="./assets/images/svg/star_gold.svg" alt="" />`.repeat(
-              review.star
-            )} ${`<img
-              src="./assets/images/svg/star_empty.svg"
-              alt=""
-            />`.repeat(5 - review.star)}
-          </div>
-          <span class="hide">작성 날짜</span>
-          <div class="date">${review.date}</div>
-        </div>
-        <span class="hide">리뷰내용</span>
-        <p class="customer-review">${review.text}</p>
-        <button class="review-more">더보기</button>
-        <span class="hide">리뷰이미지</span>
-        ${
-          review.imgs
-            ? `
-            <ul class="review-imgs">
-              ${review.imgs
-                .map(
-                  (img) => `
-                <li>
-                  <img src="${img}" alt="" />
-                </li>
-              `
-                )
-                .join("")}
-            </ul>
-            `
-            : ""
-        }
-        <span class="hide">리뷰태그</span>
-        <ul class="review-tags">
-          ${
-            review.tags.jedong
-              ? `
-          <li class="review-tag jedong">제동력이 좋아요</li>
-          `
-              : ""
-          } ${
-      review.tags.seoungchagam
-        ? `
-          <li class="review-tag seoungchagam">승차감이 편안해요</li>
-          `
-        : ""
-    } ${
-      review.tags.soeum
-        ? `
-          <li class="review-tag soeum">소음이 없어요</li>
-          `
-        : ""
-    } ${
-      review.tags.gosoc
-        ? `
-          <li class="review-tag gosoc">고속주행에도 안정적이에요</li>
-          `
-        : ""
-    } ${
-      review.tags.clean
-        ? `
-          <li class="review-tag clean">잘 닦여요</li>
-          `
-        : ""
-    } ${
-      review.tags.gaseongbi
-        ? `
-          <li class="review-tag gaseongbi">가성비가 좋아요</li>
-          `
-        : ""
-    } ${
-      review.tags.chinjul
-        ? `
-          <li class="review-tag chinjul">친절해요</li>
-          `
-        : ""
-    } ${
-      review.tags.sulmyung
-        ? `
-          <li class="review-tag sulmyung">잘 설명해주셨어요</li>
-          `
-        : ""
-    } ${
-      review.tags.ddabong
-        ? `
-          <li class="review-tag ddabong">작업이 만족스러워요</li>
-          `
-        : ""
-    } ${
-      review.tags.jaebangmun
-        ? `
-          <li class="review-tag jaebangmun">재방문하고 싶어요</li>
-          `
-        : ""
-    } ${
-      review.tags.huegesil
-        ? `
-          <li class="review-tag huegesil">휴게 공간이 있어요</li>
-          `
-        : ""
-    }
-        </ul>
-        <button class="recommend-btn" aria-label="추천버튼">
-          도움이 돼요 <span>${review.recommend}</span>
-        </button>
-      </div>
-      <div class="review-card__right">
-      ${
-        product.img
-          ? `<div class="product-info">
-      <div class="product-info__img">
-        ${product.label.hot ? `<span class="img-label hot">hot</span>` : ""}
-        ${product.label.best ? `<span class="img-label best">best</span>` : ""}
-        ${product.img ? ` <img src="${product.img}" alt="" />` : ""}
-      </div>
-      <div class="product-info__txt">
-        ${product.brand ? `<span class="brand">${product.brand}</span>` : ""} ${
-              product.title
-                ? `<span class="title">${product.title}</span
-        >`
-                : ""
-            } ${
-              product.model
-                ? `<span class="model"
-          >${product.model}</span
-        >`
-                : ""
-            } ${
-              store.countInfo.review
-                ? `<span class="location"
-          >${store.location.address}</span
-        >`
-                : ""
-            } ${
-              store.countInfo.review
-                ? `<span class="review-customer"
-          >리뷰 ${store.countInfo.review} ∙ 방문고객
-          ${store.countInfo.visit}</span
-        >`
-                : ""
-            }
-      </div>
-    </div>`
+
+  const customerCarType = customerInfo.car
+    ? `<span class="hide">차종</span>
+  <span class="cartype">${customerInfo.car}</span>`
+    : "";
+  const reviewTags = createReviewTags(review.tags);
+
+  const reviewCardHTML = `<li class="swiper-slide review-card">
+  <span class="hide">고객리뷰</span>
+  <div class="review-card__left">
+    <div class="customer-cartype">
+      <span class="hide">고객명</span>
+      <span class="customer">${customerInfo.name}</span>
+      ${customerCarType}
+    </div>
+    ${createStarRate(review.star)}
+      <span class="hide">작성 날짜</span>
+      <div class="date">${review.date}</div>
+    </div>
+    <span class="hide">리뷰내용</span>
+    <p class="customer-review">${review.text}</p>
+    <button class="review-more">더보기</button>
+    ${createReviewImages(review.imgs)}
+    <span class="hide">리뷰태그</span>
+    <ul class="review-tags">
+      ${reviewTags}
+    </ul>
+    <button class="recommend-btn" aria-label="추천버튼">
+      도움이 돼요 <span>${review.recommend}</span>
+    </button>
+  </div>
+  <div class="review-card__right">
+  ${createProductInfo(product, store)}
+  ${createStoreInfo(store)}
+  ${createMoreButton(product, store)}
+  </div>
+</li>`;
+  return reviewCardHTML;
+}
+function createReviewTags(tags) {
+  return Object.entries(tags)
+    .filter(([_, value]) => value)
+    .map(
+      ([key]) => `<li class="review-tag ${key}">${tagDescriptions[key]}</li>`
+    )
+    .join("");
+}
+function createStarRate(star) {
+  return `<div class="star-rate">
+<span class="hide">별점</span>
+<div class="star">
+  ${`<img src="./assets/images/svg/star_gold.svg" alt="" />`.repeat(
+    star
+  )} ${`<img
+    src="./assets/images/svg/star_empty.svg"
+    alt=""
+  />`.repeat(5 - star)}
+</div>`;
+}
+function createReviewImages(imgs) {
+  return `<span class="hide">리뷰이미지</span>
+${
+  imgs
+    ? `
+    <ul class="review-imgs">
+      ${imgs
+        .map(
+          (img) => `
+        <li>
+          <img src="${img}" alt="" />
+        </li>
+      `
+        )
+        .join("")}
+    </ul>
+    `
+    : ""
+}`;
+}
+function createProductInfo(product, store) {
+  const productLabel = product.label.hot
+    ? `
+    <span class="img-label hot">hot</span>`
+    : product.label.best
+    ? `<span class="img-label best">best</span>`
+    : "";
+  const productImage = product.img ? `<img src="${product.img}" alt="" />` : "";
+  return productImage
+    ? `<div class="product-info">
+    <div class="product-info__img">${productLabel} ${productImage}</div>
+    <div class="product-info__txt">
+      ${product.brand ? `<span class="brand">${product.brand}</span>` : ""} ${
+        product.title ? `<span class="title">${product.title}</span>` : ""
+      } ${product.model ? `<span class="model">${product.model}</span>` : ""} ${
+        store.countInfo.review
+          ? `<span class="location"
+        >${store.location.address}</span
+      >`
+          : ""
+      } ${
+        store.countInfo.review
+          ? `<span class="review-customer"
+        >리뷰 ${store.countInfo.review} ∙ 방문고객
+        ${store.countInfo.visit}</span
+      >`
           : ""
       }
-        <div class="store-info">
-          ${
-            store.visit
-              ? `
-          <div class="visit-store"><span>매장방문</span></div>
-          `
-              : ""
-          } ${
-      store.shipping
-        ? `
-          <div class="standard-shipping">일반 배송</div>
-          `
-        : ""
-    } ${
-      store.replacement
-        ? `
-          <div class="tire-replacement">타이어 교체</div>
-          `
-        : ""
-    } ${
-      store.wheelAlign
-        ? `
-          <div class="wheel-align">
-            <div><span>휠 얼라인먼트</span><span>추가</span></div>
-          </div>
-          `
-        : ""
-    } ${
-      store.location.name
-        ? `
-          <div class="store-location">
-            <div>
-              <span>${store.location.name}</span>
-              <span>${store.location.address}</span>
-            </div>
-          </div>
-          `
-        : ""
+    </div>
+  </div>`
+    : "";
+}
+const service = {
+  visit: "매장방문",
+  shipping: "일반 배송",
+  replacement: "타이어 교체",
+  wheelbalance: {
+    type: "휠 밸런스",
+    option: "기본",
+  },
+  wheelalign: { type: "휠 얼라인먼트", option: "추가" },
+};
+function createServiceItem(service, data) {
+  return `<div class="service-item ${service}">
+            ${
+              data &&
+              `<div><span>${data.type}</span><span>${data.option}</span></div>`
+            }
+          </div>`;
+}
+function createStoreInfo(store) {
+  let storeInfoHTML = `<div class="store-info">`;
+  const storeLocation = store.location.name
+    ? `
+  <div class="service-item store-location">
+    <div>
+      <span>${store.location.name}</span>
+      <span>${store.location.address}</span>
+    </div>
+  </div>
+  `
+    : "";
+  for (const key in store) {
+    if (typeof store[key] === "boolean" && store[key]) {
+      if (typeof service[key] === "object") {
+        storeInfoHTML += createServiceItem(key, service[key]);
+      } else {
+        storeInfoHTML += `<div class="service-item ${key}">${service[key]}</div>`;
+      }
     }
-        </div>
-        ${
-          product.img
-            ? `<button class="more-btn product">상품 보기</button>`
-            : ""
-        }
-      </div>
-    </li>
-    `
-  );
+  }
+  storeInfoHTML += `${storeLocation}</div>`;
+  return storeInfoHTML;
+}
+function createMoreButton(product, store) {
+  return product.model
+    ? `<button class="more-btn product">상품 보기</button>`
+    : store.countInfo.review
+    ? `<button class="more-btn product">매장 보기</button>`
+    : "";
+}
+
+userReviewData.forEach((data) => {
+  swiWrapper.insertAdjacentHTML("beforeend", createReviewCard(data));
 });
 
 const reviewSlide = document.querySelectorAll(".review .swiper-slide");

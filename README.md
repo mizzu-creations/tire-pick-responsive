@@ -12,3 +12,5 @@
 - figure, figcaption
 - picture로 반응형
 - aside <- 전체 콘텐츠와 상관없을 때
+
+- 공통 데이터 구조화 후 리뷰 카드 렌더링
