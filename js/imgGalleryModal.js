@@ -20,6 +20,12 @@ function closeGallery() {
   imgPrevBtn.removeEventListener("click", prevButtonClickHandler);
   imgNextBtn.removeEventListener("click", nextButtonClickHandler);
 }
+function renderPrevNextBtn() {
+  if (imageUrls.length === 1) {
+    imgPrevBtn.style.display = "none";
+    imgNextBtn.style.display = "none";
+  }
+}
 function renderGallery() {
   gallery.innerHTML = imageUrls
     .map(
@@ -31,6 +37,7 @@ function renderGallery() {
     )
     .join("");
 
+  renderPrevNextBtn();
   showImage(imageIndex);
 
   imgPrevBtn.addEventListener("click", prevButtonClickHandler);

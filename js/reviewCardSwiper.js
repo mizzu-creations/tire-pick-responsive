@@ -38,6 +38,7 @@ const userReviewData = [
     product: {
       label: {
         hot: true,
+        best: false,
       },
       img: "./assets/images/webp/tire_kh_hp71_11_45degree.webp",
       brand: "금호",
@@ -95,6 +96,7 @@ const userReviewData = [
     product: {
       label: {
         hot: false,
+        best: false,
       },
       img: "./assets/images/webp/wiper_2023_12_137a702ggjj2456.webp",
       brand: "BOSCH",
@@ -159,6 +161,7 @@ const userReviewData = [
     product: {
       label: {
         hot: false,
+        best: false,
       },
       img: "./assets/images/png/tire-pick-repair-shop.png",
       brand: null,
@@ -213,6 +216,7 @@ const userReviewData = [
     product: {
       label: {
         hot: false,
+        best: false,
       },
       img: null,
       brand: null,
@@ -234,11 +238,67 @@ const userReviewData = [
       wheelAlign: true,
     },
   },
+  {
+    customerInfo: {
+      name: "김*휘",
+      car: "르노삼성 QM6",
+    },
+    review: {
+      star: 4,
+      date: "24.04.04",
+      text: `아 ~~ 이것이 타이어픽이지요 <br>
+      <br>
+      싸다 싸 ~~ 거기에 23년 52주생산 <br>
+      <br>
+      거의 거저주는 가격이네요 <br>
+      <br>
+      매장 80만원 달라던데 여기서 54만원에 해결 <br>
+      <br>
+      베리 베리 굿`,
+      imgs: ["./assets/images/jpg/review_user03_img01.jpeg"],
+      tags: {
+        jedong: false,
+        seoungchagam: true,
+        soeum: false,
+        gosoc: true,
+        clean: false,
+        gaseongbi: false,
+        chinjul: false,
+        sulmyung: false,
+        ddabong: false,
+        jaebangmun: false,
+        huegesil: false,
+      },
+      recommend: 3,
+    },
+    product: {
+      label: {
+        hot: false,
+        best: true,
+      },
+      img: "./assets/images/webp/tire_kh_hp71_11_45degree.webp",
+      brand: "금호",
+      title: "크루젠 HP71",
+      model: "235/55R18",
+    },
+    store: {
+      location: {
+        name: "스피드메이트 포항신덕점",
+        address: "경상북도 포항시",
+      },
+      countInfo: {
+        review: null,
+        visit: null,
+      },
+      visit: true,
+      shipping: false,
+      replacement: false,
+      wheelAlign: true,
+    },
+  },
 ];
-
 userReviewData.forEach((data) => {
   const { customerInfo, review, product, store } = data;
-
   swiWrapper.insertAdjacentHTML(
     "beforeend",
     `<li class="swiper-slide review-card">
@@ -274,18 +334,18 @@ userReviewData.forEach((data) => {
         ${
           review.imgs
             ? `
-        <ul class="review-imgs">
-          <li>
-            <img src="${review.imgs[0]}" alt="" />
-          </li>
-          <li>
-            <img src="${review.imgs[1]}" alt="" />
-          </li>
-          <li>
-            <img src="${review.imgs[2]}" alt="" />
-          </li>
-        </ul>
-        `
+            <ul class="review-imgs">
+              ${review.imgs
+                .map(
+                  (img) => `
+                <li>
+                  <img src="${img}" alt="" />
+                </li>
+              `
+                )
+                .join("")}
+            </ul>
+            `
             : ""
         }
         <span class="hide">리뷰태그</span>
@@ -367,7 +427,8 @@ userReviewData.forEach((data) => {
         product.img
           ? `<div class="product-info">
       <div class="product-info__img">
-        ${product.label.hot ? `<span class="img-label">hot</span>` : ""}
+        ${product.label.hot ? `<span class="img-label hot">hot</span>` : ""}
+        ${product.label.best ? `<span class="img-label best">best</span>` : ""}
         ${product.img ? ` <img src="${product.img}" alt="" />` : ""}
       </div>
       <div class="product-info__txt">
