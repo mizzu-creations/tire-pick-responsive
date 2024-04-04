@@ -208,21 +208,15 @@ label {
   }
 }
 
-.footer section, .main__buyoption-partnership, .main__monthly-special, .main__mini-banner, .main__review {
+.footer section, .main__buyoption-partnership, .main__monthly-special, .main__mini-banner, .main__review, .main__best-seller .list-wrap, .main__register > div, .main__menu ul, .header section {
   width: 118.4rem;
   margin: 0 auto;
   padding: 4rem 3rem;
 }
 @media (min-width: 0px) and (max-width: 769px) {
-  .footer section, .main__buyoption-partnership, .main__monthly-special, .main__mini-banner, .main__review {
+  .footer section, .main__buyoption-partnership, .main__monthly-special, .main__mini-banner, .main__review, .main__best-seller .list-wrap, .main__register > div, .main__menu ul, .header section {
     width: 100%;
   }
-}
-
-.m0auto {
-  width: 118.4rem;
-  margin: 0 auto;
-  padding: 0 3rem;
 }
 
 .header {
@@ -239,23 +233,23 @@ label {
     box-sizing: border-box;
   }
 }
-.header .m0auto {
+.header section {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   gap: 4rem;
+  padding: 0 3rem;
 }
 @media (min-width: 0px) and (max-width: 769px) {
-  .header .m0auto {
+  .header section {
     width: 100%;
     padding: 0;
   }
 }
-.header .m0auto .logo {
+.header section .logo {
   font-size: 0;
 }
 @media (min-width: 0px) and (max-width: 769px) {
-  .header .m0auto .logo img {
+  .header section .logo img {
     width: 12.8rem;
   }
 }
@@ -352,9 +346,6 @@ label {
     max-width: 76.8rem;
   }
 }
-.main__menu {
-  padding: 5rem 0;
-}
 @media (min-width: 0px) and (max-width: 769px) {
   .main__menu {
     order: 1;
@@ -362,56 +353,52 @@ label {
     border-bottom: 0.8rem solid #f1f3f6;
   }
 }
-@media (min-width: 0px) and (max-width: 769px) {
-  .main__menu .m0auto {
-    width: 100%;
-    padding: 0;
-  }
-}
-.main__menu .m0auto ul {
+.main__menu ul {
   display: flex;
   justify-content: space-between;
 }
 @media (min-width: 0px) and (max-width: 769px) {
-  .main__menu .m0auto ul {
+  .main__menu ul {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 1.2rem 1rem;
+    width: 100%;
+    padding: 0;
   }
 }
 @media (min-width: 0px) and (max-width: 769px) {
-  .main__menu .m0auto ul li:nth-child(1) {
+  .main__menu ul li:nth-child(1) {
     order: 1;
   }
-  .main__menu .m0auto ul li:nth-child(2) {
+  .main__menu ul li:nth-child(2) {
     order: 7;
   }
-  .main__menu .m0auto ul li:nth-child(3) {
+  .main__menu ul li:nth-child(3) {
     order: 3;
   }
-  .main__menu .m0auto ul li:nth-child(4) {
+  .main__menu ul li:nth-child(4) {
     order: 4;
   }
-  .main__menu .m0auto ul li:nth-child(5) {
+  .main__menu ul li:nth-child(5) {
     order: 5;
   }
-  .main__menu .m0auto ul li:nth-child(6) {
+  .main__menu ul li:nth-child(6) {
     order: 6;
   }
-  .main__menu .m0auto ul li:nth-child(7) {
+  .main__menu ul li:nth-child(7) {
     order: 7;
   }
-  .main__menu .m0auto ul li:nth-child(8) {
+  .main__menu ul li:nth-child(8) {
     order: 8;
   }
-  .main__menu .m0auto ul li:nth-child(9) {
+  .main__menu ul li:nth-child(9) {
     order: 9;
   }
-  .main__menu .m0auto ul li:nth-child(10) {
+  .main__menu ul li:nth-child(10) {
     order: 10;
   }
 }
-.main__menu .m0auto ul li a {
+.main__menu ul li a {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -422,16 +409,16 @@ label {
   white-space: nowrap;
 }
 @media (min-width: 0px) and (max-width: 769px) {
-  .main__menu .m0auto ul li a {
+  .main__menu ul li a {
     font-size: 1.1rem;
   }
 }
 @media (min-width: 0px) and (max-width: 380px) {
-  .main__menu .m0auto ul li a {
+  .main__menu ul li a {
     font-size: 0.92rem;
   }
 }
-.main__menu .m0auto ul li a.new span::after {
+.main__menu ul li a.new span::after {
   content: "";
   width: 1.6rem;
   height: 1.6rem;
@@ -441,12 +428,12 @@ label {
   background: url(../../assets/images/svg/new.svg) no-repeat right top;
 }
 @media (min-width: 0px) and (max-width: 769px) {
-  .main__menu .m0auto ul li a.new span::after {
+  .main__menu ul li a.new span::after {
     top: -0.2rem;
     right: -0.2rem;
   }
 }
-.main__menu .m0auto ul li a span {
+.main__menu ul li a span {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -456,19 +443,19 @@ label {
   border-radius: 2.4rem;
   background-color: #f1f3f6;
 }
-.main__menu .m0auto ul li a span#lottie1 {
+.main__menu ul li a span#lottie1 {
   overflow: hidden;
 }
 @media (min-width: 0px) and (max-width: 769px) {
-  .main__menu .m0auto ul li a span#lottie1 {
+  .main__menu ul li a span#lottie1 {
     padding: 0;
   }
 }
-.main__menu .m0auto ul li a span.quality {
+.main__menu ul li a span.quality {
   background-color: #c61515;
 }
 @media (min-width: 0px) and (max-width: 769px) {
-  .main__menu .m0auto ul li a span {
+  .main__menu ul li a span {
     width: 100%;
     max-width: 8rem;
     height: auto;
@@ -478,11 +465,11 @@ label {
     padding: 0.6rem;
   }
 }
-.main__menu .m0auto ul li a span img {
+.main__menu ul li a span img {
   width: 6rem;
 }
 @media (min-width: 0px) and (max-width: 769px) {
-  .main__menu .m0auto ul li a span img {
+  .main__menu ul li a span img {
     width: 100%;
     max-width: 6rem;
   }
@@ -491,44 +478,52 @@ label {
   order: 1;
 }
 @media (min-width: 0px) and (max-width: 769px) {
-  .main__register .m0auto {
+  .main__register {
+    padding: 1rem 2rem;
+  }
+}
+.main__register > div {
+  padding: 0 3rem;
+}
+@media (min-width: 0px) and (max-width: 769px) {
+  .main__register > div {
     width: 100%;
     padding: 0;
   }
 }
-.main__register .m0auto a {
+.main__register > div a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #fff;
   padding: 0.4rem 2.4rem;
+  background-color: #fff;
   border: 0.1rem solid #eceef1;
   border-radius: 0.8rem;
   box-shadow: rgba(0, 0, 0, 0.06) 0 0.2rem 0.4rem 0;
 }
 @media (min-width: 0px) and (max-width: 769px) {
-  .main__register .m0auto a {
-    padding: 1rem 2rem;
+  .main__register > div a {
+    padding: 0;
     border: none;
     border-bottom: 0.1rem solid #f1f3f6;
     border-radius: 0;
     box-shadow: none;
   }
 }
-.main__register .m0auto a span {
+.main__register > div a span {
   display: flex;
 }
-.main__register .m0auto a span .register-text {
+.main__register > div a span .register-text {
   display: flex;
   align-items: center;
 }
 @media (min-width: 0px) and (max-width: 769px) {
-  .main__register .m0auto a span .register-text {
+  .main__register > div a span .register-text {
     flex-direction: column;
     align-items: baseline;
   }
 }
-.main__register .m0auto a span .register-text .title {
+.main__register > div a span .register-text .title {
   margin: 0 0.8rem 0 1.2rem;
   line-height: 2.4rem;
   font-size: 1.7rem;
@@ -536,31 +531,28 @@ label {
   color: #282a2e;
 }
 @media (min-width: 0px) and (max-width: 769px) {
-  .main__register .m0auto a span .register-text .title {
+  .main__register > div a span .register-text .title {
     line-height: 2rem;
     font-size: 1.5rem;
   }
 }
-.main__register .m0auto a span .register-text .license {
+.main__register > div a span .register-text .license {
   line-height: 2rem;
   font-size: 1.5rem;
   font-weight: 500;
   color: #5a5c60;
 }
 @media (min-width: 0px) and (max-width: 769px) {
-  .main__register .m0auto a span .register-text .license {
+  .main__register > div a span .register-text .license {
     font-size: 1.4rem;
   }
 }
-.main__register .m0auto a span .register-text .license strong {
+.main__register > div a span .register-text .license strong {
   margin-left: 0.4rem;
   color: #7b3ff1;
 }
-.main__register .m0auto a span#lottie2 {
+.main__register > div a span#lottie2 {
   width: 5.6rem;
-}
-.main__best-seller {
-  padding: 4rem 3rem;
 }
 @media (min-width: 0px) and (max-width: 769px) {
   .main__best-seller {
@@ -570,37 +562,37 @@ label {
     border-bottom: 0.8rem solid #f1f3f6;
   }
 }
-.main__best-seller .m0auto {
+.main__best-seller .list-wrap {
   position: relative;
-  padding: 0;
 }
 @media (min-width: 0px) and (max-width: 769px) {
-  .main__best-seller .m0auto {
+  .main__best-seller .list-wrap {
     width: 100%;
+    padding: 0;
   }
 }
 @media (min-width: 0px) and (max-width: 769px) {
-  .main__best-seller .m0auto > h2 {
+  .main__best-seller .list-wrap > h2 {
     margin-left: 2rem;
   }
 }
-.main__best-seller .m0auto > span {
+.main__best-seller .list-wrap > span {
   line-height: 2.4rem;
   font-size: 1.7rem;
   font-weight: 500;
   color: #5a5c60;
 }
 @media (min-width: 0px) and (max-width: 769px) {
-  .main__best-seller .m0auto > span {
+  .main__best-seller .list-wrap > span {
     margin-left: 2rem;
     line-height: 1.8rem;
     font-size: 1.3rem;
   }
 }
-.main__best-seller .m0auto > button {
+.main__best-seller .list-wrap > button {
   position: absolute;
-  top: 2.4rem;
-  right: 0;
+  top: 6.5rem;
+  right: 3rem;
 }
 .main__review {
   display: flex;
