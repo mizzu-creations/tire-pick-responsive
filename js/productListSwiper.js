@@ -11,7 +11,7 @@ const productList = [
     price: 125000,
     rate: 4.7,
     review: 2833,
-    keywords: { 1: "사계절용", 2: "SUV", 3: "고급형" },
+    keywords: { 1: "사계절용", 2: "SUV", 3: "고급형", 4: "품절임박 잔여 1개" },
   },
   {
     rank: 2,
@@ -135,59 +135,62 @@ const productList = [
 const addComma = (number) => {
   return number.toLocaleString();
 };
+
+const swiperSectons = document.querySelectorAll(".product-list .swiper");
+
 const createProductCard = () => {
-  const swiperWrapper = document.querySelector(
-    ".swiper.product-list .swiper-wrapper"
-  );
-  productList.forEach((data) => {
-    swiperWrapper.insertAdjacentHTML(
-      "beforeend",
-      `<div class="swiper-slide">
-    <a href="javascript:void(0)">
-      <figure class="product">
-        <div class="product__img">
-          <span class="product__img__rank">${data.rank}위</span>
-          <img src="${data.tireImg}" alt="" class="product__img__tire">
-          <img src="${data.brandImg}" alt="브랜드" class="product__img__mark">
-        </div>
-        <figcaption class="product__info">
-          <div class="product__info__brand"><span class="hide">브랜드</span>${
-            data.brand
-          }</div>
-          <div class="product__info__title"><span class="hide">제품명</span>${
-            data.title
-          }</div>
-          <div class="product__info__model"><span class="hide">모델명</span>${
-            data.model
-          }</div>
-          <div class="product__info__price">
-            <span class="hide">할인율</span>
-            <span class="product__info__price__discount">${
-              data.discount
-            }%</span>
-            <span class="hide">가격</span>
-            <span class="product__info__price__value">${addComma(
-              data.price
-            )}원</span>
+  swiperSectons.forEach((section) => {
+    const wrapper = section.querySelector(".swiper-wrapper");
+    productList.forEach((data) => {
+      wrapper.insertAdjacentHTML(
+        "beforeend",
+        `<div class="swiper-slide">
+      <a href="javascript:void(0)">
+        <figure class="product">
+          <div class="product__img">
+            <span class="product__img__rank">${data.rank}위</span>
+            <img src="${data.tireImg}" alt="" class="product__img__tire">
+            <img src="${data.brandImg}" alt="브랜드" class="product__img__mark">
           </div>
-          <div class="product__info__review">
-            <span class="hide">별점</span>
-            <span class="product__info__review__rate">${data.rate}</span>
-            <span class="hide">리뷰</span>
-            <span class="product__info__review__count">리뷰 ${addComma(
-              data.review
-            )}</span>
-          </div>
-          <ul class="product__info__keywords">
-            <li>${data.keywords[1]}</li>
-            <li>${data.keywords[2]}</li>
-            <li>${data.keywords[3]}</li>
-        </ul>
-        </figcaption>
-      </figure>
-    </a>
-  </div>`
-    );
+          <figcaption class="product__info">
+            <div class="product__info__brand"><span class="hide">브랜드</span>${
+              data.brand
+            }</div>
+            <div class="product__info__title"><span class="hide">제품명</span>${
+              data.title
+            }</div>
+            <div class="product__info__model"><span class="hide">모델명</span>${
+              data.model
+            }</div>
+            <div class="product__info__price">
+              <span class="hide">할인율</span>
+              <span class="product__info__price__discount">${
+                data.discount
+              }%</span>
+              <span class="hide">가격</span>
+              <span class="product__info__price__value">${addComma(
+                data.price
+              )}원</span>
+            </div>
+            <div class="product__info__review">
+              <span class="hide">별점</span>
+              <span class="product__info__review__rate">${data.rate}</span>
+              <span class="hide">리뷰</span>
+              <span class="product__info__review__count">리뷰 ${addComma(
+                data.review
+              )}</span>
+            </div>
+            <ul class="product__info__keywords">
+            ${Object.values(data.keywords)
+              .map((keyword) => `<li>${keyword}</li>`)
+              .join("")}
+          </ul>
+          </figcaption>
+        </figure>
+      </a>
+    </div>`
+      );
+    });
   });
 };
 const changeRankColor = () => {
@@ -200,21 +203,26 @@ const changeRankColor = () => {
 createProductCard();
 changeRankColor();
 
-const productListswiper = new Swiper(".swiper.product-list", {
-  slidesPerView: "auto",
-  spaceBetween: -40,
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: false,
-  },
-  breakpoints: {
-    769: {
-      slidesPerView: 4,
-      spaceBetween: 24,
+swiperSectons.forEach((section) => {
+  const uniqueClassName = Array.from(section.classList).find(
+    (className) => className !== "swiper" && className !== "product-list"
+  );
+  new Swiper(`.swiper.${uniqueClassName}`, {
+    slidesPerView: "auto",
+    spaceBetween: -40,
+    pagination: {
+      el: `.swiper-pagination.${uniqueClassName}`,
+      clickable: false,
     },
-  },
-  navigation: {
-    nextEl: ".swiper-button-next.product-list",
-    prevEl: ".swiper-button-prev.product-list",
-  },
+    breakpoints: {
+      769: {
+        slidesPerView: 4,
+        spaceBetween: 24,
+      },
+    },
+    navigation: {
+      nextEl: `.swiper-button-next.${uniqueClassName}`,
+      prevEl: `.swiper-button-prev.${uniqueClassName}`,
+    },
+  });
 });

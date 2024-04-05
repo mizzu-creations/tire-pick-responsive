@@ -1,7 +1,9 @@
 section.product-list {
   @include mobile {
     padding: 2.4rem 0 0 0;
-    @include mobileDivider;
+    &:not(.main__storage) {
+      @include mobileDivider;
+    }
   }
   .list-wrap {
     @extend %layout-center;
@@ -9,6 +11,9 @@ section.product-list {
     &:has(.section-description) {
       > h2 {
         padding-bottom: 0;
+      }
+      .swiper-container {
+        padding-top: 1.6rem;
       }
     }
     @include mobile {

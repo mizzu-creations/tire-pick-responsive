@@ -1832,6 +1832,8 @@ section.product-list .list-wrap, .footer section, .main__buyoption-partnership, 
 @media (min-width: 0px) and (max-width: 769px) {
   section.product-list {
     padding: 2.4rem 0 0 0;
+  }
+  section.product-list:not(.main__storage) {
     border-bottom: 0.8rem solid #f1f3f6;
   }
 }
@@ -1840,6 +1842,9 @@ section.product-list .list-wrap {
 }
 section.product-list .list-wrap:has(.section-description) > h2 {
   padding-bottom: 0;
+}
+section.product-list .list-wrap:has(.section-description) .swiper-container {
+  padding-top: 1.6rem;
 }
 @media (min-width: 0px) and (max-width: 769px) {
   section.product-list .list-wrap {
