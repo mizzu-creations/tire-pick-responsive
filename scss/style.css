@@ -971,7 +971,7 @@ section.product-list .list-wrap, .footer section, .main__buyoption-partnership, 
     gap: 2.4rem;
   }
 }
-.footer__top {
+.footer__top.top {
   padding-bottom: 2.4rem;
 }
 @media (min-width: 0px) and (max-width: 769px) {
@@ -1838,11 +1838,34 @@ section.product-list .list-wrap, .footer section, .main__buyoption-partnership, 
 section.product-list .list-wrap {
   position: relative;
 }
+section.product-list .list-wrap:has(.section-description) > h2 {
+  padding-bottom: 0;
+}
 @media (min-width: 0px) and (max-width: 769px) {
   section.product-list .list-wrap {
     width: 100%;
     padding: 0;
   }
+}
+section.product-list .list-wrap > h2 {
+  display: flex;
+  align-items: center;
+}
+section.product-list .list-wrap > h2:has(> span.product) > span.product::before {
+  content: "";
+  display: inline-block;
+  width: 0.1rem;
+  height: 1.8rem;
+  margin: 0 1.2rem;
+  background-color: #dddfe2;
+}
+section.product-list .list-wrap > h2 > span.product {
+  display: flex;
+  align-items: center;
+  line-height: 2.4rem;
+  font-size: 1.7rem;
+  font-weight: 500;
+  color: #5a5c60;
 }
 @media (min-width: 0px) and (max-width: 769px) {
   section.product-list .list-wrap > h2 {
@@ -1864,8 +1887,11 @@ section.product-list .list-wrap > span {
 }
 section.product-list .list-wrap > button {
   position: absolute;
-  top: 6.5rem;
+  top: 4rem;
   right: 3rem;
+}
+section.product-list .list-wrap > button.best-seller {
+  top: 6.5rem;
 }
 
 .swiper-container {

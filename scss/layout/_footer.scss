@@ -15,7 +15,9 @@
     }
   }
   &__top {
-    padding-bottom: 2.4rem;
+    &.top {
+      padding-bottom: 2.4rem;
+    }
     @include mobile {
       flex-direction: column-reverse;
     }

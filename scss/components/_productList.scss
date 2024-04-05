@@ -6,11 +6,35 @@ section.product-list {
   .list-wrap {
     @extend %layout-center;
     position: relative;
+    &:has(.section-description) {
+      > h2 {
+        padding-bottom: 0;
+      }
+    }
     @include mobile {
       width: 100%;
       padding: 0;
     }
     > h2 {
+      display: flex;
+      align-items: center;
+      &:has(> span.product) {
+        > span.product::before {
+          content: "";
+          display: inline-block;
+          width: 0.1rem;
+          height: 1.8rem;
+          margin: 0 1.2rem;
+          background-color: $graydd;
+        }
+      }
+      > span.product {
+        display: flex;
+        align-items: center;
+        @include font17;
+        font-weight: 500;
+        color: $gray5a;
+      }
       @include mobile {
         margin-left: 2rem;
       }
@@ -26,8 +50,11 @@ section.product-list {
     }
     > button {
       position: absolute;
-      top: 6.5rem;
+      top: 4rem;
       right: 3rem;
+      &.best-seller {
+        top: 6.5rem;
+      }
     }
   }
 }
