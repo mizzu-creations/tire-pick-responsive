@@ -1,6 +1,9 @@
 section.product-list {
   @include mobile {
-    padding: 2.4rem 0 0 0;
+    padding: 2.4rem 0;
+    &.main__best-seller {
+      padding: 2.4rem 0 0 0;
+    }
     &:not(.main__storage) {
       @include mobileDivider;
     }
@@ -31,6 +34,9 @@ section.product-list {
           height: 1.8rem;
           margin: 0 1.2rem;
           background-color: $graydd;
+          @include mobile {
+            margin: 0 0.8rem;
+          }
         }
       }
       > span.product {
@@ -39,6 +45,11 @@ section.product-list {
         @include font17;
         font-weight: 500;
         color: $gray5a;
+        @include mobile {
+          flex-direction: row;
+          gap: 0;
+          @include font13;
+        }
       }
       @include mobile {
         margin-left: 2rem;

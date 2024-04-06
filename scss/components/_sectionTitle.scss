@@ -5,6 +5,7 @@
   font-weight: 700;
   color: $black;
   @include mobile {
+    padding-bottom: 1.6rem;
     @include font17;
   }
 }

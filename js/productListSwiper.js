@@ -11,7 +11,7 @@ const productList = [
     price: 125000,
     rate: 4.7,
     review: 2833,
-    keywords: { 1: "사계절용", 2: "SUV", 3: "고급형", 4: "품절임박 잔여 1개" },
+    keywords: { 1: "사계절용", 2: "SUV", 3: "고급형" },
   },
   {
     rank: 2,
@@ -142,55 +142,78 @@ const createProductCard = () => {
   swiperSectons.forEach((section) => {
     const wrapper = section.querySelector(".swiper-wrapper");
     productList.forEach((data) => {
+      if (!section.classList.contains("rising-product")) {
+        wrapper.insertAdjacentHTML(
+          "beforeend",
+          `<div class="swiper-slide">
+        <a href="javascript:void(0)">
+          <figure class="product">
+            <div class="product__img">
+              <span class="product__img__rank">${data.rank}위</span>
+              <img src="${data.tireImg}" alt="" class="product__img__tire">
+              <img src="${
+                data.brandImg
+              }" alt="브랜드" class="product__img__mark">
+            </div>
+            <figcaption class="product__info">
+              <div class="product__info__brand"><span class="hide">브랜드</span>${
+                data.brand
+              }</div>
+              <div class="product__info__title"><span class="hide">제품명</span>${
+                data.title
+              }</div>
+              <div class="product__info__model"><span class="hide">모델명</span>${
+                data.model
+              }</div>
+              <div class="product__info__price">
+                <span class="hide">할인율</span>
+                <span class="product__info__price__discount">${
+                  data.discount
+                }%</span>
+                <span class="hide">가격</span>
+                <span class="product__info__price__value">${addComma(
+                  data.price
+                )}원</span>
+              </div>
+              <div class="product__info__review">
+                <span class="hide">별점</span>
+                <span class="product__info__review__rate">${data.rate}</span>
+                <span class="hide">리뷰</span>
+                <span class="product__info__review__count">리뷰 ${addComma(
+                  data.review
+                )}</span>
+              </div>
+              <ul class="product__info__keywords">
+              ${Object.values(data.keywords)
+                .map((keyword) => {
+                  const outOfStock = keyword.split(" ")[0];
+                  if (outOfStock === "품절임박") {
+                    return `<li class="stock">${keyword}</li>`;
+                  } else {
+                    return `<li>${keyword}</li>`;
+                  }
+                })
+                .join("")}
+            </ul>
+            </figcaption>
+          </figure>
+        </a>
+      </div>`
+        );
+      }
+    });
+    if (
+      !section.classList.contains("best-seller") &&
+      !section.classList.contains("rising-product")
+    ) {
       wrapper.insertAdjacentHTML(
         "beforeend",
-        `<div class="swiper-slide">
-      <a href="javascript:void(0)">
-        <figure class="product">
-          <div class="product__img">
-            <span class="product__img__rank">${data.rank}위</span>
-            <img src="${data.tireImg}" alt="" class="product__img__tire">
-            <img src="${data.brandImg}" alt="브랜드" class="product__img__mark">
-          </div>
-          <figcaption class="product__info">
-            <div class="product__info__brand"><span class="hide">브랜드</span>${
-              data.brand
-            }</div>
-            <div class="product__info__title"><span class="hide">제품명</span>${
-              data.title
-            }</div>
-            <div class="product__info__model"><span class="hide">모델명</span>${
-              data.model
-            }</div>
-            <div class="product__info__price">
-              <span class="hide">할인율</span>
-              <span class="product__info__price__discount">${
-                data.discount
-              }%</span>
-              <span class="hide">가격</span>
-              <span class="product__info__price__value">${addComma(
-                data.price
-              )}원</span>
-            </div>
-            <div class="product__info__review">
-              <span class="hide">별점</span>
-              <span class="product__info__review__rate">${data.rate}</span>
-              <span class="hide">리뷰</span>
-              <span class="product__info__review__count">리뷰 ${addComma(
-                data.review
-              )}</span>
-            </div>
-            <ul class="product__info__keywords">
-            ${Object.values(data.keywords)
-              .map((keyword) => `<li>${keyword}</li>`)
-              .join("")}
-          </ul>
-          </figcaption>
-        </figure>
-      </a>
-    </div>`
+        `<div class="swiper-slide view-all">
+        <div></div>
+        전체보기
+      </div>`
       );
-    });
+    }
   });
 };
 const changeRankColor = () => {
@@ -203,26 +226,115 @@ const changeRankColor = () => {
 createProductCard();
 changeRankColor();
 
+const risingList = document.querySelector(".swiper.rising-product");
+const risingWrapper = document.querySelector(
+  ".swiper.rising-product .swiper-wrapper"
+);
+const risingSlide = document.querySelectorAll(
+  ".swiper.rising-product .swiper-wrapper .swiper-slide"
+);
+
+const gap = 16;
+
 swiperSectons.forEach((section) => {
   const uniqueClassName = Array.from(section.classList).find(
     (className) => className !== "swiper" && className !== "product-list"
   );
-  new Swiper(`.swiper.${uniqueClassName}`, {
-    slidesPerView: "auto",
-    spaceBetween: -40,
-    pagination: {
-      el: `.swiper-pagination.${uniqueClassName}`,
-      clickable: false,
-    },
-    breakpoints: {
-      769: {
-        slidesPerView: 4,
-        spaceBetween: 24,
-      },
-    },
-    navigation: {
-      nextEl: `.swiper-button-next.${uniqueClassName}`,
-      prevEl: `.swiper-button-prev.${uniqueClassName}`,
-    },
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth < 540 && uniqueClassName === "rising-product") {
+      let height = 0;
+
+      risingSlide.forEach((el) => (height += el.offsetHeight));
+
+      height += gap * risingSlide.length - 1;
+
+      risingList.style.height = `${height}px`;
+      risingWrapper.style.height = `${height}px`;
+    } else if (
+      window.innerWidth < 769 &&
+      uniqueClassName === "rising-product"
+    ) {
+      let height = 0;
+
+      risingSlide.forEach((el) => (height += el.offsetHeight));
+
+      height += gap * risingSlide.length - 1;
+
+      risingList.style.height = `${height / 2}px`;
+      risingWrapper.style.height = `${height / 2}px`;
+    } else if (window.innerWidth >= 769) {
+      risingList.style.height = "42rem";
+      risingWrapper.style.height = "42rem";
+    }
+
+    if (window.innerWidth <= 769 && uniqueClassName === "rising-product") {
+      return;
+    } else {
+      new Swiper(`.swiper.${uniqueClassName}`, {
+        slidesPerView: "auto",
+        spaceBetween: uniqueClassName === "best-seller" ? -40 : -24,
+        pagination: {
+          el: `.swiper-pagination.${uniqueClassName}`,
+          clickable: false,
+        },
+        breakpoints: {
+          769: {
+            slidesPerView: 4,
+            spaceBetween: 24,
+          },
+        },
+        navigation: {
+          nextEl: `.swiper-button-next.${uniqueClassName}`,
+          prevEl: `.swiper-button-prev.${uniqueClassName}`,
+        },
+      });
+    }
   });
+
+  if (window.innerWidth < 540 && uniqueClassName === "rising-product") {
+    let height = 0;
+
+    risingSlide.forEach((el) => (height += el.offsetHeight));
+
+    height += gap * risingSlide.length - 1;
+
+    risingList.style.height = `${height}px`;
+    risingWrapper.style.height = `${height}px`;
+  } else if (window.innerWidth < 769 && uniqueClassName === "rising-product") {
+    let height = 0;
+
+    risingSlide.forEach((el) => (height += el.offsetHeight));
+
+    height += gap * risingSlide.length - 1;
+
+    risingList.style.height = `${height / 2}px`;
+    risingWrapper.style.height = `${height / 2}px`;
+  } else if (window.innerWidth >= 769) {
+    risingList.style.height = "42rem";
+    risingWrapper.style.height = "42rem";
+  }
+
+  if (window.innerWidth <= 780 && uniqueClassName === "rising-product") {
+    return;
+  } else {
+    new Swiper(`.swiper.${uniqueClassName}`, {
+      slidesPerView: "auto",
+      spaceBetween: uniqueClassName === "best-seller" ? -40 : -24,
+      pagination: {
+        el: `.swiper-pagination.${uniqueClassName}`,
+        clickable: false,
+      },
+      breakpoints: {
+        769: {
+          slidesPerView: 4,
+          spaceBetween: 24,
+        },
+      },
+      navigation: {
+        nextEl: `.swiper-button-next.${uniqueClassName}`,
+        prevEl: `.swiper-button-prev.${uniqueClassName}`,
+      },
+    });
+  }
 });

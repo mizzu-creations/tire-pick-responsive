@@ -1,40 +1,127 @@
 .swiper-container {
   position: relative;
   .swiper.product-list {
+    width: 100%;
+    height: 43.6rem;
     @include mobile {
-      width: 100%;
-      height: 23.8rem;
+      height: 30.4rem;
     }
-    .swiper-wrapper {
+    &.best-seller {
       @include mobile {
-        height: 17.6rem;
-        margin-bottom: 3.2rem;
+        height: 23.8rem;
         .swiper-slide {
           display: flex;
           justify-content: center;
-          width: 36.8rem;
+          width: 36.8rem !important;
           a {
-            width: 32.8rem;
+            width: 32.8rem !important;
+            .product {
+              flex-direction: row;
+              width: 32.8rem;
+              &__img {
+                @include mobile {
+                  min-width: 17.6rem;
+                }
+                &__tire {
+                  @include mobile {
+                    width: 12.5rem;
+                  }
+                }
+              }
+              &__info {
+                &__title {
+                  white-space: wrap;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    &.rising-product {
+      .swiper-wrapper {
+        @include mobile {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 1.6rem;
+          width: 100%;
+          transform: translate3d(0, 0, 0) !important;
+          padding: 0 2rem;
+          box-sizing: border-box;
+          .swiper-slide {
+            width: 100%;
+            height: 29rem;
+            a {
+              width: 100%;
+            }
+          }
+        }
+        @media (min-width: 0px) and (max-width: 540px) {
+          grid-template-columns: repeat(1, 1fr);
+        }
+      }
+    }
+    .swiper-wrapper {
+      .swiper-slide.view-all {
+        display: none;
+      }
+      @include mobile {
+        height: 30rem;
+        .swiper-slide {
+          display: flex;
+          justify-content: center;
+          width: 18rem;
+          &.view-all {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.8rem;
+            width: 14.8rem;
+            margin-right: 2rem !important;
+            @include font13;
+            color: $gray5a;
+            cursor: pointer;
+            > div {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              width: 3.2rem;
+              height: 3.2rem;
+              @include bg(
+                "svg/arrow_view_all.svg",
+                $width: 1.6rem,
+                $height: 1.6rem,
+                $x: center,
+                $y: center
+              );
+              background-color: $grayec;
+              border-radius: 50%;
+            }
+          }
+          a {
+            width: 14rem;
           }
         }
       }
     }
     .swiper-pagination {
       display: none;
-      @include mobile {
-        display: block;
-        margin-bottom: 0.5rem;
-        .swiper-pagination-bullet {
-          width: 0.6rem;
-          height: 0.6rem;
-          margin: 0 0.24rem;
-          background-color: $gray96;
-          transition: all 0.3s ease 0s;
-        }
-        .swiper-pagination-bullet-active {
-          width: 1.5rem;
-          border-radius: 10rem;
-          background-color: $gray28;
+      &.best-seller {
+        @include mobile {
+          display: block;
+          margin-bottom: 0.5rem;
+          .swiper-pagination-bullet {
+            width: 0.6rem;
+            height: 0.6rem;
+            margin: 0 0.24rem;
+            background-color: $gray96;
+            transition: all 0.3s ease 0s;
+          }
+          .swiper-pagination-bullet-active {
+            width: 1.5rem;
+            border-radius: 10rem;
+            background-color: $gray28;
+          }
         }
       }
     }
