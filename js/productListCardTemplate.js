@@ -4,7 +4,8 @@ const basicProductCard = (data) => {
   return `<div class="swiper-slide">
   <a href="javascript:void(0)">
     <figure class="product">
-      <div class="product__img">
+      <div class="product__img ${data.soldOut ? "sold-out" : ""}">
+      ${data.soldOut ? `<span class="hide">품절</span>` : ""}
       ${
         data.rank
           ? `<span class="product__img__rank">${data.rank}위</span>`
@@ -12,6 +13,8 @@ const basicProductCard = (data) => {
           ? `<span class="product__img__rank iwol">이월상품</span>`
           : data.new
           ? `<span class="product__img__rank new">NEW</span>`
+          : data.hot
+          ? `<span class="product__img__rank hot">HOT</span>`
           : ""
       }
         <img src="${data.tireImg}" alt="" class="product__img__tire">

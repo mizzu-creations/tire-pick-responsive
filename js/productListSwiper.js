@@ -3,6 +3,9 @@ import {
   lowestPrice,
   risingProduct,
   winter,
+  women,
+  wiper,
+  storage,
 } from "./productListData.js";
 import {
   basicProductCard,
@@ -20,6 +23,18 @@ const createProductCard = () => {
       });
     } else if (section.classList.contains("winter")) {
       winter.forEach((data) => {
+        wrapper.insertAdjacentHTML("beforeend", basicProductCard(data));
+      });
+    } else if (section.classList.contains("women")) {
+      women.forEach((data) => {
+        wrapper.insertAdjacentHTML("beforeend", basicProductCard(data));
+      });
+    } else if (section.classList.contains("wiper")) {
+      wiper.forEach((data) => {
+        wrapper.insertAdjacentHTML("beforeend", basicProductCard(data));
+      });
+    } else if (section.classList.contains("storage")) {
+      storage.forEach((data) => {
         wrapper.insertAdjacentHTML("beforeend", basicProductCard(data));
       });
     } else if (!section.classList.contains("rising-product")) {

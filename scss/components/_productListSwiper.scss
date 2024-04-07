@@ -2,35 +2,40 @@
   position: relative;
   .swiper.product-list {
     width: 100%;
-    height: 43.6rem;
+    height: 44rem;
     @include mobile {
-      height: 30.4rem;
+      height: 30.6rem;
     }
     &.best-seller {
       @include mobile {
         height: 23.8rem;
-        .swiper-slide {
-          display: flex;
-          justify-content: center;
-          width: 36.8rem !important;
-          a {
-            width: 32.8rem !important;
-            .product {
-              flex-direction: row;
-              width: 32.8rem;
-              &__img {
-                @include mobile {
-                  min-width: 17.6rem;
-                }
-                &__tire {
+        .swiper-wrapper {
+          height: 23.8rem;
+          .swiper-slide {
+            display: flex;
+            justify-content: center;
+            width: 36.8rem !important;
+            height: 17.6rem;
+            a {
+              width: 32.8rem !important;
+              height: 17.6rem;
+              .product {
+                flex-direction: row;
+                width: 32.8rem;
+                &__img {
                   @include mobile {
-                    width: 12.5rem;
+                    min-width: 17.6rem;
+                  }
+                  &__tire {
+                    @include mobile {
+                      width: 12.5rem;
+                    }
                   }
                 }
-              }
-              &__info {
-                &__title {
-                  white-space: wrap;
+                &__info {
+                  &__title {
+                    white-space: wrap;
+                  }
                 }
               }
             }
@@ -66,7 +71,6 @@
         display: none;
       }
       @include mobile {
-        height: 30rem;
         .swiper-slide {
           display: flex;
           justify-content: center;

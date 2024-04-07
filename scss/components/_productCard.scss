@@ -30,6 +30,23 @@
     aspect-ratio: 1/1;
     background-color: $whitef6;
     border-radius: 0.8rem;
+    &.sold-out {
+      position: relative;
+      overflow: hidden;
+      &::after {
+        content: "품절";
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.3);
+        color: $white;
+        @include font20;
+        font-weight: 400;
+        z-index: 1;
+      }
+    }
     @include mobile {
       min-width: 14rem;
     }
@@ -49,6 +66,9 @@
       &.new {
         background-color: $yellow;
         color: $gray28;
+      }
+      &.hot {
+        background-color: $purple;
       }
       @include mobile {
         top: 0.1rem;

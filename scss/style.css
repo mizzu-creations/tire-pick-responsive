@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* Reset */
 html,
 body,
@@ -1663,6 +1664,24 @@ section.product-list .list-wrap, .footer section, .main__buyoption-partnership, 
   background-color: #f6f8fb;
   border-radius: 0.8rem;
 }
+.product__img.sold-out {
+  position: relative;
+  overflow: hidden;
+}
+.product__img.sold-out::after {
+  content: "품절";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: #fff;
+  line-height: 3rem;
+  font-size: 2rem;
+  font-weight: 400;
+  z-index: 1;
+}
 @media (min-width: 0px) and (max-width: 769px) {
   .product__img {
     min-width: 14rem;
@@ -1686,6 +1705,9 @@ section.product-list .list-wrap, .footer section, .main__buyoption-partnership, 
 .product__img__rank.new {
   background-color: #ffcc00;
   color: #282a2e;
+}
+.product__img__rank.hot {
+  background-color: #7b3ff1;
 }
 @media (min-width: 0px) and (max-width: 769px) {
   .product__img__rank {
@@ -2002,42 +2024,47 @@ section.product-list .list-wrap > button.best-seller {
 }
 .swiper-container .swiper.product-list {
   width: 100%;
-  height: 43.6rem;
+  height: 44rem;
 }
 @media (min-width: 0px) and (max-width: 769px) {
   .swiper-container .swiper.product-list {
-    height: 30.4rem;
+    height: 30.6rem;
   }
 }
 @media (min-width: 0px) and (max-width: 769px) {
   .swiper-container .swiper.product-list.best-seller {
     height: 23.8rem;
   }
-  .swiper-container .swiper.product-list.best-seller .swiper-slide {
+  .swiper-container .swiper.product-list.best-seller .swiper-wrapper {
+    height: 23.8rem;
+  }
+  .swiper-container .swiper.product-list.best-seller .swiper-wrapper .swiper-slide {
     display: flex;
     justify-content: center;
     width: 36.8rem !important;
+    height: 17.6rem;
   }
-  .swiper-container .swiper.product-list.best-seller .swiper-slide a {
+  .swiper-container .swiper.product-list.best-seller .swiper-wrapper .swiper-slide a {
     width: 32.8rem !important;
+    height: 17.6rem;
   }
-  .swiper-container .swiper.product-list.best-seller .swiper-slide a .product {
+  .swiper-container .swiper.product-list.best-seller .swiper-wrapper .swiper-slide a .product {
     flex-direction: row;
     width: 32.8rem;
   }
 }
 @media (min-width: 0px) and (max-width: 769px) and (min-width: 0px) and (max-width: 769px) {
-  .swiper-container .swiper.product-list.best-seller .swiper-slide a .product__img {
+  .swiper-container .swiper.product-list.best-seller .swiper-wrapper .swiper-slide a .product__img {
     min-width: 17.6rem;
   }
 }
 @media (min-width: 0px) and (max-width: 769px) and (min-width: 0px) and (max-width: 769px) {
-  .swiper-container .swiper.product-list.best-seller .swiper-slide a .product__img__tire {
+  .swiper-container .swiper.product-list.best-seller .swiper-wrapper .swiper-slide a .product__img__tire {
     width: 12.5rem;
   }
 }
 @media (min-width: 0px) and (max-width: 769px) {
-  .swiper-container .swiper.product-list.best-seller .swiper-slide a .product__info__title {
+  .swiper-container .swiper.product-list.best-seller .swiper-wrapper .swiper-slide a .product__info__title {
     white-space: wrap;
   }
 }
@@ -2068,9 +2095,6 @@ section.product-list .list-wrap > button.best-seller {
   display: none;
 }
 @media (min-width: 0px) and (max-width: 769px) {
-  .swiper-container .swiper.product-list .swiper-wrapper {
-    height: 30rem;
-  }
   .swiper-container .swiper.product-list .swiper-wrapper .swiper-slide {
     display: flex;
     justify-content: center;
