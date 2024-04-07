@@ -1680,6 +1680,13 @@ section.product-list .list-wrap, .footer section, .main__buyoption-partnership, 
   font-weight: 500;
   border-radius: 0.8rem 0;
 }
+.product__img__rank.iwol {
+  background-color: #bec0c4;
+}
+.product__img__rank.new {
+  background-color: #ffcc00;
+  color: #282a2e;
+}
 @media (min-width: 0px) and (max-width: 769px) {
   .product__img__rank {
     top: 0.1rem;
@@ -1872,6 +1879,37 @@ section.product-list .list-wrap, .footer section, .main__buyoption-partnership, 
   font-weight: 400;
   color: #282a2e;
 }
+.product__info__event {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  padding-top: 0.6rem;
+  line-height: 1.8rem;
+  font-size: 1.3rem;
+  color: #282a2e;
+}
+.product__info__event::before {
+  content: "";
+  width: 1.6rem;
+  height: 1.6rem;
+  background: url(../../assets/images/svg/benefit.svg) no-repeat;
+  background-size: 1.6rem 1.6rem;
+}
+@media (min-width: 0px) and (max-width: 769px) {
+  .product__info__event::before {
+    width: 1.2rem;
+    height: 1.2rem;
+    background: url(../../assets/images/svg/benefit.svg) no-repeat;
+    background-size: 1.2rem 1.2rem;
+  }
+}
+@media (min-width: 0px) and (max-width: 769px) {
+  .product__info__event {
+    padding-top: 0.8rem;
+    line-height: 1.2rem;
+    font-size: 1.1rem;
+  }
+}
 
 @media (min-width: 0px) and (max-width: 769px) {
   section.product-list {
@@ -2026,7 +2064,7 @@ section.product-list .list-wrap > button.best-seller {
     grid-template-columns: repeat(1, 1fr);
   }
 }
-.swiper-container .swiper.product-list .swiper-wrapper .swiper-slide.view-all {
+.swiper-container .swiper.product-list .swiper-wrapper .view-all {
   display: none;
 }
 @media (min-width: 0px) and (max-width: 769px) {
@@ -2038,19 +2076,21 @@ section.product-list .list-wrap > button.best-seller {
     justify-content: center;
     width: 18rem;
   }
-  .swiper-container .swiper.product-list .swiper-wrapper .swiper-slide.view-all {
+  .swiper-container .swiper.product-list .swiper-wrapper .swiper-slide.view-all > a {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     gap: 0.8rem;
     width: 14.8rem;
+    height: 100%;
     margin-right: 2rem !important;
     line-height: 1.8rem;
     font-size: 1.3rem;
     color: #5a5c60;
     cursor: pointer;
   }
-  .swiper-container .swiper.product-list .swiper-wrapper .swiper-slide.view-all > div {
+  .swiper-container .swiper.product-list .swiper-wrapper .swiper-slide.view-all > a > div {
     display: flex;
     justify-content: center;
     align-items: center;

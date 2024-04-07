@@ -43,6 +43,13 @@
       @include font15;
       font-weight: 500;
       border-radius: 0.8rem 0;
+      &.iwol {
+        background-color: $graybe;
+      }
+      &.new {
+        background-color: $yellow;
+        color: $gray28;
+      }
       @include mobile {
         top: 0.1rem;
         @include font11;
@@ -205,6 +212,29 @@
       @include font13;
       font-weight: 400;
       color: $gray28;
+    }
+    &__event {
+      display: flex;
+      align-items: center;
+      gap: 0.2rem;
+      padding-top: 0.6rem;
+      &::before {
+        content: "";
+        width: 1.6rem;
+        height: 1.6rem;
+        @include bg("svg/benefit.svg", $width: 1.6rem, $height: 1.6rem);
+        @include mobile {
+          width: 1.2rem;
+          height: 1.2rem;
+          @include bg("svg/benefit.svg", $width: 1.2rem, $height: 1.2rem);
+        }
+      }
+      @include font13;
+      color: $gray28;
+      @include mobile {
+        padding-top: 0.8rem;
+        @include font11;
+      }
     }
   }
 }

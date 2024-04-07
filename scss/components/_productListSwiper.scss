@@ -62,7 +62,7 @@
       }
     }
     .swiper-wrapper {
-      .swiper-slide.view-all {
+      .view-all {
         display: none;
       }
       @include mobile {
@@ -72,30 +72,34 @@
           justify-content: center;
           width: 18rem;
           &.view-all {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.8rem;
-            width: 14.8rem;
-            margin-right: 2rem !important;
-            @include font13;
-            color: $gray5a;
-            cursor: pointer;
-            > div {
+            > a {
               display: flex;
+              flex-direction: column;
               justify-content: center;
               align-items: center;
-              width: 3.2rem;
-              height: 3.2rem;
-              @include bg(
-                "svg/arrow_view_all.svg",
-                $width: 1.6rem,
-                $height: 1.6rem,
-                $x: center,
-                $y: center
-              );
-              background-color: $grayec;
-              border-radius: 50%;
+              gap: 0.8rem;
+              width: 14.8rem;
+              height: 100%;
+              margin-right: 2rem !important;
+              @include font13;
+              color: $gray5a;
+              cursor: pointer;
+              > div {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 3.2rem;
+                height: 3.2rem;
+                @include bg(
+                  "svg/arrow_view_all.svg",
+                  $width: 1.6rem,
+                  $height: 1.6rem,
+                  $x: center,
+                  $y: center
+                );
+                background-color: $grayec;
+                border-radius: 50%;
+              }
             }
           }
           a {
