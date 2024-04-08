@@ -128,5 +128,13 @@ const risingProductCard = (data) => {
   </a>
 </div>`;
 };
+const viewAll = () => {
+  return `<div class="swiper-slide view-all">
+  <a href="javascript:void(0)">
+    <div></div>
+    전체보기
+  </a>
+</div>`;
+};
 
-export { basicProductCard, risingProductCard };
+export { basicProductCard, risingProductCard, viewAll };
