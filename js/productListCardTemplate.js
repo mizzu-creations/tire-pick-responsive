@@ -12,22 +12,44 @@ const basicProductCard = (data) => {
     launchEvent,
   } = data;
 
+  const renderRankTag = () => {
+    if (tags.rank)
+      return `<span class="product__img__rank">${tags.rank}위</span>`;
+    if (tags.iwol)
+      return `<span class="product__img__rank iwol">이월상품</span>`;
+    if (tags.new) return `<span class="product__img__rank new">NEW</span>`;
+    if (tags.hot) return `<span class="product__img__rank hot">HOT</span>`;
+    return "";
+  };
+  const renderReviewSection = () => {
+    if (!review.count) return "";
+    return `<div class="product__info__review">
+      <span class="hide">별점</span>
+      <span class="product__info__review__rate">${review.rate}</span>
+      <span class="hide">리뷰</span>
+      <span class="product__info__review__count">리뷰 ${addComma(
+        review.count
+      )}</span>
+    </div>`;
+  };
+  const renderKeywordList = () => {
+    return Object.values(keywords)
+      .map((keyword) => {
+        if (typeof keyword === "number") {
+          return `<li class="stock">품절임박 잔여 ${keyword}개</li>`;
+        } else {
+          return `<li>${keyword}</li>`;
+        }
+      })
+      .join("");
+  };
+
   return `<div class="swiper-slide">
   <a href="javascript:void(0)">
     <figure class="product">
       <div class="product__img ${soldOut ? "sold-out" : ""}">
       ${soldOut ? `<span class="hide">품절</span>` : ""}
-      ${
-        tags.rank
-          ? `<span class="product__img__rank">${tags.rank}위</span>`
-          : tags.iwol
-          ? `<span class="product__img__rank iwol">이월상품</span>`
-          : tags.new
-          ? `<span class="product__img__rank new">NEW</span>`
-          : tags.hot
-          ? `<span class="product__img__rank hot">HOT</span>`
-          : ""
-      }
+      ${renderRankTag()}
         <img src="${imgs.tireImg}" alt="" class="product__img__tire">
         <img src="${imgs.brandImg}" alt="브랜드" class="product__img__mark">
       </div>
@@ -49,28 +71,9 @@ const basicProductCard = (data) => {
             price.price
           )}원</span>
         </div>
-        ${
-          review.count
-            ? `<div class="product__info__review">
-        <span class="hide">별점</span>
-        <span class="product__info__review__rate">${review.rate}</span>
-        <span class="hide">리뷰</span>
-        <span class="product__info__review__count">리뷰 ${addComma(
-          review.count
-        )}</span>
-      </div>`
-            : ""
-        }
+        ${renderReviewSection()}
         <ul class="product__info__keywords">
-        ${Object.values(keywords)
-          .map((keyword) => {
-            const isOutOfStock = typeof keyword === "number";
-            const liClass = isOutOfStock ? "stock" : "";
-            return isOutOfStock
-              ? `<li class="stock">품절임박 잔여 ${keyword}개</li>`
-              : `<li class="${liClass}">${keyword}</li>`;
-          })
-          .join("")}
+        ${renderKeywordList()}
       </ul>
       ${
         launchEvent
