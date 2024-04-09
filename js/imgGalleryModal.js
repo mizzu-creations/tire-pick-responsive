@@ -10,7 +10,6 @@ let imageUrls = [];
 
 function openGallery(images, selectedImageSrc) {
   dialog.open = true;
-  console.log("d");
   setBodyOverflow("hidden");
   imageUrls = images.map((img) => img.src);
   imageIndex = imageUrls.indexOf(selectedImageSrc);

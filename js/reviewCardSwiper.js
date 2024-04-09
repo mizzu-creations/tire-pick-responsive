@@ -568,11 +568,10 @@ userReviewData.forEach((data) => {
 });
 
 const reviewSlide = document.querySelectorAll(".review .swiper-slide");
-console.log();
 const reviewSwiper = new Swiper(".swiper.review", {
   direction: "vertical",
   loopedSlides: reviewSlide.length,
-  loop: document.querySelector(".swiper.review").style.display ? true : false,
+  loop: true,
   slidesPerView: "auto",
   speed: 1000,
   freeMode: true,
