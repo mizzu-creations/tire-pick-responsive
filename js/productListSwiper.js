@@ -13,52 +13,51 @@ import {
   viewAll,
 } from "./productListCardTemplate.js";
 
-const swiperSections = document.querySelectorAll(".product-list .swiper");
+const sections = [
+  { name: "lowest-price", data: lowestPrice },
+  { name: "winter", data: winter },
+  { name: "women", data: women },
+  { name: "wiper", data: wiper },
+  { name: "storage", data: storage },
+  { name: "rising-product", data: risingProduct },
+  { name: "best-seller", data: bestSeller },
+];
 
-// 카드 생성
-const createProductCard = (data, wrapper, isRisingProduct) => {
-  data.forEach((item) => {
-    const cardTemplate = isRisingProduct
-      ? risingProductCard(item)
-      : basicProductCard(item);
-    wrapper.insertAdjacentHTML("beforeend", cardTemplate);
+// Swiper 초기화 및 섹션 처리 함수
+const initializeSections = () => {
+  sections.forEach((section) => {
+    const sectionElement = document.querySelector(`.${section.name}`);
+    if (sectionElement) {
+      const wrapper = sectionElement.querySelector(".swiper-wrapper");
+      const isBestSeller = section.name === "best-seller";
+      const isRisingProduct = section.name === "rising-product";
+
+      renderProductCards(section.data, wrapper, isRisingProduct);
+      initializeSwiper(section.name, isBestSeller);
+      addViewAllButton(wrapper, section.name);
+
+      if (isBestSeller) {
+        const firstRankTire = wrapper.querySelector(".product__img__rank");
+        if (firstRankTire) {
+          firstRankTire.style.backgroundColor = "#7b3ff1";
+        }
+      }
+      if (isRisingProduct) {
+        handleRisingProductResize(sectionElement, wrapper);
+        window.addEventListener("resize", () =>
+          handleRisingProductResize(sectionElement, wrapper)
+        );
+      }
+    }
   });
 };
-// 전체보기 버튼 추가
-const addViewAllButton = (section, wrapper) => {
-  if (
-    !section.classList.contains("best-seller") &&
-    !section.classList.contains("rising-product")
-  ) {
-    wrapper.insertAdjacentHTML("beforeend", viewAll());
-  }
-};
-// 랭크 색상 변경
-const changeRankColor = () => {
-  const firstRankTire = document.querySelector(
-    ".swiper.product-list .product__img__rank"
-  );
-  firstRankTire.style.backgroundColor = "#7b3ff1";
-};
-// Swiper 초기화
-const initializeSwiper = (section, data) => {
-  const wrapper = section.querySelector(".swiper-wrapper");
-  const uniqueClassName = Array.from(section.classList).find(
-    (className) => className !== "swiper" && className !== "product-list"
-  );
-
-  // 카드 생성
-  createProductCard(
-    data,
-    wrapper,
-    section.classList.contains("rising-product")
-  );
-  // swiper 설정
-  const productSwiper = new Swiper(`.swiper.${uniqueClassName}`, {
+// Swiper 초기화 함수
+const initializeSwiper = (sectionName, isBestSeller) => {
+  new Swiper(`.swiper.${sectionName}`, {
     slidesPerView: "auto",
-    spaceBetween: uniqueClassName === "best-seller" ? -40 : -24,
+    spaceBetween: isBestSeller ? -40 : -24,
     pagination: {
-      el: `.swiper-pagination.${uniqueClassName}`,
+      el: `.swiper-pagination.${sectionName}`,
       clickable: false,
     },
     breakpoints: {
@@ -68,27 +67,32 @@ const initializeSwiper = (section, data) => {
       },
     },
     navigation: {
-      nextEl: `.swiper-button-next.${uniqueClassName}`,
-      prevEl: `.swiper-button-prev.${uniqueClassName}`,
+      nextEl: `.swiper-button-next.${sectionName}`,
+      prevEl: `.swiper-button-prev.${sectionName}`,
     },
   });
-  // bestSeller 섹션인 경우에만 랭크 색상 변경
-  if (section.classList.contains("best-seller")) {
-    changeRankColor();
+};
+// 제품 카드 생성 함수
+const renderProductCards = (data, wrapper, isRisingProduct) => {
+  data.forEach((item) => {
+    const cardTemplate = isRisingProduct
+      ? risingProductCard(item)
+      : basicProductCard(item);
+    wrapper.insertAdjacentHTML("beforeend", cardTemplate);
+  });
+};
+// 전체보기 버튼 추가 함수
+const addViewAllButton = (wrapper, sectionName) => {
+  if (!["best-seller", "rising-product"].includes(sectionName)) {
+    wrapper.insertAdjacentHTML("beforeend", viewAll());
   }
 };
-// resize 이벤트 핸들러
-const handleResize = (section) => {
-  const uniqueClassName = Array.from(section.classList).find(
-    (className) => className !== "swiper" && className !== "product-list"
-  );
-  const risingList = document.querySelector(".swiper.rising-product");
-  const risingWrapper = risingList.querySelector(".swiper-wrapper");
-  const risingSlide = risingWrapper.querySelectorAll(".swiper-slide");
-
+// rising product 섹션 리사이징 처리 함수
+const handleRisingProductResize = (sectionElement, wrapper) => {
+  const risingSlide = wrapper.querySelectorAll(".swiper-slide");
   const setRisingListHeight = (height) => {
-    risingList.style.height = `${height}rem`;
-    risingWrapper.style.height = `${height}rem`;
+    sectionElement.style.height = `${height}px`;
+    wrapper.style.height = `${height}px`;
   };
   const calculateHeight = () => {
     const gap = 16;
@@ -96,68 +100,13 @@ const handleResize = (section) => {
     risingSlide.forEach((slide) => (height += slide.offsetHeight));
     return height + gap * risingSlide.length - 1;
   };
-  // list height 설정
-  if (window.innerWidth < 540 && uniqueClassName === "rising-product") {
+  if (window.innerWidth < 540) {
     setRisingListHeight(calculateHeight());
-  } else if (window.innerWidth < 769 && uniqueClassName === "rising-product") {
+  } else if (window.innerWidth < 769) {
     setRisingListHeight(calculateHeight() / 2);
-  } else if (window.innerWidth >= 769) {
-    setRisingListHeight(42);
-  }
-  // 모바일 swiper disable 설정
-  if (window.innerWidth <= 769 && uniqueClassName === "rising-product") {
-    return;
   } else {
-    const productSwiper = new Swiper(`.swiper.${uniqueClassName}`, {
-      slidesPerView: "auto",
-      spaceBetween: uniqueClassName === "best-seller" ? -40 : -24,
-      pagination: {
-        el: `.swiper-pagination.${uniqueClassName}`,
-        clickable: false,
-      },
-      breakpoints: {
-        769: {
-          slidesPerView: 4,
-          spaceBetween: 24,
-        },
-      },
-      navigation: {
-        nextEl: `.swiper-button-next.${uniqueClassName}`,
-        prevEl: `.swiper-button-prev.${uniqueClassName}`,
-      },
-    });
-    productSwiper.update();
+    setRisingListHeight(420);
   }
 };
-// 각 섹션별로 초기화 작업 및 이벤트 핸들러 등록
-swiperSections.forEach((section) => {
-  let data;
-  // 해당 섹션에 맞는 데이터 선택
-  switch (true) {
-    case section.classList.contains("lowest-price"):
-      data = lowestPrice;
-      break;
-    case section.classList.contains("winter"):
-      data = winter;
-      break;
-    case section.classList.contains("women"):
-      data = women;
-      break;
-    case section.classList.contains("wiper"):
-      data = wiper;
-      break;
-    case section.classList.contains("storage"):
-      data = storage;
-      break;
-    case section.classList.contains("rising-product"):
-      data = risingProduct;
-      break;
-    default:
-      data = bestSeller;
-  }
-
-  initializeSwiper(section, data);
-  addViewAllButton(section, section.querySelector(".swiper-wrapper"));
-
-  window.addEventListener("resize", () => handleResize(section));
-});
+// 초기화 함수 호출
+initializeSections();
