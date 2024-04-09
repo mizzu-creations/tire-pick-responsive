@@ -1,12 +1,13 @@
+import { setBodyOverflow } from "./utils.js";
+
 const mobileModalBackdrop = document.querySelector(".mobile-modal");
 const mobileModalBox = document.querySelector(".mobile-modal dialog");
 
 const blockBodyScroll = () => {
-  const body = document.querySelector("body");
   if (window.innerWidth < 769) {
-    body.style.overflow = mobileModalBox.open ? "hidden" : "auto";
+    mobileModalBox.open ? setBodyOverflow("hidden") : setBodyOverflow("");
   } else {
-    body.style.overflow = "auto";
+    setBodyOverflow("");
   }
 };
 const handleCloseModal = () => {

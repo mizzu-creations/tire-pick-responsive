@@ -3,5 +3,8 @@ const addComma = (number) => {
     return number.toLocaleString();
   }
 };
+const setBodyOverflow = (state) => {
+  return (document.querySelector("body").style.overflow = state);
+};
 
-export { addComma };
+export { addComma, setBodyOverflow };

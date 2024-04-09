@@ -1,3 +1,5 @@
+import { setBodyOverflow } from "./utils.js";
+
 const addClassToElement = (element, className) => {
   if (!element.classList.contains(className)) {
     element.classList.add(className);
@@ -18,18 +20,23 @@ const openSearchBox = () => {
   searchBtn.addEventListener("click", (e) => {
     e.stopPropagation();
     searchContent.open = !searchContent.open;
+    if (searchContent.open) {
+      setBodyOverflow("hidden");
+    }
   });
   searchBtn.addEventListener("keydown", (e) => {
     let keyCode = e.keyCode || e.which;
     if (keyCode === 13) {
       e.stopPropagation();
       searchContent.open = !searchContent.open;
+      setBodyOverflow("hidden");
     }
   });
 
   document.addEventListener("click", (e) => {
-    if (!e.target.closest("dialog")) {
+    if (searchContent.open && !e.target.closest("dialog")) {
       searchContent.open = false;
+      setBodyOverflow("");
     }
   });
 };

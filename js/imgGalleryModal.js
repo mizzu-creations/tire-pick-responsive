@@ -1,4 +1,5 @@
-const body = document.body.style;
+import { setBodyOverflow } from "./utils.js";
+
 const dialog = document.querySelector(".img-modal");
 const gallery = document.querySelector(".img-modal__gallery");
 const imgPrevBtn = document.querySelector(".img-modal__btn.prev");
@@ -9,14 +10,15 @@ let imageUrls = [];
 
 function openGallery(images, selectedImageSrc) {
   dialog.open = true;
-  body.overflow = "hidden";
+  console.log("d");
+  setBodyOverflow("hidden");
   imageUrls = images.map((img) => img.src);
   imageIndex = imageUrls.indexOf(selectedImageSrc);
   renderGallery();
 }
 function closeGallery() {
   dialog.open = false;
-  body.overflow = "auto";
+  setBodyOverflow("");
   imgPrevBtn.removeEventListener("click", prevButtonClickHandler);
   imgNextBtn.removeEventListener("click", nextButtonClickHandler);
 }
