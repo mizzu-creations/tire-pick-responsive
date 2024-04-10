@@ -1,16 +1,16 @@
 .product {
-  width: 27.8rem;
+  @include box(27.8rem);
   box-sizing: border-box;
   &.rising-product {
     border: 0.1rem solid $grayec;
     border-radius: 0.8rem;
     @include mobile {
       gap: 0;
-      width: 100%;
+      @include box(100%);
       .product__img {
         aspect-ratio: 0;
         &__tire {
-          width: 14rem;
+          @include box(14rem);
           margin: 1rem 0;
         }
       }
@@ -20,7 +20,7 @@
     display: flex;
     flex-direction: column;
     gap: 1.2rem;
-    width: 14rem;
+    @include box(14rem);
   }
   &__img {
     display: flex;
@@ -77,10 +77,10 @@
       }
     }
     &__tire {
-      width: 18.8rem;
+      @include box(18.8rem);
       transition: transform 0.3s ease-in-out;
       @include mobile {
-        width: 10rem;
+        @include box(10rem);
       }
       &:hover {
         transform: scale(1.1);
@@ -90,14 +90,12 @@
       }
     }
     &__mark {
-      width: 8.1rem;
-      height: 2.2rem;
+      @include box(8.1rem, 2.2rem);
       position: absolute;
       top: 2rem;
       right: 2rem;
       @include mobile {
-        width: 4.4rem;
-        height: 1.2rem;
+        @include box(4.4rem, 1.2rem);
         top: 1rem;
         right: 0.8rem;
       }
@@ -175,8 +173,7 @@
         color: $gray28;
         &::before {
           content: "";
-          width: 1.6rem;
-          height: 1.6rem;
+          @include boxSquare(1.6rem);
           @include bg(
             "svg/star_gold.svg",
             $width: 1.6rem,
@@ -188,8 +185,7 @@
         @include mobile {
           @include font13;
           &::before {
-            width: 1.4rem;
-            height: 1.4rem;
+            @include boxSquare(1.4rem);
             @include bg("svg/star_gold.svg", $width: 1.4rem, $height: 1.4rem);
           }
         }
@@ -240,12 +236,10 @@
       padding-top: 0.6rem;
       &::before {
         content: "";
-        width: 1.6rem;
-        height: 1.6rem;
+        @include boxSquare(1.6rem);
         @include bg("svg/benefit.svg", $width: 1.6rem, $height: 1.6rem);
         @include mobile {
-          width: 1.2rem;
-          height: 1.2rem;
+          @include boxSquare(1.2rem);
           @include bg("svg/benefit.svg", $width: 1.2rem, $height: 1.2rem);
         }
       }

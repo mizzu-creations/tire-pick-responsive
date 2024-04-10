@@ -25,6 +25,9 @@ function renderPrevNextBtn() {
   if (imageUrls.length === 1) {
     imgPrevBtn.style.display = "none";
     imgNextBtn.style.display = "none";
+  } else {
+    imgPrevBtn.style.display = "block";
+    imgNextBtn.style.display = "block";
   }
 }
 function renderGallery() {

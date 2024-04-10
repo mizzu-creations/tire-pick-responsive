@@ -38,8 +38,7 @@ $review-icons: (
   }
   &::before {
     content: "";
-    width: 1.6rem;
-    height: 1.6rem;
+    @include boxSquare(1.6rem);
   }
   @each $icon, $path in $review-icons {
     @include review-tag-icon($icon);

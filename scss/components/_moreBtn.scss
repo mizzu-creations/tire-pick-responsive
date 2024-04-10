@@ -1,5 +1,5 @@
 .more-btn {
-  width: 10.4rem;
+  @include box(10.4rem);
   padding: 0.7rem 1rem;
   @include font13;
   font-weight: 500;

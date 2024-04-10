@@ -1,5 +1,5 @@
 .header {
-  width: 100%;
+  @include box(100%);
   position: sticky;
   top: 0;
   padding-top: 3.2rem;
@@ -23,7 +23,7 @@
       font-size: 0;
       @include mobile {
         img {
-          width: 12.8rem;
+          @include box(12.8rem);
         }
       }
     }
@@ -33,14 +33,14 @@
     justify-content: space-between;
     align-items: center;
     gap: 2.4rem;
-    width: 100%;
+    @include box(100%);
     height: 8rem;
     @include mobile {
       display: none;
     }
   }
   .spot-menu {
-    width: 100%;
+    @include box(100%);
     @include position(left, 0, top, 0);
     padding: 0.7rem 0;
     border-bottom: 0.1rem solid $whitef1;
@@ -54,8 +54,7 @@
       &__cart {
         a {
           display: inline-block;
-          width: 2.4rem;
-          height: 2.4rem;
+          @include boxSquare(2.4rem);
           @include bg("svg/icons/cart.svg", $x: right, $y: center);
           span {
             @include hide;
@@ -70,7 +69,7 @@
       width: $width;
       margin: 0 auto;
       @include mobile {
-        width: 100%;
+        @include box(100%);
       }
       li {
         position: relative;
@@ -78,8 +77,7 @@
         text-align: right;
         &:not(:last-of-type)::after {
           content: "";
-          width: 0.1rem;
-          height: 1rem;
+          @include box(0.1rem, 1rem);
           @include position(top, 50%, right, -50%);
           background-color: $graydd;
           @include mobile {

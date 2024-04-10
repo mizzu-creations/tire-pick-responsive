@@ -1,3 +1,13 @@
+// Size
+@mixin box($width: null, $height: null) {
+  width: $width;
+  height: $height;
+}
+@mixin boxSquare($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
 // Font
 @mixin font11 {
   line-height: 1.2rem;

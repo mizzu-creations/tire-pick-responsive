@@ -5,7 +5,7 @@
     display: flex;
     align-items: center;
     gap: 1rem;
-    width: 33rem;
+    @include box(33rem);
     line-height: 2rem;
     padding: 1rem 1.6rem;
     background-color: $whitef1;
@@ -23,7 +23,7 @@
     }
   }
   &__contents {
-    width: 79.8rem;
+    @include box(79.8rem);
     margin-top: 1rem;
     padding: 1.2rem;
     @include position(left, auto, right, 0);
@@ -34,7 +34,7 @@
     nav {
       position: relative;
       .search__tab-focus {
-        width: 26rem;
+        @include box(26rem);
         @include position(left, 0.8rem, top, 50%);
         padding: 1.2rem 0;
         background-color: $white;
@@ -60,10 +60,10 @@
           display: flex;
           justify-content: center;
           align-items: center;
-          width: 100%;
+          @include box(100%);
           cursor: pointer;
           a {
-            width: 100%;
+            @include box(100%);
             text-align: center;
           }
         }
@@ -184,7 +184,7 @@
 .search__custom-select {
   display: flex;
   align-items: center;
-  width: 100%;
+  @include box(100%);
   position: relative;
   @include bg(
     "svg/chevron_down-black.svg",
@@ -195,8 +195,7 @@
   border: 0.1rem solid $graydd;
   border-radius: 0.8rem;
   .search__option-label {
-    width: inherit;
-    height: 100%;
+    @include box(inherit, 100%);
     padding-left: 1.2rem;
     background-color: transparent;
     color: $gray96;
@@ -209,7 +208,7 @@
     display: none;
     max-height: 17rem;
     @include position(top, 4.8rem, left, 0);
-    width: 100%;
+    @include box(100%);
     border-radius: 0.8rem;
     background-color: $white;
     box-shadow: rgba(0, 0, 0, 0.16) 0 0.2rem 0.8rem;

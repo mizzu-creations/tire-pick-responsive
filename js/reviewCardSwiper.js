@@ -568,12 +568,24 @@ userReviewData.forEach((data) => {
 });
 
 const reviewSlide = document.querySelectorAll(".review .swiper-slide");
-const reviewSwiper = new Swiper(".swiper.review", {
+new Swiper(".swiper.review", {
   direction: "vertical",
   loopedSlides: reviewSlide.length,
-  loop: true,
+  loop: window.innerWidth > 769 ? true : false,
   slidesPerView: "auto",
   speed: 1000,
   freeMode: true,
   mousewheel: true,
+});
+
+window.addEventListener("resize", () => {
+  new Swiper(".swiper.review", {
+    direction: "vertical",
+    loopedSlides: reviewSlide.length,
+    loop: window.innerWidth > 769 ? true : false,
+    slidesPerView: "auto",
+    speed: 1000,
+    freeMode: true,
+    mousewheel: true,
+  });
 });

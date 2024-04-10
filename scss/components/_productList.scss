@@ -20,7 +20,7 @@ section.product-list {
       }
     }
     @include mobile {
-      width: 100%;
+      @include box(100%);
       padding: 0;
     }
     > h2 {
@@ -30,8 +30,7 @@ section.product-list {
         > span.product::before {
           content: "";
           display: inline-block;
-          width: 0.1rem;
-          height: 1.8rem;
+          @include box(0.1rem, 1.8rem);
           margin: 0 1.2rem;
           background-color: $graydd;
           @include mobile {

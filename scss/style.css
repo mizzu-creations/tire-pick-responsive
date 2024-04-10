@@ -704,7 +704,7 @@ section.product-list .list-wrap, .footer section, .main__buyoption-partnership, 
 }
 @media (min-width: 0px) and (max-width: 769px) {
   .main__mini-banner .swiper-container .swiper.mini .swiper-wrapper .swiper-slide {
-    width: 36rem !important;
+    width: 36rem;
   }
 }
 .main__mini-banner .swiper-container .swiper.mini .swiper-wrapper .swiper-slide a {
@@ -773,7 +773,7 @@ section.product-list .list-wrap, .footer section, .main__buyoption-partnership, 
 }
 @media (min-width: 0px) and (max-width: 769px) {
   .main__monthly-special .swiper.monthly-special .swiper-wrapper .swiper-slide {
-    width: 28rem !important;
+    width: 28rem;
   }
 }
 .main__monthly-special .swiper.monthly-special .swiper-wrapper .swiper-slide a {
@@ -1002,19 +1002,10 @@ section.product-list .list-wrap, .footer section, .main__buyoption-partnership, 
     font-size: 1.1rem;
   }
 }
-.footer__top__left div:first-child {
-  flex-direction: row;
-  gap: 1.2rem;
-}
-@media (min-width: 0px) and (max-width: 769px) {
-  .footer__top__left div:first-child {
-    gap: 1rem;
-  }
-}
-.footer__top__left div:first-child span {
+.footer__top__left div:first-child span, .footer__top__left div:nth-child(2) span {
   position: relative;
 }
-.footer__top__left div:first-child span ~ span::before {
+.footer__top__left div:first-child span ~ span::before, .footer__top__left div:nth-child(2) span ~ span::before {
   content: "";
   width: 0.1rem;
   height: 1.2rem;
@@ -1024,10 +1015,27 @@ section.product-list .list-wrap, .footer section, .main__buyoption-partnership, 
   background-color: #282a2e;
 }
 @media (min-width: 0px) and (max-width: 769px) {
-  .footer__top__left div:first-child span ~ span::before {
+  .footer__top__left div:first-child span ~ span::before, .footer__top__left div:nth-child(2) span ~ span::before {
     height: 1.1rem;
     top: 0.2rem;
     left: -0.52rem;
+  }
+}
+.footer__top__left div:first-child {
+  flex-direction: row;
+  gap: 1.2rem;
+}
+@media (min-width: 0px) and (max-width: 769px) {
+  .footer__top__left div:first-child {
+    gap: 1rem;
+  }
+}
+.footer__top__left div:nth-child(2) span ~ span::before {
+  display: none;
+}
+@media (min-width: 0px) and (max-width: 769px) {
+  .footer__top__left div:nth-child(2) span ~ span::before {
+    display: inline-block;
   }
 }
 @media (min-width: 0px) and (max-width: 769px) {
@@ -1039,27 +1047,6 @@ section.product-list .list-wrap, .footer section, .main__buyoption-partnership, 
 @media (min-width: 0px) and (max-width: 769px) and (min-width: 0px) and (max-width: 769px) {
   .footer__top__left div:nth-child(2) {
     gap: 1rem;
-  }
-}
-@media (min-width: 0px) and (max-width: 769px) {
-  .footer__top__left div:nth-child(2) span {
-    position: relative;
-  }
-  .footer__top__left div:nth-child(2) span ~ span::before {
-    content: "";
-    width: 0.1rem;
-    height: 1.2rem;
-    position: absolute;
-    top: 0.25rem;
-    left: -0.62rem;
-    background-color: #96989c;
-  }
-}
-@media (min-width: 0px) and (max-width: 769px) and (min-width: 0px) and (max-width: 769px) {
-  .footer__top__left div:nth-child(2) span ~ span::before {
-    height: 1.1rem;
-    top: 0.2rem;
-    left: -0.52rem;
   }
 }
 .footer__top__left div:nth-child(2) span {
@@ -2028,25 +2015,27 @@ section.product-list .list-wrap > button.best-seller {
 }
 @media (min-width: 0px) and (max-width: 769px) {
   .swiper-container .swiper.product-list {
+    width: 100%;
     height: 30.6rem;
   }
 }
 @media (min-width: 0px) and (max-width: 769px) {
   .swiper-container .swiper.product-list.best-seller {
+    width: 100%;
     height: 23.8rem;
   }
   .swiper-container .swiper.product-list.best-seller .swiper-wrapper {
+    width: 100%;
     height: 23.8rem;
   }
   .swiper-container .swiper.product-list.best-seller .swiper-wrapper .swiper-slide {
     display: flex;
     justify-content: center;
-    width: 36.8rem !important;
+    width: 36.8rem;
     height: 17.6rem;
   }
   .swiper-container .swiper.product-list.best-seller .swiper-wrapper .swiper-slide a {
-    width: 32.8rem !important;
-    height: 17.6rem;
+    width: 32.8rem;
   }
   .swiper-container .swiper.product-list.best-seller .swiper-wrapper .swiper-slide a .product {
     flex-direction: row;
@@ -2244,8 +2233,8 @@ section.product-list .list-wrap > button.best-seller {
   height: 100%;
 }
 .swiper.review .swiper-wrapper .swiper-slide {
-  height: -moz-fit-content !important;
-  height: fit-content !important;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 
 .review-card {
@@ -2483,8 +2472,8 @@ section.product-list .list-wrap > button.best-seller {
 }
 @media (min-width: 0px) and (max-width: 769px) {
   .review-card__right .product-info__img {
-    width: 6rem;
     min-width: 6rem;
+    width: 6rem;
     height: 6rem;
     background-color: #f6f8fb;
   }
