@@ -22,6 +22,8 @@ const openSearchBox = () => {
     searchContent.open = !searchContent.open;
     if (searchContent.open) {
       setBodyOverflow("hidden");
+    } else {
+      setBodyOverflow("");
     }
   });
   searchBtn.addEventListener("keydown", (e) => {
@@ -30,6 +32,8 @@ const openSearchBox = () => {
       e.stopPropagation();
       searchContent.open = !searchContent.open;
       setBodyOverflow("hidden");
+    } else {
+      setBodyOverflow("");
     }
   });
 
