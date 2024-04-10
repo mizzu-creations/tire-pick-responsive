@@ -256,8 +256,8 @@ section.product-list .list-wrap, .footer section, .main__buyoption-partnership, 
 }
 .header__nav {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   gap: 2.4rem;
   width: 100%;
   height: 8rem;
@@ -401,8 +401,8 @@ section.product-list .list-wrap, .footer section, .main__buyoption-partnership, 
 }
 .main__menu ul li a {
   display: flex;
-  flex-direction: column;
   align-items: center;
+  flex-direction: column;
   gap: 0.6rem;
   font-size: 1.5rem;
   font-weight: 500;
@@ -436,8 +436,8 @@ section.product-list .list-wrap, .footer section, .main__buyoption-partnership, 
 }
 .main__menu ul li a span {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   width: 8rem;
   height: 8rem;
   position: relative;
@@ -494,8 +494,8 @@ section.product-list .list-wrap, .footer section, .main__buyoption-partnership, 
 }
 .main__register > div a {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   padding: 0.4rem 2.4rem;
   background-color: #fff;
   border: 0.1rem solid #eceef1;
@@ -562,8 +562,8 @@ section.product-list .list-wrap, .footer section, .main__buyoption-partnership, 
 }
 .main__review {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   gap: 4rem;
 }
 @media (min-width: 0px) and (max-width: 769px) {
@@ -855,8 +855,8 @@ section.product-list .list-wrap, .footer section, .main__buyoption-partnership, 
 }
 .main__buyoption-partnership .card {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   flex: 1;
   gap: 1.2rem;
   padding: 2.4rem 5rem;
@@ -1160,8 +1160,8 @@ section.product-list .list-wrap, .footer section, .main__buyoption-partnership, 
 
 .top-banner {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   min-width: 124.4rem;
   height: 4.8rem;
   padding: 0.3rem 4rem;
@@ -1306,8 +1306,8 @@ section.product-list .list-wrap, .footer section, .main__buyoption-partnership, 
 }
 .search__contents nav ul .search__tab {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   width: 100%;
   cursor: pointer;
 }
@@ -1532,8 +1532,8 @@ section.product-list .list-wrap, .footer section, .main__buyoption-partnership, 
 }
 .swiper.visual .swiper-wrapper .swiper-slide {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   font-size: 1.8rem;
   background: #000000;
 }
@@ -1599,6 +1599,7 @@ section.product-list .list-wrap, .footer section, .main__buyoption-partnership, 
   .swiper.visual .swiper-pagination-fraction {
     display: flex;
     align-items: center;
+    justify-content: center;
     padding: 0.2rem 1rem;
     bottom: 1rem;
     right: 0.8rem;
@@ -1644,8 +1645,8 @@ section.product-list .list-wrap, .footer section, .main__buyoption-partnership, 
 }
 .product__img {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   position: relative;
   aspect-ratio: 1/1;
   background-color: #f6f8fb;
@@ -1658,8 +1659,8 @@ section.product-list .list-wrap, .footer section, .main__buyoption-partnership, 
 .product__img.sold-out::after {
   content: "품절";
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   position: absolute;
   inset: 0;
   background-color: rgba(0, 0, 0, 0.3);
@@ -1815,7 +1816,7 @@ section.product-list .list-wrap, .footer section, .main__buyoption-partnership, 
   padding-bottom: 0.4rem;
 }
 .product__info__review__rate {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   line-height: 2rem;
   font-size: 1.5rem;
@@ -2091,9 +2092,9 @@ section.product-list .list-wrap > button.best-seller {
   }
   .swiper-container .swiper.product-list .swiper-wrapper .swiper-slide.view-all > a {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    flex-direction: column;
     gap: 0.8rem;
     width: 14.8rem;
     height: 100%;
@@ -2105,8 +2106,8 @@ section.product-list .list-wrap > button.best-seller {
   }
   .swiper-container .swiper.product-list .swiper-wrapper .swiper-slide.view-all > a > div {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     width: 3.2rem;
     height: 3.2rem;
     background: url(../../assets/images/svg/arrow_view_all.svg) no-repeat center center;
@@ -2461,8 +2462,8 @@ section.product-list .list-wrap > button.best-seller {
 }
 .review-card__right .product-info__img {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   width: 8.8rem;
   height: 8.8rem;
   position: relative;
@@ -2543,9 +2544,6 @@ section.product-list .list-wrap > button.best-seller {
 }
 @media (min-width: 0px) and (max-width: 769px) {
   .review-card__right .store-info {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     min-height: 0;
     padding: 1.2rem;
     border: 0.1rem solid #eceef1;
@@ -2555,8 +2553,8 @@ section.product-list .list-wrap > button.best-seller {
 }
 .review-card__right .store-info .service-item {
   display: flex;
-  flex-direction: row;
   align-items: center;
+  flex-direction: row;
   gap: 0.8rem;
 }
 .review-card__right .store-info .service-item::before {
@@ -2766,8 +2764,8 @@ section.product-list .list-wrap > button.best-seller {
 
 .img-modal[open] {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   width: 100%;
   height: 100%;
   position: fixed;
@@ -2837,8 +2835,8 @@ section.product-list .list-wrap > button.best-seller {
   }
   .tab-bar ul {
     display: flex;
-    justify-content: space-around;
     align-items: center;
+    justify-content: space-around;
     height: 5.6rem;
   }
   .tab-bar ul li:nth-child(1).--active a:before {
@@ -2849,8 +2847,8 @@ section.product-list .list-wrap > button.best-seller {
   }
   .tab-bar ul li:nth-child(1) a {
     display: flex;
-    flex-direction: column;
     align-items: center;
+    flex-direction: column;
   }
   .tab-bar ul li:nth-child(1) a span {
     line-height: 1.4rem;
@@ -2875,8 +2873,8 @@ section.product-list .list-wrap > button.best-seller {
   }
   .tab-bar ul li:nth-child(2) a {
     display: flex;
-    flex-direction: column;
     align-items: center;
+    flex-direction: column;
   }
   .tab-bar ul li:nth-child(2) a span {
     line-height: 1.4rem;
@@ -2901,8 +2899,8 @@ section.product-list .list-wrap > button.best-seller {
   }
   .tab-bar ul li:nth-child(3) a {
     display: flex;
-    flex-direction: column;
     align-items: center;
+    flex-direction: column;
   }
   .tab-bar ul li:nth-child(3) a span {
     line-height: 1.4rem;
@@ -2927,8 +2925,8 @@ section.product-list .list-wrap > button.best-seller {
   }
   .tab-bar ul li:nth-child(4) a {
     display: flex;
-    flex-direction: column;
     align-items: center;
+    flex-direction: column;
   }
   .tab-bar ul li:nth-child(4) a span {
     line-height: 1.4rem;
@@ -2983,10 +2981,10 @@ section.product-list .list-wrap > button.best-seller {
   }
   .mobile-modal dialog .swiper.mobile-modal .swiper-wrapper .swiper-slide {
     text-align: center;
-    font-size: 18px;
+    font-size: 1.8rem;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
   }
   .mobile-modal dialog .swiper.mobile-modal .swiper-wrapper .swiper-slide img {
     display: block;

@@ -3,9 +3,7 @@
   position: relative;
   .swiper-wrapper {
     .swiper-slide {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      @include flex-center;
       font-size: 1.8rem;
       background: $black;
       .slide-bg {
@@ -42,7 +40,7 @@
     left: calc(50% - 61.8rem);
   }
   .swiper-pagination-fraction {
-    width: fit-content;
+    @include box(fit-content);
     line-height: 1.8rem;
     @include position(bottom, 2rem, right, calc(50% - 59.2rem));
     left: auto;
@@ -59,8 +57,7 @@
       display: none;
     }
     @include mobile {
-      display: flex;
-      align-items: center;
+      @include flex-center;
       padding: 0.2rem 1rem;
       bottom: 1rem;
       right: 0.8rem;

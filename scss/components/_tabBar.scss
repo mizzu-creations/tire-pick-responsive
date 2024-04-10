@@ -18,9 +18,8 @@ $iconCount: length($icons);
     background-color: $white;
     z-index: 100;
     ul {
-      display: flex;
+      @include flex-center-vert;
       justify-content: space-around;
-      align-items: center;
       @include box($height: 5.6rem);
       li {
         @for $i from 1 through $iconCount {
@@ -36,9 +35,8 @@ $iconCount: length($icons);
               }
             }
             a {
-              display: flex;
+              @include flex-center-vert;
               flex-direction: column;
-              align-items: center;
               span {
                 line-height: 1.4rem;
                 font-size: 1.1rem;

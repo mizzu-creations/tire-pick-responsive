@@ -17,15 +17,12 @@
     }
   }
   @include mobile {
-    display: flex;
-    flex-direction: column;
+    @include flex-column;
     gap: 1.2rem;
     @include box(14rem);
   }
   &__img {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex-center;
     position: relative;
     aspect-ratio: 1/1;
     background-color: $whitef6;
@@ -35,9 +32,7 @@
       overflow: hidden;
       &::after {
         content: "품절";
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include flex-center;
         position: absolute;
         inset: 0;
         background-color: rgba(0, 0, 0, 0.3);
@@ -161,13 +156,11 @@
       }
     }
     &__review {
-      display: flex;
-      align-items: center;
+      @include flex-center-vert;
       gap: 0.2rem;
       padding-bottom: 0.4rem;
       &__rate {
-        display: inline-flex;
-        align-items: center;
+        @include flex-center-vert;
         @include font15;
         font-weight: 700;
         color: $gray28;
@@ -230,8 +223,7 @@
       color: $gray28;
     }
     &__event {
-      display: flex;
-      align-items: center;
+      @include flex-center-vert;
       gap: 0.2rem;
       padding-top: 0.6rem;
       &::before {

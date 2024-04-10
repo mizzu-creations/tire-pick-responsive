@@ -24,8 +24,7 @@ section.product-list {
       padding: 0;
     }
     > h2 {
-      display: flex;
-      align-items: center;
+      @include flex-center-vert;
       &:has(> span.product) {
         > span.product::before {
           content: "";
@@ -39,8 +38,7 @@ section.product-list {
         }
       }
       > span.product {
-        display: flex;
-        align-items: center;
+        @include flex-center-vert;
         @include font17;
         font-weight: 500;
         color: $gray5a;

@@ -1,8 +1,6 @@
 .img-modal {
   &[open] {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex-center;
     @include boxSquare(100%);
     position: fixed;
     top: 0;

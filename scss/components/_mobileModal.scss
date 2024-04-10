@@ -11,7 +11,7 @@
     dialog {
       max-width: $web;
       min-width: 32.8rem;
-      width: 100%;
+      @include box(100%);
       position: absolute;
       bottom: -100%;
       padding: 0;
@@ -29,10 +29,8 @@
         .swiper-wrapper {
           .swiper-slide {
             text-align: center;
-            font-size: 18px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            font-size: 1.8rem;
+            @include flex-center;
             img {
               display: block;
               @include box(100%, 100%);
@@ -43,7 +41,7 @@
         .swiper-pagination {
           display: flex;
           gap: 0.4rem;
-          width: fit-content;
+          @include box(fit-content);
           line-height: 1.5rem;
           position: absolute;
           right: 1.5rem;

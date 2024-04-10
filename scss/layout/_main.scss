@@ -1,7 +1,6 @@
 .main {
   @include mobile {
-    display: flex;
-    flex-direction: column;
+    @include flex-column;
     @include box(100%);
     min-width: 32rem;
     max-width: 76.8rem;
@@ -36,9 +35,8 @@
           }
         }
         a {
-          display: flex;
+          @include flex-center-vert;
           flex-direction: column;
-          align-items: center;
           gap: 0.6rem;
           font-size: 1.5rem;
           font-weight: 500;
@@ -61,9 +59,7 @@
             }
           }
           span {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            @include flex-center;
             @include boxSquare(8rem);
             position: relative;
             border-radius: 2.4rem;
@@ -111,9 +107,8 @@
         padding: 0;
       }
       a {
-        display: flex;
+        @include flex-center-vert;
         justify-content: space-between;
-        align-items: center;
         padding: 0.4rem 2.4rem;
         background-color: $white;
         border: 0.1rem solid $grayec;
@@ -129,8 +124,7 @@
         span {
           display: flex;
           .register-text {
-            display: flex;
-            align-items: center;
+            @include flex-center-vert;
             @include mobile {
               flex-direction: column;
               align-items: baseline;
@@ -170,9 +164,8 @@
     }
   }
   &__review {
-    display: flex;
+    @include flex-center-vert;
     justify-content: space-between;
-    align-items: center;
     gap: 4rem;
     @extend %layout-center;
     @include mobile {
@@ -202,8 +195,7 @@
       }
     }
     &__left {
-      display: flex;
-      flex-direction: column;
+      @include flex-column;
       gap: 2.4rem;
       @include mobile {
         gap: 0.8rem;
@@ -266,8 +258,7 @@
         }
       }
       > ul {
-        display: flex;
-        flex-direction: column;
+        @include flex-column;
         gap: 2.5rem;
       }
     }
@@ -300,8 +291,7 @@
               @include box(36rem);
             }
             a {
-              display: flex;
-              justify-content: center;
+              @include flex-center-horiz;
               img {
                 @include box(58rem, 12rem);
                 @include mobile {
@@ -360,11 +350,9 @@
             @include box(28rem);
           }
           a {
-            display: flex;
-            justify-content: center;
+            @include flex-center-horiz;
             figure {
-              display: flex;
-              flex-direction: column;
+              @include flex-column;
               gap: 1.6rem;
               @include mobile {
                 gap: 1.2rem;
@@ -378,8 +366,7 @@
                 }
               }
               figcaption {
-                display: flex;
-                flex-direction: column;
+                @include flex-column;
                 gap: 0.2rem;
                 .section-title {
                   padding-bottom: 0;
@@ -433,9 +420,7 @@
       box-sizing: border-box;
     }
     .card {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      @include flex-center;
       flex: 1;
       gap: 1.2rem;
       padding: 2.4rem 5rem;
@@ -451,16 +436,13 @@
         background-color: $whitef6;
       }
       .icon {
-        width: 5.6rem;
-        height: 5.6rem;
+        @include boxSquare(5.6rem);
         @include mobile {
-          width: 2.4rem;
-          height: 2.4rem;
+          @include boxSquare(2.4rem);
         }
       }
       .txt {
-        display: flex;
-        flex-direction: column;
+        @include flex-column;
         color: $gray28;
         .title {
           @include font19;
@@ -484,8 +466,7 @@
         border-radius: 0.8rem 0 0 0.8rem;
         &::after {
           content: "";
-          width: 0.1rem;
-          height: 3.2rem;
+          @include box(0.1rem, 3.2rem);
           position: absolute;
           right: 0;
           background-color: $graye7;

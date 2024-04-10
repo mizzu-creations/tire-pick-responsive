@@ -2,8 +2,7 @@
   position: relative;
   z-index: 10;
   &__btn {
-    display: flex;
-    align-items: center;
+    @include flex-center-vert;
     gap: 1rem;
     @include box(33rem);
     line-height: 2rem;
@@ -57,9 +56,7 @@
         font-size: 2.2rem;
         font-weight: 700;
         .search__tab {
-          display: flex;
-          justify-content: center;
-          align-items: center;
+          @include flex-center;
           @include box(100%);
           cursor: pointer;
           a {
@@ -182,8 +179,7 @@
 }
 
 .search__custom-select {
-  display: flex;
-  align-items: center;
+  @include flex-center-vert;
   @include box(100%);
   position: relative;
   @include bg(
